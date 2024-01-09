@@ -1,0 +1,61 @@
+.navigation {
+  background-color: #ded2aa;
+  color: #b3816e;
+  position: fixed;
+  height: 100vh;
+  width: 107px;
+  transition: width 200ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation:hover {
+  width: 300px;
+}
+
+.web-name {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  padding: 20px 15px;
+  gap: 30px;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+.navigation li:last-child {
+  margin-top: auto;
+}
+
+.nav-link:hover {
+  background-color: #b3816e;
+  color: #ded2aa;
+  transition: all 0.5s;
+}
+
+.nav-text {
+  display: none;
+}
+
+.navigation:hover .nav-text {
+  display: block;
+}
+
+.DashboardIcon {
+  height: 50px;
+  width: 70px;
+  margin-right: 2px;
+  flex-shrink: 0;
+}
