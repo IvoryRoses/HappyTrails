@@ -12,9 +12,9 @@ export default function NavigationBar() {
   const location = useLocation();
 
   const isSignupRoute = location.pathname === "/signup";
-  const isLoginRoute = location.pathname === "/login";
+  const isSigninRoute = location.pathname === "/signin";
 
-  if (isSignupRoute || isLoginRoute) {
+  if (isSignupRoute || isSigninRoute) {
     return null;
   }
 

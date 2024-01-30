@@ -43,6 +43,14 @@ export default function Login() {
   return (
     <>
       <div className="authenticate login">
+        <div className="signLogBtnContainer">
+          <Link to="/signup">
+            <button className="signLogBtn"> SignUp </button>
+          </Link>
+          <Link to="/signin">
+            <button className="signLogBtn"> SignIn </button>
+          </Link>
+        </div>
         <h1> Login</h1>
         <input
           className="inputs"
@@ -58,9 +66,6 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={login}> Log In</button>
-        <Link to="/signup">
-          <button> Sign in </button>
-        </Link>
       </div>
       <ToastContainer position="bottom-right" autoClose={3000} />
     </>

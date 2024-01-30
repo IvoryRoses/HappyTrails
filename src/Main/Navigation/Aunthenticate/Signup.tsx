@@ -50,7 +50,15 @@ export default function Signup() {
   return (
     <>
       <div className="authenticate signup">
-        <h1> Sign Up</h1>
+        <div className="signLogBtnContainer">
+          <Link to="/signup">
+            <button className="signLogBtn"> SignUp </button>
+          </Link>
+          <Link to="/signin">
+            <button className="signLogBtn"> SignIn </button>
+          </Link>
+        </div>
+        <h1>Sign Up</h1>
         <form onSubmit={signUp} className="formSignup">
           <input
             className="inputs"
@@ -74,9 +82,6 @@ export default function Signup() {
           />
           <button type="submit"> Sign up</button>
         </form>
-        <Link to="/login">
-          <button> Log in </button>
-        </Link>
       </div>
       <ToastContainer position="bottom-right" autoClose={3000} />
     </>

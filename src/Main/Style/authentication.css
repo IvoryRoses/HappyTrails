@@ -1,7 +1,6 @@
 .authenticate {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   background-color: white;
   padding: 20px 15px;
@@ -11,6 +10,18 @@
   margin-left: 40%;
   margin-right: 40%;
   border-radius: 10px;
+}
+
+.signLogBtnContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.signLogBtn {
+  background-color: blue;
+  color: white;
+  border-radius: 6px;
 }
 
 .formSignup {
