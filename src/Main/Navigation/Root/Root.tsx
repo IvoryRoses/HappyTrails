@@ -10,7 +10,7 @@ const Root = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        navigate("/signup");
+        navigate("/signin");
       }
     });
 

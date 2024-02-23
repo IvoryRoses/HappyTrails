@@ -54,18 +54,24 @@ export default function Login() {
         <h1> Login</h1>
         <input
           className="inputs"
-          placeholder="Email"
+          placeholder="yoMama@test.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           className="inputs"
-          placeholder="Password"
+          placeholder="******"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <Link to="/signup" className="textForget">
+          <h1>Forget password?</h1>
+        </Link>
         <button onClick={login}> Log In</button>
+        <Link to="/signup" className="textCreate">
+          <h1>Create a new account</h1>
+        </Link>
       </div>
       <ToastContainer position="bottom-right" autoClose={3000} />
     </>

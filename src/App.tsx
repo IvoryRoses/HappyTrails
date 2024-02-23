@@ -11,6 +11,7 @@ import Setting from "./Main/Navigation/Routes/Setting";
 import About from "./Main/Navigation/Routes/About";
 import Signup from "./Main/Navigation/Aunthenticate/Signup";
 import Signin from "./Main/Navigation/Aunthenticate/Signin";
+import Forget from "./Main/Navigation/Aunthenticate/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/signin",
         Component: Signin,
+      },
+      {
+        path: "/forget",
+        Component: Forget,
       },
       {
         path: "/dashboard",
