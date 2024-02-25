@@ -1,5 +1,8 @@
-import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
-import { useState, FormEvent } from "react";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
+import { useState, FormEvent, ChangeEvent } from "react";
 import { auth } from "../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
@@ -9,79 +12,131 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [isFilled, setIsFilled] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Confirm password comparison to Password
-  const validatePassword = () => {
+  // Function to sign up the user
+  const signUp = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Check if passwords match
     if (password !== passwordConfirmation) {
-      // Error Popup
       toast.error("Passwords do not match");
+      setIsSubmitting(false);
       clearPasswords();
-      return false;
-    }
-    return true;
-  };
-
-  const signUp = async (e: FormEvent) => {
-    e.preventDefault(); // Prevent default form submission behavior
-
-    if (!validatePassword()) {
       return;
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      // Clear password fields after successful signup
-      clearPasswords();
-      toast.success("Account created successfully. Please log in.");
+      // Create the user without signing them in
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-      // Automatically log out the user after signup
-      await signOut(auth);
+      // Send email verification
+      await sendEmailVerification(userCredential.user);
+
+      // Clear form fields
+      clearPasswords();
+
+      // Notify user to verify email
+      toast.success(
+        "Sign up successful. Please verify your email before logging in."
+      );
     } catch (error) {
       console.error(error);
       toast.error("Sign up failed. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
+  // Function to clear form fields
   const clearPasswords = () => {
     setPassword("");
     setPasswordConfirmation("");
   };
 
+  // Function to handle email input change
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    setIsFilled(
+      e.target.value.trim() !== "" &&
+        password.trim() !== "" &&
+        passwordConfirmation.trim() !== ""
+    );
+  };
+
+  // Function to handle password input change
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+    setIsFilled(
+      email.trim() !== "" &&
+        e.target.value.trim() !== "" &&
+        passwordConfirmation.trim() !== ""
+    );
+  };
+
+  // Function to handle password confirmation input change
+  const handlePasswordConfirmationChange = (
+    e: ChangeEvent<HTMLInputElement>
+  ) => {
+    setPasswordConfirmation(e.target.value);
+    setIsFilled(
+      email.trim() !== "" &&
+        password.trim() !== "" &&
+        e.target.value.trim() !== ""
+    );
+  };
+
   return (
     <>
-      <div className="authenticate signup">
-        <div className="signLogBtnContainer">
-          <Link to="/signup">
-            <button className="signLogBtn"> SignUp </button>
-          </Link>
-          <Link to="/signin">
-            <button className="signLogBtn"> SignIn </button>
-          </Link>
+      <div className="authenticate">
+        <div className="first-spacing">
+          <h1 className="text-header">Sign Up</h1>
+          <h1 className="text-email-pass">Email</h1>
+          <form onSubmit={signUp} className="form">
+            <input
+              className="inputs"
+              placeholder="HiMaamJoan@gmail.com"
+              value={email}
+              onChange={handleEmailChange}
+            />
+            <h1 className="text-email-pass">Password</h1>
+            <input
+              className="inputs"
+              placeholder="******"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+            <h1 className="text-email-pass">Confirm Password</h1>
+            <input
+              className="inputs"
+              placeholder="******"
+              type="password"
+              value={passwordConfirmation}
+              onChange={handlePasswordConfirmationChange}
+            />
+            <div className="btn-signup">
+              <button
+                type="submit"
+                className={`btn-login ${isFilled ? "filled" : ""}`}
+                disabled={!isFilled || isSubmitting}
+              >
+                Sign up
+              </button>
+            </div>
+          </form>
+          <div className="already-padding">
+            <Link to="/signin" className="text-account">
+              <h1>Already have an account? Log in</h1>
+            </Link>
+          </div>
         </div>
-        <h1>Sign Up</h1>
-        <form onSubmit={signUp} className="formSignup">
-          <input
-            className="inputs"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            className="inputs"
-            placeholder="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            className="inputs"
-            placeholder="Confirm Password"
-            type="password"
-            value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
-          />
-          <button type="submit"> Sign up</button>
-        </form>
       </div>
       <ToastContainer position="bottom-right" autoClose={3000} />
     </>

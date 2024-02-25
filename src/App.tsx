@@ -13,6 +13,7 @@ import Signup from "./Main/Navigation/Aunthenticate/Signup";
 import Signin from "./Main/Navigation/Aunthenticate/Signin";
 import Forget from "./Main/Navigation/Aunthenticate/ForgetPassword";
 
+//routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <>
-      <h1 className="version">V 1.2.0</h1>
+      <h1 className="version">V 2.0.0</h1>
       <RouterProvider router={router} />
     </>
   );

@@ -13,8 +13,9 @@ export default function NavigationBar() {
 
   const isSignupRoute = location.pathname === "/signup";
   const isSigninRoute = location.pathname === "/signin";
+  const isForgetRoute = location.pathname === "/forget";
 
-  if (isSignupRoute || isSigninRoute) {
+  if (isSignupRoute || isSigninRoute || isForgetRoute) {
     return null;
   }
 
@@ -56,9 +57,11 @@ export default function NavigationBar() {
             <span className="nav-text">About</span>
           </Link>
         </li>
-        <li className="nav-link">
-          <CiLogout onClick={logout} className=" DashboardIcon" />
-          <span className="nav-text">Logout</span>
+        <li>
+          <Link to="/signin" className="nav-link" onClick={logout}>
+            <CiLogout onClick={logout} className=" DashboardIcon" />
+            <span className="nav-text">Logout</span>
+          </Link>
         </li>
       </ul>
     </nav>

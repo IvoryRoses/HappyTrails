@@ -8,25 +8,48 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isFilled, setIsFilled] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Check if both email and password are filled
+    setIsFilled(email.trim() !== "" && password.trim() !== "");
+  }, [email, password]);
+
   const login = async () => {
+    setIsSubmitting(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // If login is successful, navigate to the dashboard
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      if (!user.emailVerified) {
+        // If the email is not verified, display an error message and prevent login
+        toast.error("Please verify your email before logging in.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      // If login is successful and email is verified, navigate to the dashboard
       navigate("/dashboard");
     } catch (error) {
       // Handle login errors
       console.error(error);
       clearPasswords();
       toast.error("Login failed. Please check your email and password.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   // Check if the user is already logged in
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
+      if (user && user.emailVerified) {
         // User is already logged in, navigate to the dashboard
         navigate("/dashboard");
       }
@@ -42,36 +65,45 @@ export default function Login() {
 
   return (
     <>
-      <div className="authenticate login">
-        <div className="signLogBtnContainer">
-          <Link to="/signup">
-            <button className="signLogBtn"> SignUp </button>
-          </Link>
-          <Link to="/signin">
-            <button className="signLogBtn"> SignIn </button>
-          </Link>
+      <div className="authenticate">
+        <div className="first-spacing">
+          <h1 className="text-header">Login</h1>
+          <h1 className="text-email-pass">Email</h1>
+          <input
+            name="email"
+            className="inputs"
+            placeholder="harrystyles@gmail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <h1 className="text-email-pass">Password</h1>
+          <input
+            className="inputs"
+            placeholder="******"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className="forgot-padding">
+            <Link to="/forget" className="text-forget">
+              <h1>Forgot password?</h1>
+            </Link>
+          </div>
         </div>
-        <h1> Login</h1>
-        <input
-          className="inputs"
-          placeholder="yoMama@test.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          className="inputs"
-          placeholder="******"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Link to="/signup" className="textForget">
-          <h1>Forget password?</h1>
-        </Link>
-        <button onClick={login}> Log In</button>
-        <Link to="/signup" className="textCreate">
-          <h1>Create a new account</h1>
-        </Link>
+        <div className="first-spacing">
+          <button
+            onClick={login}
+            className={`btn-login ${isFilled ? "filled" : ""}`}
+            disabled={!isFilled || isSubmitting}
+          >
+            Log In
+          </button>
+          <div className="create-padding">
+            <Link to="/signup" className="text-create">
+              <h1>Create a new account</h1>
+            </Link>
+          </div>
+        </div>
       </div>
       <ToastContainer position="bottom-right" autoClose={3000} />
     </>

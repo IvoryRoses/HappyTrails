@@ -1,43 +1,113 @@
+/*Main*/
 .authenticate {
   display: flex;
-  align-items: center;
   flex-direction: column;
   background-color: white;
-  padding: 20px 15px;
-  height: 35vh;
-  gap: 20px;
+  padding: 20px 20px;
+  height: 40vh;
+  min-height: 40vh;
   margin-top: 10rem;
-  margin-left: 40%;
-  margin-right: 40%;
+  margin-left: 38%;
+  margin-right: 38%;
   border-radius: 10px;
 }
 
-.signLogBtnContainer {
+/*Spacing for individual entity*/
+.first-spacing {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  flex-direction: column;
+  padding: 15px 0px;
+  gap: 7px;
 }
 
-.signLogBtn {
-  background-color: blue;
-  color: white;
-  border-radius: 6px;
+/*Every component has this*/
+.text-header {
+  display: flex;
+  justify-content: center;
+  color: #273b68;
 }
 
-.formSignup {
+.form {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 7px;
 }
 
-.textForget {
+.text-email-pass {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #273b68;
+}
+
+.inputs {
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+.btn-login {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #ded2aa;
+  color: #b3816e;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn-login.filled {
+  background-color: #b3816e;
+  color: #ded2aa;
+}
+
+.btn-login:disabled {
+  cursor: default;
+}
+
+/*Signin.tsx*/
+.forgot-padding {
+  padding-left: 18rem;
+}
+
+.text-forget {
+  display: flex;
+  justify-content: right;
+  font-size: 7px;
+  color: #273b68;
   text-decoration: none;
 }
 
-.textCreate {
-  color: white;
-  font-size: 15px;
+.create-padding {
+  padding: 0rem 8.2rem;
+}
+
+/*Signup.tsx*/
+.btn-signup {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.already-padding {
+  padding: 0rem 5.9rem;
+}
+
+/*ForgetPassword.tsx*/
+.back-padding {
+  padding: 0rem 9rem;
+}
+
+.text-create,
+.text-account,
+.text-back {
+  display: flex;
+  justify-content: center;
+  font-size: 7px;
+  color: #273b68;
   text-decoration: none;
 }
