@@ -1,11 +1,15 @@
 import {
+  signOut,
   createUserWithEmailAndPassword,
   sendEmailVerification,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { useState, FormEvent, ChangeEvent } from "react";
 import { auth } from "../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Signup() {
@@ -14,12 +18,39 @@ export default function Signup() {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [isFilled, setIsFilled] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+
+  const handleGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      if (user) {
+        const isEmailVerified = user.emailVerified;
+
+        if (isEmailVerified) {
+          await signOut(auth);
+          navigate("/signup");
+          toast.warning("You already have an account. Please log in.");
+        } else {
+          toast.success(
+            "Sign up successful. Please verify your email before logging in."
+          );
+        }
+      } else {
+        console.error("Google sign-in failed: user is null");
+        toast.error("Sign up with Google failed. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Sign up with Google failed. Please try again.");
+    }
+  };
 
   // Function to sign up the user
   const signUp = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     // Check if passwords match
     if (password !== passwordConfirmation) {
       toast.error("Passwords do not match");
@@ -35,13 +66,10 @@ export default function Signup() {
         email,
         password
       );
-
       // Send email verification
       await sendEmailVerification(userCredential.user);
-
       // Clear form fields
       clearPasswords();
-
       // Notify user to verify email
       toast.success(
         "Sign up successful. Please verify your email before logging in."
@@ -49,6 +77,7 @@ export default function Signup() {
     } catch (error) {
       console.error(error);
       toast.error("Sign up failed. Please try again.");
+      setIsSubmitting(false);
     } finally {
       setIsSubmitting(false);
     }
@@ -136,6 +165,11 @@ export default function Signup() {
               <h1>Already have an account? Log in</h1>
             </Link>
           </div>
+          <div className="separator">or</div>
+          <button onClick={handleGoogle} className="btn-google">
+            <FcGoogle className="icon-google" />
+            Sign up with Google
+          </button>
         </div>
       </div>
       <ToastContainer position="bottom-right" autoClose={3000} />

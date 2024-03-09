@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
-import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { auth } from "../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
+import { FcGoogle } from "react-icons/fc";
+import HappyText from "../Image/Happy_Trails_Text.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -16,6 +22,10 @@ export default function Login() {
     // Check if both email and password are filled
     setIsFilled(email.trim() !== "" && password.trim() !== "");
   }, [email, password]);
+
+  const handleGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+  };
 
   const login = async () => {
     setIsSubmitting(true);
@@ -66,6 +76,9 @@ export default function Login() {
   return (
     <>
       <div className="authenticate">
+        <div className="happy-div">
+          <img src={HappyText} className="happy-text" alt="" />
+        </div>
         <div className="first-spacing">
           <h1 className="text-header">Login</h1>
           <h1 className="text-email-pass">Email</h1>
@@ -103,6 +116,11 @@ export default function Login() {
               <h1>Create a new account</h1>
             </Link>
           </div>
+          <div className="separator">or</div>
+          <button className="btn-google">
+            <FcGoogle className="icon-google" />
+            Log in with Google
+          </button>
         </div>
       </div>
       <ToastContainer position="bottom-right" autoClose={3000} />

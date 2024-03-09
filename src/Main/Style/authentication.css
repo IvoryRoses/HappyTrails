@@ -4,9 +4,8 @@
   flex-direction: column;
   background-color: white;
   padding: 20px 20px;
-  height: 40vh;
-  min-height: 40vh;
-  margin-top: 10rem;
+  min-height: 30vh;
+  margin-top: 8rem;
   margin-left: 38%;
   margin-right: 38%;
   border-radius: 10px;
@@ -69,6 +68,50 @@
   cursor: default;
 }
 
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px;
+  gap: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 1.5px 2.5px #d6caca;
+}
+
+.icon-google {
+  width: 25px;
+  height: 25px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  color: grey;
+  margin-top: 15px;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #273b68;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.25em;
+}
+
 /*Signin.tsx*/
 .forgot-padding {
   padding-left: 18rem;
@@ -84,6 +127,15 @@
 
 .create-padding {
   padding: 0rem 8.2rem;
+}
+
+.happy-div {
+  display: flex;
+  justify-content: center;
+}
+
+.happy-text {
+  max-width: 200px;
 }
 
 /*Signup.tsx*/

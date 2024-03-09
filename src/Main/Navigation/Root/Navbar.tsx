@@ -29,37 +29,37 @@ export default function NavigationBar() {
       <ul className="nav-list">
         <li>
           <Link to="/dashboard" className="nav-link">
-            <IoHome className="DashboardIcon" />
+            <IoHome className="dashboard-icon" />
             <span className="nav-text">Dashboard</span>
           </Link>
         </li>
         <li>
           <Link to="/account" className="nav-link">
-            <MdAccountCircle alt="" className="DashboardIcon" />
+            <MdAccountCircle alt="" className="dashboard-icon" />
             <span className="nav-text">Account</span>
           </Link>
         </li>
         <li>
           <Link to="/history" className="nav-link">
-            <BiSolidCompass className="DashboardIcon" />
+            <BiSolidCompass className="dashboard-icon" />
             <span className="nav-text">History</span>
           </Link>
         </li>
         <li>
           <Link to="/setting" className="nav-link">
-            <PiGearSixFill className="DashboardIcon" />
+            <PiGearSixFill className="dashboard-icon" />
             <span className="nav-text">Setting</span>
           </Link>
         </li>
         <li>
           <Link to="/about" className="nav-link">
-            <TbInfoCircleFilled className="DashboardIcon" />
+            <TbInfoCircleFilled className="dashboard-icon" />
             <span className="nav-text">About</span>
           </Link>
         </li>
         <li>
           <Link to="/signin" className="nav-link" onClick={logout}>
-            <CiLogout onClick={logout} className=" DashboardIcon" />
+            <CiLogout onClick={logout} className=" dashboard-icon" />
             <span className="nav-text">Logout</span>
           </Link>
         </li>

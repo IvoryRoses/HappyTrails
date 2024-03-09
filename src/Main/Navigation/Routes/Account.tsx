@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { db, auth } from "../../../firebase";
+import { auth } from "../../../firebase";
 
 export default function Account() {
   const [userEmail, setUserEmail] = useState<string | null>(null);
