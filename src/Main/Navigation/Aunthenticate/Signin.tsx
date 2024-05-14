@@ -3,6 +3,7 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
@@ -25,6 +26,12 @@ export default function Login() {
 
   const handleGoogle = async () => {
     const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Google sign-in failed:", error);
+      toast.error("Sign in with Google failed. Please try again.");
+    }
   };
 
   const login = async () => {
@@ -117,7 +124,7 @@ export default function Login() {
             </Link>
           </div>
           <div className="separator">or</div>
-          <button className="btn-google">
+          <button onClick={handleGoogle} className="btn-google">
             <FcGoogle className="icon-google" />
             Log in with Google
           </button>
