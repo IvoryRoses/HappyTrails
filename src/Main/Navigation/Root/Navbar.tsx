@@ -14,8 +14,9 @@ export default function NavigationBar() {
   const isSignupRoute = location.pathname === "/signup";
   const isSigninRoute = location.pathname === "/signin";
   const isForgetRoute = location.pathname === "/forget";
+  const isHomeRoute = location.pathname === "/home";
 
-  if (isSignupRoute || isSigninRoute || isForgetRoute) {
+  if (isSignupRoute || isSigninRoute || isForgetRoute || isHomeRoute) {
     return null;
   }
 

@@ -5,7 +5,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { auth } from "../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
@@ -19,6 +19,10 @@ export default function Signup() {
   const [isFilled, setIsFilled] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = "#a3cb8f";
+  }, []);
 
   const handleGoogle = async () => {
     const provider = new GoogleAuthProvider();

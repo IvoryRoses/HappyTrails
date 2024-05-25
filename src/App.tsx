@@ -2,6 +2,8 @@ import "./Main/Style/main.css";
 import "./Main/Style/navbar.css";
 import "./Main/Style/setting.css";
 import "./Main/Style/authentication.css";
+import "./Main/Style/front.css";
+import "./Main/Style/account.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Main/Navigation/Root/Root";
 import Dashboard from "./Main/Navigation/Routes/Dashboard";
@@ -12,6 +14,7 @@ import About from "./Main/Navigation/Routes/About";
 import Signup from "./Main/Navigation/Aunthenticate/Signup";
 import Signin from "./Main/Navigation/Aunthenticate/Signin";
 import Forget from "./Main/Navigation/Aunthenticate/ForgetPassword";
+import LandingPage from "./Main/Navigation/Front/LandingPage";
 
 //routes
 const router = createBrowserRouter([
@@ -19,6 +22,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     children: [
+      {
+        path: "/home",
+        Component: LandingPage,
+      },
       {
         path: "/signup",
         Component: Signup,
@@ -58,7 +65,7 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <>
-      <h1 className="version">V 2.0.0</h1>
+      <h1 className="version"></h1>
       <RouterProvider router={router} />
     </>
   );

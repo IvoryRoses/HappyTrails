@@ -11,6 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
 import HappyText from "../Image/Happy_Trails_Text.png";
+import PadayoColor from "../Image/Padayo_Color.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,6 +19,10 @@ export default function Login() {
   const [isFilled, setIsFilled] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = "#a3cb8f";
+  }, []);
 
   useEffect(() => {
     // Check if both email and password are filled
@@ -84,7 +89,9 @@ export default function Login() {
     <>
       <div className="authenticate">
         <div className="happy-div">
-          <img src={HappyText} className="happy-text" alt="" />
+          <Link to="/home">
+            <img src={PadayoColor} className="happy-text" alt="" />
+          </Link>
         </div>
         <div className="first-spacing">
           <h1 className="text-header">Login</h1>

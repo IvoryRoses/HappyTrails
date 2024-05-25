@@ -7,8 +7,8 @@
 }
 
 body {
-  background: #a3cb8f;
   /*this affects the navigation bar if the outlet is small */
+  background-color: #a3cb8f;
   justify-content: center;
   align-items: center;
   margin: 0;

@@ -114,7 +114,7 @@
 
 /*Signin.tsx*/
 .forgot-padding {
-  padding-left: 18rem;
+  padding-left: 17rem;
 }
 
 .text-forget {
@@ -132,6 +132,7 @@
 .happy-div {
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .happy-text {
@@ -146,7 +147,7 @@
 }
 
 .already-padding {
-  padding: 0rem 5.9rem;
+  padding: 0rem 5.8rem;
 }
 
 /*ForgetPassword.tsx*/
