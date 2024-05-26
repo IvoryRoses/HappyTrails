@@ -26,6 +26,7 @@
   color: #273b68;
 }
 
+/* account.tsx uses this too*/
 .form {
   display: flex;
   justify-content: center;
@@ -156,7 +157,7 @@
 }
 
 .text-create,
-.text-account,
+.text-already,
 .text-back {
   display: flex;
   justify-content: center;

@@ -2,11 +2,30 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState, FormEvent, ChangeEvent, useEffect } from "react";
+import SigninBG from "../Image/Signup_BG.png";
 
 export default function ForgetPassword() {
   const navigate = useNavigate();
   const [isFilled, setIsFilled] = useState(false);
+
+  useEffect(() => {
+    // Set the background image
+    document.body.style.backgroundImage = `url(${SigninBG})`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundAttachment = "fixed"; // Optional for fixed background
+
+    // Cleanup function to remove the background image when the component unmounts
+    return () => {
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundSize = "";
+      document.body.style.backgroundRepeat = "";
+      document.body.style.backgroundPosition = "";
+      document.body.style.backgroundAttachment = ""; // Cleanup optional style
+    };
+  }, []);
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setIsFilled(e.target.value.trim() !== "");

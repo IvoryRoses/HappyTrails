@@ -7,6 +7,7 @@ import { BiSolidCompass } from "react-icons/bi";
 import { PiGearSixFill } from "react-icons/pi";
 import { TbInfoCircleFilled } from "react-icons/tb";
 import { CiLogout } from "react-icons/ci";
+import PadayoWhite from "../Image/Padayo_White.png";
 
 export default function NavigationBar() {
   const location = useLocation();
@@ -28,7 +29,7 @@ export default function NavigationBar() {
     <>
       <nav className="notif"></nav>
       <nav className="navigation">
-        <a className="web-name">HappyTrail</a>
+        <img src={PadayoWhite} className="nav-logo" />
         <ul className="nav-list">
           <li>
             <Link to="/dashboard" className="nav-link">

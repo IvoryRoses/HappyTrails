@@ -10,6 +10,7 @@ import { auth } from "../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import SigninBG from "../Image/Signup_BG.png";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Signup() {
@@ -21,7 +22,21 @@ export default function Signup() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.body.style.backgroundColor = "#a3cb8f";
+    // Set the background image
+    document.body.style.backgroundImage = `url(${SigninBG})`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundAttachment = "fixed"; // Optional for fixed background
+
+    // Cleanup function to remove the background image when the component unmounts
+    return () => {
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundSize = "";
+      document.body.style.backgroundRepeat = "";
+      document.body.style.backgroundPosition = "";
+      document.body.style.backgroundAttachment = ""; // Cleanup optional style
+    };
   }, []);
 
   const handleGoogle = async () => {
@@ -165,7 +180,7 @@ export default function Signup() {
             </div>
           </form>
           <div className="already-padding">
-            <Link to="/signin" className="text-account">
+            <Link to="/signin" className="text-already">
               <h1>Already have an account? Log in</h1>
             </Link>
           </div>

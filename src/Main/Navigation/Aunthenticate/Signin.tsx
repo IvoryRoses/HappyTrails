@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
-import HappyText from "../Image/Happy_Trails_Text.png";
+import SigninBG from "../Image/Signup_BG.png";
 import PadayoColor from "../Image/Padayo_Color.png";
 
 export default function Login() {
@@ -21,7 +21,21 @@ export default function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.body.style.backgroundColor = "#a3cb8f";
+    // Set the background image
+    document.body.style.backgroundImage = `url(${SigninBG})`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundAttachment = "fixed"; // Optional for fixed background
+
+    // Cleanup function to remove the background image when the component unmounts
+    return () => {
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundSize = "";
+      document.body.style.backgroundRepeat = "";
+      document.body.style.backgroundPosition = "";
+      document.body.style.backgroundAttachment = ""; // Cleanup optional style
+    };
   }, []);
 
   useEffect(() => {

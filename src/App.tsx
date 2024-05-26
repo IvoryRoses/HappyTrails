@@ -16,6 +16,8 @@ import Signin from "./Main/Navigation/Aunthenticate/Signin";
 import Forget from "./Main/Navigation/Aunthenticate/ForgetPassword";
 import LandingPage from "./Main/Navigation/Front/LandingPage";
 
+//DO NOT TOUCH THIS FOR THE LOVE OF GOD, UNLES YOUR SEBASTIAN ABUYO
+
 //routes
 const router = createBrowserRouter([
   {
@@ -70,3 +72,5 @@ export default function App() {
     </>
   );
 }
+
+//DO NOT TOUCH THIS FOR THE LOVE OF GOD, UNLES YOUR SEBASTIAN ABUYO

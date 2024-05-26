@@ -1,37 +1,71 @@
 import { useEffect, useState } from "react";
-import { auth } from "../../../firebase";
-import { updateProfile } from "firebase/auth"; // Import updateProfile function
+import { auth, fs } from "../../../firebase";
+import { updateProfile } from "firebase/auth";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 const Account = () => {
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
-  const [userTrait, setUserTrait] = useState("empty");
+  const [userAddress, setUserAddress] = useState<string | null>("");
+  const [userContactNumber, setUserContactNumber] = useState<string | null>(
+    null
+  );
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
-    const currentUser = auth.currentUser;
+    const fetchUserData = async () => {
+      const currentUser = auth.currentUser;
 
-    if (currentUser) {
-      setUserEmail(currentUser.email ?? null);
-      setUserName(currentUser.displayName ?? "None");
-    }
+      if (currentUser) {
+        // Display details from auth
+        setUserEmail(currentUser.email ?? null);
+        setUserName(currentUser.displayName ?? "none");
+
+        // Fetch user address and contact number from Firestore
+        const userDocRef = doc(fs, "users", currentUser.uid);
+        const userDoc = await getDoc(userDocRef);
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          setUserAddress(userData.address);
+          setUserContactNumber(userData.contactNumber);
+        } else {
+          setUserAddress("");
+          setUserContactNumber(null);
+        }
+      }
+    };
+    fetchUserData();
   }, []);
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  const updateUserName = async (newName: string) => {
+  const updateUserProfile = async (
+    newName: string,
+    newAddress: string,
+    newContactNumber: string
+  ) => {
     const currentUser = auth.currentUser;
 
     if (currentUser) {
       try {
+        // Update display name in Auth
         await updateProfile(currentUser, { displayName: newName });
-        setUserName(newName); // Update local state with the new display name
-        alert("Username updated successfully!");
+        setUserName(newName);
+
+        // Update address and contact number in Firestore
+        const userDocRef = doc(fs, "users", currentUser.uid);
+        await setDoc(
+          userDocRef,
+          { address: newAddress, contactNumber: newContactNumber },
+          { merge: true }
+        );
+        setUserAddress(newAddress);
+        setUserContactNumber(newContactNumber);
+        alert("Profile updated successfully");
       } catch (error) {
-        console.error("Error updating username:", error);
-        alert("Failed to update username. Please try again.");
+        alert("Failed to update profile. Please try again.");
       }
     }
   };
@@ -41,25 +75,47 @@ const Account = () => {
       <h1 className="page-content accountMain">Profile</h1>
       <p className="page-content">Username: {userName}</p>
       <p className="page-content">Email: {userEmail}</p>
-      <p className="page-content">Trait: {userTrait}</p>
+      <p className="page-content">Address: {userAddress}</p>
+      <p className="page-content">Contact Number: {userContactNumber}</p>
       <button onClick={togglePopup} className="page-content open-popup-btn">
         Open Form
       </button>
       {isPopupOpen && (
-        <PopupForm handleClose={togglePopup} updateUserName={updateUserName} />
+        <PopupForm
+          handleClose={togglePopup}
+          updateUserProfile={updateUserProfile}
+          existingName={userName}
+          existingAddress={userAddress}
+          existingContactNumber={userContactNumber}
+        />
       )}
     </div>
   );
 };
 
+// PopupForm component
 const PopupForm = ({
   handleClose,
-  updateUserName,
+  updateUserProfile,
+  existingName,
+  existingAddress,
+  existingContactNumber,
 }: {
   handleClose: () => void;
-  updateUserName: (newName: string) => Promise<void>;
+  updateUserProfile: (
+    newName: string,
+    newAddress: string,
+    newContactNumber: string
+  ) => Promise<void>;
+  existingName: string | null;
+  existingAddress: string | null;
+  existingContactNumber: string | null;
 }) => {
-  const [name, setName] = useState<string>("");
+  const [name, setName] = useState<string>(existingName || "");
+  const [address, setAddress] = useState<string>(existingAddress || "");
+  const [contactNumber, setContactNumber] = useState<string>(
+    existingContactNumber || ""
+  );
 
   const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
@@ -70,8 +126,22 @@ const PopupForm = ({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent the default form submission
 
-    // Call the function to update the display name in Firebase
-    await updateUserName(name);
+    // Validate contact number
+    if (contactNumber && !/^0\d{10}$/.test(contactNumber)) {
+      alert(
+        "Please enter a valid contact number starting with 0 and 10 digits long."
+      );
+      return;
+    }
+
+    // Use existing values if input fields are empty
+    const finalName = name.trim() || existingName || "";
+    const finalAddress = address.trim() || existingAddress || "";
+    const finalContactNumber =
+      contactNumber.trim() || existingContactNumber || "";
+
+    // Call the function to update the display name, address, and contact number in Firebase
+    await updateUserProfile(finalName, finalAddress, finalContactNumber);
 
     // Close the form after submission
     handleClose();
@@ -83,10 +153,10 @@ const PopupForm = ({
         <button className="close-btn" onClick={handleClose}>
           ×
         </button>
-        <h2>Update Username</h2>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Name:
+        <div className="account-spacing">
+          <form onSubmit={handleSubmit} className="form">
+            <h1 className="text-header-profile-form">Update Profile</h1>
+            <h1 className="text-account">Name</h1>
             <input
               type="text"
               name="name"
@@ -94,14 +164,34 @@ const PopupForm = ({
               className="profiler-input"
               onChange={(e) => setName(e.target.value)}
             />
-            <button className="profiler-trait">Pangit</button>
-            <button className="profiler-trait">Gwapo</button>
-            <button className="profiler-trait">Bading</button>
-          </label>
-          <button className="account-button" type="submit">
-            Submit
-          </button>
-        </form>
+            <h1 className="text-account">Address</h1>
+            <input
+              type="text"
+              name="address"
+              value={address}
+              className="profiler-input"
+              onChange={(e) => setAddress(e.target.value)}
+            />
+            <h1 className="text-account">Contact Number</h1>
+            <input
+              type="text"
+              name="contactNumber"
+              maxLength={11}
+              value={contactNumber}
+              className="profiler-input"
+              onChange={(e) => {
+                const value = e.target.value;
+                if (/^\d*$/.test(value)) {
+                  // Allow only digits
+                  setContactNumber(value);
+                }
+              }}
+            />
+            <button className="account-button" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
