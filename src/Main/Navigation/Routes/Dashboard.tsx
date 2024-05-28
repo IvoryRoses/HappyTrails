@@ -8,6 +8,7 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import { Icon } from "leaflet";
+const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
 
 export default function Dashboard() {
   // Define the type for markers
@@ -36,16 +37,34 @@ export default function Dashboard() {
   // Component to handle map clicks
   function AddMarkerOnClick() {
     useMapEvents({
-      click: (e) => {
-        if (markers.length < 2) {
-          const newMarker: MarkerType = {
+      click: async (e) => {
+        if (markers.length < 1) {
+          const newMarker = {
             id: generateId(),
             geocode: [e.latlng.lat, e.latlng.lng],
-            popUp: `New marker at ${e.latlng.lat.toFixed(
+            popUp: `Starting at ${e.latlng.lat.toFixed(
               2
             )}, ${e.latlng.lng.toFixed(2)}`,
           };
           setMarkers((prevMarkers) => [...prevMarkers, newMarker]);
+
+          // Correctly assigning the latitude and longitude values to the variables
+          let initLat = e.latlng.lat;
+          let initLng = e.latlng.lng;
+          console.log("latitude:", initLat);
+          console.log("longitude:", initLng);
+
+          // Construct the API URL
+          const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${initLng},${initLat}&end=14.14, 121.32`;
+
+          try {
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log("Openrouteservice API response:", data);
+            // Handle the API response data as needed
+          } catch (error) {
+            console.error("Error fetching directions:", error);
+          }
         }
       },
     });
@@ -59,7 +78,6 @@ export default function Dashboard() {
       prevMarkers.filter((marker) => marker.id !== id)
     );
   };
-
   return (
     <>
       <div className="page-content dashboardMain">
@@ -80,7 +98,6 @@ export default function Dashboard() {
               </Popup>
             </Marker>
           ))}
-
           <AddMarkerOnClick />
         </MapContainer>
       </div>
