@@ -1,7 +1,12 @@
 import "leaflet/dist/leaflet.css";
-import { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
+import React, { useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents, GeoJSON } from "react-leaflet";
 import { Icon } from "leaflet";
+import LAGUNA from './../../../Data/LAGUNA.json';
+import type { GeoJsonObject } from 'geojson';
+
+// Make sure LAGUNA is typed correctly
+const lagunaGeoJson: GeoJsonObject = LAGUNA as GeoJsonObject;
 
 export default function Dashboard() {
   // Define the type for markers
@@ -46,6 +51,15 @@ export default function Dashboard() {
     setMarkers((prevMarkers) => prevMarkers.filter(marker => marker.id !== id));
   };
 
+  // Define a style function for the GeoJSON layer
+  const geoJsonStyle = {
+    color: '#3388ff', // border color
+    weight: 2,       // border width
+    opacity: 0,      // border transparency
+    fillColor: '#3388ff', // fill color
+    fillOpacity: 0   // fill transparency
+  };
+
   return (
     <div className="page-content dashboardMain">
       <MapContainer className="map" center={[14.1407, 121.4692]} zoom={13}>
@@ -53,6 +67,8 @@ export default function Dashboard() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        <GeoJSON data={lagunaGeoJson} style={() => geoJsonStyle} />
 
         {markers.map((marker: MarkerType) => (
           <Marker key={marker.id} position={marker.geocode} icon={customIcon}>
