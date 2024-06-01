@@ -36,11 +36,3 @@ body {
   margin-left: 10rem;
   padding: 1rem;
 }
-
-.leaflet-container {
-  height: 90vh;
-}
-
-.map {
-  z-index: 1;
-}

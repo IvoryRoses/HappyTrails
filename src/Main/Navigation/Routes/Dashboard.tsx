@@ -38,6 +38,26 @@ export default function Dashboard() {
   // Function to generate a unique ID for each marker
   const generateId = () => "_" + Math.random().toString(36).substr(2, 9);
 
+  // Function to get user's current location
+  const getUserLocation = (): Promise<[number, number]> => {
+    return new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            resolve([lat, lng]);
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+      } else {
+        reject(new Error("Geolocation is not supported by this browser."));
+      }
+    });
+  };
+
   // Component to handle map clicks
   function AddMarkerOnClick() {
     useMapEvents({
@@ -52,16 +72,13 @@ export default function Dashboard() {
           };
           setMarkers((prevMarkers) => [...prevMarkers, newMarker]);
 
-          // Correctly assigning the latitude and longitude values to the variables
-          let initLat = e.latlng.lat;
-          let initLng = e.latlng.lng;
-          console.log("latitude:", initLat);
-          console.log("longitude:", initLng);
-
-          // Construct the API URL
-          const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
-
           try {
+            const userLocation = await getUserLocation();
+            console.log("User location:", userLocation);
+
+            // Construct the API URL
+            const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
+
             const response = await fetch(url, {
               method: "POST",
               headers: {
@@ -70,8 +87,8 @@ export default function Dashboard() {
               },
               body: JSON.stringify({
                 coordinates: [
-                  [initLng, initLat],
-                  [121.37, 14.24],
+                  [e.latlng.lng, e.latlng.lat],
+                  [userLocation[1], userLocation[0]],
                 ],
               }),
             });
