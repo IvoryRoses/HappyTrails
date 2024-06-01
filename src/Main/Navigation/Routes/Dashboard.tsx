@@ -7,8 +7,10 @@ import {
   Popup,
   useMapEvents,
   Polyline,
+  useMap,
 } from "react-leaflet";
 import { Icon } from "leaflet";
+import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
 
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
@@ -21,6 +23,43 @@ export default function Dashboard() {
     popUp: string;
   };
 
+  const UseGPSLocation = () => {
+    const map = useMap();
+
+    useEffect(() => {
+      map.locate({ setView: true, watch: true });
+      map.on("locationfound", handleLocationFound);
+      return () => {
+        map.off("locationfound", handleLocationFound);
+      };
+    }, []);
+
+    const handleLocationFound = (e) => {
+      const { lat, lng } = e.latlng;
+      const radius = e.accuracy;
+
+      L.marker([lat, lng]).addTo(map).bindPopup("You are here").openPopup();
+      L.circle([lat, lng], radius).addTo(map);
+    };
+
+    return null;
+  };
+
+  const preferenceMarker = [
+    {
+      geocode: [14.19, 121.44],
+      popUp: "first",
+    },
+    {
+      geocode: [14.23, 121.43],
+      popUp: "second ",
+    },
+    {
+      geocode: [14.293747821516202, 121.55630132554286],
+      popUp: "Caliraya Springs Golf Club",
+    },
+  ];
+
   useEffect(() => {
     document.body.style.backgroundColor = "#a3cb8f";
   }, []);
@@ -32,7 +71,7 @@ export default function Dashboard() {
   const [route, setRoute] = useState<[number, number][]>([]);
 
   // State to hold the route length
-  const [routeLength, setRouteLength] = useState<number | null>(null);
+  const [routeLength, setRouteLength] = useState<number | null>(0);
 
   // State to hold the user input location
   const [inputLocation, setInputLocation] = useState<string>("");
@@ -171,11 +210,60 @@ export default function Dashboard() {
     }
   };
 
+  const handleStartTripClick = (marker: MarkerType) => {
+    // Clear all markers except the clicked marker
+    setMarkers([]);
+    // Fetch the route using the coordinates of the clicked marker
+    fetchRouteRef(marker.geocode);
+  };
+
+  const fetchRouteRef = async (coordinates: [number, number]) => {
+    try {
+      // Define the fixed destination point
+      const destinationPoint = [14.3195223, 121.4757249];
+
+      // Construct the API URL
+      const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: apiKey,
+        },
+        body: JSON.stringify({
+          coordinates: [
+            [coordinates[1], coordinates[0]],
+            [destinationPoint[1], destinationPoint[0]],
+          ],
+        }),
+      });
+      const data = await response.json();
+      console.log("Openrouteservice API response:", data);
+
+      if (data.features && data.features.length > 0) {
+        const routeCoordinates = data.features[0].geometry.coordinates.map(
+          (coord: [number, number]) => [coord[1], coord[0]]
+        );
+        setRoute(routeCoordinates);
+
+        // Calculate the route length
+        const routeLengthInMeters = data.features[0].properties.segments.reduce(
+          (total: number, segment: any) => total + segment.distance,
+          0
+        );
+        setRouteLength(routeLengthInMeters / 1000); // Convert to kilometers
+      }
+    } catch (error) {
+      console.error("Error fetching directions:", error);
+    }
+  };
+
   // Function to clear the route and remove the marker
   const clearRouteAndMarker = () => {
     setMarkers([]);
     setRoute([]);
-    setRouteLength(null);
+    setRouteLength(0);
     setSelectedPresetLocation(""); // clear selected preset location
   };
 
@@ -223,6 +311,17 @@ export default function Dashboard() {
             url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
+          {preferenceMarker.map((marker) => (
+            <Marker key={marker.geocode.join(",")} position={marker.geocode}>
+              <Popup>
+                {marker.popUp}
+                <button onClick={() => handleStartTripClick(marker)}>
+                  Start trip
+                </button>
+              </Popup>
+            </Marker>
+          ))}
+
           {markers.map((marker: MarkerType) => (
             <Marker key={marker.id} position={marker.geocode} icon={customIcon}>
               <Popup>
@@ -238,6 +337,7 @@ export default function Dashboard() {
           {route.length > 0 && <Polyline positions={route} color="blue" />}
 
           <AddMarkerOnClick />
+          <UseGPSLocation />
         </MapContainer>
       </div>
     </>
