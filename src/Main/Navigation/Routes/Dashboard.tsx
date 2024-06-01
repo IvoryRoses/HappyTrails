@@ -61,7 +61,7 @@ export default function Dashboard() {
   // Component to handle map clicks
   function AddMarkerOnClick() {
     useMapEvents({
-      click: async (e) => {
+      click: (e) => {
         if (markers.length < 1) {
           const newMarker = {
             id: generateId(),
@@ -71,40 +71,6 @@ export default function Dashboard() {
             )}, ${e.latlng.lng.toFixed(2)}`,
           };
           setMarkers((prevMarkers) => [...prevMarkers, newMarker]);
-
-          try {
-            const userLocation = await getUserLocation();
-            console.log("User location:", userLocation);
-
-            // Construct the API URL
-            const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
-
-            const response = await fetch(url, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: apiKey,
-              },
-              body: JSON.stringify({
-                coordinates: [
-                  [e.latlng.lng, e.latlng.lat],
-                  [userLocation[1], userLocation[0]],
-                ],
-              }),
-            });
-            const data = await response.json();
-            console.log("Openrouteservice API response:", data);
-
-            if (data.features && data.features.length > 0) {
-              const routeCoordinates =
-                data.features[0].geometry.coordinates.map(
-                  (coord: [number, number]) => [coord[1], coord[0]]
-                );
-              setRoute(routeCoordinates);
-            }
-          } catch (error) {
-            console.error("Error fetching directions:", error);
-          }
         }
       },
     });
@@ -119,9 +85,62 @@ export default function Dashboard() {
     );
   };
 
+  // Function to fetch the route
+  const fetchRoute = async () => {
+    if (markers.length > 0) {
+      try {
+        const markerLocation = markers[0].geocode;
+        console.log("Marker location:", markerLocation);
+
+        // Define the fixed destination point
+        const destinationPoint = [14.3195223, 121.4757249];
+
+        // Construct the API URL
+        const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
+
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: apiKey,
+          },
+          body: JSON.stringify({
+            coordinates: [
+              [markerLocation[1], markerLocation[0]],
+              [destinationPoint[1], destinationPoint[0]], // Change to the destination point
+            ],
+          }),
+        });
+        const data = await response.json();
+        console.log("Openrouteservice API response:", data);
+
+        if (data.features && data.features.length > 0) {
+          const routeCoordinates = data.features[0].geometry.coordinates.map(
+            (coord: [number, number]) => [coord[1], coord[0]]
+          );
+          setRoute(routeCoordinates);
+        }
+      } catch (error) {
+        console.error("Error fetching directions:", error);
+      }
+    }
+  };
+
+  // Function to clear the route and remove the marker
+  const clearRouteAndMarker = () => {
+    setMarkers([]);
+    setRoute([]);
+  };
+
   return (
     <>
       <div className="page-content dashboardMain">
+        <button className="trip-start-button" onClick={fetchRoute}>
+          Start Trip
+        </button>
+        <button className="clear-route-button" onClick={clearRouteAndMarker}>
+          Clear Route
+        </button>
         <MapContainer className="map" center={[14.1407, 121.4692]} zoom={13}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
