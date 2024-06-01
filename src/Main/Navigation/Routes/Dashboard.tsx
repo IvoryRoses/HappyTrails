@@ -6,6 +6,7 @@ import {
   Marker,
   Popup,
   useMapEvents,
+  Polyline,
 } from "react-leaflet";
 import { Icon } from "leaflet";
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
@@ -24,6 +25,9 @@ export default function Dashboard() {
 
   // State to hold the markers, starting with an empty array
   const [markers, setMarkers] = useState<MarkerType[]>([]);
+
+  // State to hold the route coordinates
+  const [route, setRoute] = useState<[number, number][]>([]);
 
   // Custom icon for the markers
   const customIcon = new Icon({
@@ -55,13 +59,32 @@ export default function Dashboard() {
           console.log("longitude:", initLng);
 
           // Construct the API URL
-          const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${initLng},${initLat}&end=14.14, 121.32`;
+          const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
 
           try {
-            const response = await fetch(url);
+            const response = await fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: apiKey,
+              },
+              body: JSON.stringify({
+                coordinates: [
+                  [initLng, initLat],
+                  [121.37, 14.24],
+                ],
+              }),
+            });
             const data = await response.json();
             console.log("Openrouteservice API response:", data);
-            // Handle the API response data as needed
+
+            if (data.features && data.features.length > 0) {
+              const routeCoordinates =
+                data.features[0].geometry.coordinates.map(
+                  (coord: [number, number]) => [coord[1], coord[0]]
+                );
+              setRoute(routeCoordinates);
+            }
           } catch (error) {
             console.error("Error fetching directions:", error);
           }
@@ -78,6 +101,7 @@ export default function Dashboard() {
       prevMarkers.filter((marker) => marker.id !== id)
     );
   };
+
   return (
     <>
       <div className="page-content dashboardMain">
@@ -98,6 +122,9 @@ export default function Dashboard() {
               </Popup>
             </Marker>
           ))}
+
+          {route.length > 0 && <Polyline positions={route} color="blue" />}
+
           <AddMarkerOnClick />
         </MapContainer>
       </div>
