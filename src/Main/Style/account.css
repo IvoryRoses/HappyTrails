@@ -1,5 +1,45 @@
-.accountMain {
-  font-size: 2rem;
+/*Account Display*/
+.account-page {
+  display: flex;
+  background-color: wheat;
+  margin-left: 10rem;
+  margin-right: 5rem;
+  text-align: justify;
+}
+
+.account-app {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #273b68;
+}
+
+.account-user,
+.account-profiler {
+  flex: 1; /* Equal width for both columns */
+}
+
+.account-user {
+  margin-top: 1rem;
+}
+
+.account-profiler {
+  border-left: 1px solid white;
+  padding-left: 2rem;
+}
+
+.account-profile-header {
+  font-size: 3rem;
+  background-color: blue;
+}
+
+.account-profile-text {
+  font-size: 1.5rem;
+}
+
+.p-t {
   margin-bottom: 1rem;
 }
 
@@ -14,7 +54,7 @@
   margin-top: 1rem;
 }
 
-/*Update Popup*/
+/*Update Popup Account */
 .popup-overlay {
   position: fixed;
   display: flex;
@@ -70,9 +110,7 @@
 label {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  background-color: red;
-  padding: 1rem;
+  padding: 1rem 0rem;
   gap: 10px;
 }
 
@@ -103,3 +141,5 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/*Update  */

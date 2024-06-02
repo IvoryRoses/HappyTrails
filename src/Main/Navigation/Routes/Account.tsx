@@ -71,24 +71,64 @@ const Account = () => {
   };
 
   return (
-    <div>
-      <h1 className="page-content accountMain">Profile</h1>
-      <p className="page-content">Username: {userName}</p>
-      <p className="page-content">Email: {userEmail}</p>
-      <p className="page-content">Address: {userAddress}</p>
-      <p className="page-content">Contact Number: {userContactNumber}</p>
-      <button onClick={togglePopup} className="page-content open-popup-btn">
-        Open Form
-      </button>
-      {isPopupOpen && (
-        <PopupForm
-          handleClose={togglePopup}
-          updateUserProfile={updateUserProfile}
-          existingName={userName}
-          existingAddress={userAddress}
-          existingContactNumber={userContactNumber}
-        />
-      )}
+    <div className="account-page">
+      <div className="account-app">
+        <div className="account-user">
+          <p className="p-t account-profile-header">Name</p>
+          <p className="p-t account-profile-text">{userName}</p>
+          <p className="p-t account-profile-header">Email</p>
+          <p className="p-t account-profile-text">{userEmail}</p>
+          <p className="p-t account-profile-header">Address</p>
+          <p className="p-t account-profile-text">{userAddress}</p>
+          <p className="p-t account-profile-header">Contact Number</p>
+          <p className="p-t account-profile-text">{userContactNumber}</p>
+          <button onClick={togglePopup} className="p-t open-popup-btn">
+            Open Form
+          </button>
+          {isPopupOpen && (
+            <PopupForm
+              handleClose={togglePopup}
+              updateUserProfile={updateUserProfile}
+              existingName={userName}
+              existingAddress={userAddress}
+              existingContactNumber={userContactNumber}
+            />
+          )}
+        </div>
+        <div className="account-profiler">
+          <p className="p-t account-profile-header">User Preferences</p>
+          <label>
+            <input type="checkbox" /> Food and Cuisine
+          </label>
+          <label>
+            <input type="checkbox" /> Historical and Cultural Heritage Sites
+          </label>
+          <label>
+            <input type="checkbox" /> Nature and Sightseeing
+          </label>
+          <label>
+            <input type="checkbox" /> Entertainment
+          </label>
+          <p className="p-t account-profile-header">Budget Estimate</p>
+          <label>
+            <input type="checkbox" /> Low
+          </label>
+          <label>
+            <input type="checkbox" /> Medium
+          </label>
+          <label>
+            <input type="checkbox" checked /> High
+          </label>
+          <p className="p-t account-profile-header">Mode of Transport</p>
+          <label>
+            <input type="checkbox" /> Public
+          </label>
+          <label>
+            <input type="checkbox" /> Private
+          </label>
+          <button className="p-t open-popup-btn">Update</button>
+        </div>
+      </div>
     </div>
   );
 };
@@ -193,6 +233,14 @@ const PopupForm = ({
           </form>
         </div>
       </div>
+    </div>
+  );
+};
+
+const popupProfiler = ({}) => {
+  return (
+    <div>
+      <div></div>
     </div>
   );
 };
