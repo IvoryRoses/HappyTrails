@@ -9,7 +9,7 @@ import {
   Polyline,
   useMap,
 } from "react-leaflet";
-import { Icon } from "leaflet";
+import { Icon, popup } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
 
@@ -21,44 +21,16 @@ export default function Dashboard() {
     id: string;
     geocode: [number, number]; // explicitly a tuple with two elements
     popUp: string;
+    type: string;
+    budget: string;
   };
 
-  const UseGPSLocation = () => {
-    const map = useMap();
-
-    useEffect(() => {
-      map.locate({ setView: true, watch: true });
-      map.on("locationfound", handleLocationFound);
-      return () => {
-        map.off("locationfound", handleLocationFound);
-      };
-    }, []);
-
-    const handleLocationFound = (e) => {
-      const { lat, lng } = e.latlng;
-      const radius = e.accuracy;
-
-      L.marker([lat, lng]).addTo(map).bindPopup("You are here").openPopup();
-      L.circle([lat, lng], radius).addTo(map);
-    };
-
-    return null;
-  };
-
-  const preferenceMarker = [
-    {
-      geocode: [14.19, 121.44],
-      popUp: "first",
-    },
-    {
-      geocode: [14.23, 121.43],
-      popUp: "second ",
-    },
-    {
-      geocode: [14.293747821516202, 121.55630132554286],
-      popUp: "Caliraya Springs Golf Club",
-    },
-  ];
+  const preferenceMarker = presetLocations.map((location) => ({
+    geocode: location.coordinates,
+    popUp: location.name + " " + location.type,
+    type: location.type,
+    budget: location.budget,
+  }));
 
   useEffect(() => {
     document.body.style.backgroundColor = "#a3cb8f";
@@ -79,6 +51,15 @@ export default function Dashboard() {
   // State to hold the selected preset location
   const [selectedPresetLocation, setSelectedPresetLocation] =
     useState<string>("");
+
+  // State to track GPS activation
+  const [useGPS, setUseGPS] = useState<boolean>(false);
+
+  // State to manage selected types
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+
+  // State to manage selected budgets
+  const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
 
   // Custom icon for the markers
   const customIcon = new Icon({
@@ -129,6 +110,8 @@ export default function Dashboard() {
           popUp: `Starting at ${selectedLocation.coordinates[0].toFixed(
             2
           )}, ${selectedLocation.coordinates[1].toFixed(2)}`,
+          type: selectedLocation.type,
+          budget: selectedLocation.budget,
         },
       ]);
       setInputLocation(""); // clear input location
@@ -146,10 +129,47 @@ export default function Dashboard() {
           popUp: `Starting at ${e.latlng.lat.toFixed(
             2
           )}, ${e.latlng.lng.toFixed(2)}`,
+          type: "",
+          budget: "",
         };
         setMarkers([newMarker]);
       },
     });
+    return null;
+  }
+
+  // Component to handle GPS location
+  function GPSLocationHandler() {
+    const map = useMap();
+
+    useEffect(() => {
+      if (useGPS) {
+        map.locate({ setView: true, watch: true });
+        map.on("locationfound", handleLocationFound);
+      }
+
+      return () => {
+        map.off("locationfound", handleLocationFound);
+      };
+    }, [useGPS]);
+
+    const handleLocationFound = (e) => {
+      const { lat, lng } = e.latlng;
+      const radius = e.accuracy;
+
+      L.marker([lat, lng]).addTo(map).bindPopup("You are here").openPopup();
+      L.circle([lat, lng], radius).addTo(map);
+
+      // Add the GPS location as a marker
+      const newMarker = {
+        id: generateId(),
+        geocode: [lat, lng],
+        popUp: `Starting at ${lat.toFixed(2)}, ${lng.toFixed(2)}`,
+      };
+      setMarkers([newMarker]);
+      setUseGPS(false); // Stop watching location after finding it
+    };
+
     return null;
   }
 
@@ -267,6 +287,39 @@ export default function Dashboard() {
     setSelectedPresetLocation(""); // clear selected preset location
   };
 
+  const Checkbox = ({ label, value, onChange }) => {
+    return (
+      <label>
+        <input type="checkbox" checked={value} onChange={onChange} />
+        {label}
+      </label>
+    );
+  };
+
+  const handleTypeChange = (type: string) => {
+    setSelectedTypes((prevSelectedTypes) =>
+      prevSelectedTypes.includes(type)
+        ? prevSelectedTypes.filter((t) => t !== type)
+        : [...prevSelectedTypes, type]
+    );
+  };
+
+  const handleBudgetChange = (budget: string) => {
+    setSelectedBudgets((prevSelectedBudgets) =>
+      prevSelectedBudgets.includes(budget)
+        ? prevSelectedBudgets.filter((b) => b !== budget)
+        : [...prevSelectedBudgets, budget]
+    );
+  };
+
+  const filteredMarkers = preferenceMarker.filter((marker) => {
+    const typeMatch =
+      selectedTypes.length === 0 || selectedTypes.includes(marker.type);
+    const budgetMatch =
+      selectedBudgets.length === 0 || selectedBudgets.includes(marker.budget);
+    return typeMatch && budgetMatch;
+  });
+
   return (
     <>
       <div className="page-content dashboardMain">
@@ -274,7 +327,7 @@ export default function Dashboard() {
           type="text"
           value={inputLocation}
           onChange={(e) => setInputLocation(e.target.value)}
-          placeholder="Enter your location"
+          placeholder="Enter your current location"
           className="location-input"
         />
         <button className="geocode-button" onClick={geocodeLocation}>
@@ -300,6 +353,48 @@ export default function Dashboard() {
         <button className="clear-route-button" onClick={clearRouteAndMarker}>
           Clear Route
         </button>
+        <button className="GPS" onClick={() => setUseGPS(true)}>
+          Use GPS
+        </button>
+        <div className="reference-panel">
+          <h1>Preference</h1>
+          <Checkbox
+            label="Food"
+            value={selectedTypes.includes("Food")}
+            onChange={() => handleTypeChange("Food")}
+          />
+          <Checkbox
+            label="Nature"
+            value={selectedTypes.includes("Nature")}
+            onChange={() => handleTypeChange("Nature")}
+          />
+          <Checkbox
+            label="Historical"
+            value={selectedTypes.includes("Historical")}
+            onChange={() => handleTypeChange("Historical")}
+          />
+          <Checkbox
+            label="Entertainment"
+            value={selectedTypes.includes("Entertainment")}
+            onChange={() => handleTypeChange("Entertainment")}
+          />
+          <h1>Budget</h1>
+          <Checkbox
+            label="Low"
+            value={selectedBudgets.includes("Low")}
+            onChange={() => handleBudgetChange("Low")}
+          />
+          <Checkbox
+            label="Mid"
+            value={selectedBudgets.includes("Mid")}
+            onChange={() => handleBudgetChange("Mid")}
+          />
+          <Checkbox
+            label="High"
+            value={selectedBudgets.includes("High")}
+            onChange={() => handleBudgetChange("High")}
+          />
+        </div>
         {routeLength !== null && (
           <div className="route-length">
             Trip Length: {routeLength.toFixed(2)} km
@@ -311,7 +406,7 @@ export default function Dashboard() {
             url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {preferenceMarker.map((marker) => (
+          {filteredMarkers.map((marker) => (
             <Marker key={marker.geocode.join(",")} position={marker.geocode}>
               <Popup>
                 {marker.popUp}
@@ -337,7 +432,7 @@ export default function Dashboard() {
           {route.length > 0 && <Polyline positions={route} color="blue" />}
 
           <AddMarkerOnClick />
-          <UseGPSLocation />
+          <GPSLocationHandler />
         </MapContainer>
       </div>
     </>

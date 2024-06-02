@@ -1,14 +1,26 @@
 [
   {
     "name": "Location 1",
-    "coordinates": [14.428034204832434, 121.42926102933706]
+    "coordinates": [14.428034204832434, 121.42926102933706],
+    "type": "Nature",
+    "budget": "Low"
   },
   {
     "name": "Location 2",
-    "coordinates": [14.281268271295238, 121.41674558426978]
+    "coordinates": [14.281268271295238, 121.41674558426978],
+    "type": "Food",
+    "budget": "Mid"
   },
   {
     "name": "Location 3",
-    "coordinates": [14.344003256661514, 121.48872530207747]
+    "coordinates": [14.344003256661514, 121.48872530207747],
+    "type": "Historical",
+    "budget": "High"
+  },
+  {
+    "name": "Location 4",
+    "coordinates": [14.344003256661514, 122.48872530207747],
+    "type": "Entertainment",
+    "budget": "High"
   }
 ]
