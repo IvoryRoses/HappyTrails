@@ -181,68 +181,15 @@ export default function Dashboard() {
     );
   };
 
-  // Function to fetch the route
-  const fetchRoute = async () => {
-    if (markers.length > 0) {
-      try {
-        const markerLocation = markers[0].geocode;
-        console.log("Marker location:", markerLocation);
-
-        // Define the fixed destination point
-        const destinationPoint = [14.3195223, 121.4757249];
-
-        // Construct the API URL
-        const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
-
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: apiKey,
-          },
-          body: JSON.stringify({
-            coordinates: [
-              [markerLocation[1], markerLocation[0]],
-              [destinationPoint[1], destinationPoint[0]],
-            ],
-          }),
-        });
-        const data = await response.json();
-        console.log("Openrouteservice API response:", data);
-
-        if (data.features && data.features.length > 0) {
-          const routeCoordinates = data.features[0].geometry.coordinates.map(
-            (coord: [number, number]) => [coord[1], coord[0]]
-          );
-          setRoute(routeCoordinates);
-
-          // Calculate the route length
-          const routeLengthInMeters =
-            data.features[0].properties.segments.reduce(
-              (total: number, segment: any) => total + segment.distance,
-              0
-            );
-          setRouteLength(routeLengthInMeters / 1000); // Convert to kilometers
-        }
-      } catch (error) {
-        console.error("Error fetching directions:", error);
-      }
+  const handleStartTripClick = async (preferenceMarker: MarkerType) => {
+    if (markers.length === 0) {
+      console.error("User marker not found");
+      return;
     }
-  };
 
-  const handleStartTripClick = (marker: MarkerType) => {
-    // Clear all markers except the clicked marker
-    setMarkers([]);
-    // Fetch the route using the coordinates of the clicked marker
-    fetchRouteRef(marker.geocode);
-  };
+    const userMarker = markers[0]; // Assuming user marker is always the first one
 
-  const fetchRouteRef = async (coordinates: [number, number]) => {
     try {
-      // Define the fixed destination point
-      const destinationPoint = [14.3195223, 121.4757249];
-
-      // Construct the API URL
       const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
 
       const response = await fetch(url, {
@@ -253,8 +200,8 @@ export default function Dashboard() {
         },
         body: JSON.stringify({
           coordinates: [
-            [coordinates[1], coordinates[0]],
-            [destinationPoint[1], destinationPoint[0]],
+            [userMarker.geocode[1], userMarker.geocode[0]], // User marker coordinates
+            [preferenceMarker.geocode[1], preferenceMarker.geocode[0]], // Clicked preference marker coordinates
           ],
         }),
       });
@@ -285,6 +232,7 @@ export default function Dashboard() {
     setRoute([]);
     setRouteLength(0);
     setSelectedPresetLocation(""); // clear selected preset location
+    setUseGPS(false);
   };
 
   const Checkbox = ({ label, value, onChange }) => {
@@ -347,9 +295,9 @@ export default function Dashboard() {
             </option>
           ))}
         </select>
-        <button className="trip-start-button" onClick={fetchRoute}>
+        {/* <button className="trip-start-button" onClick={fetchRoute}>
           Start Trip
-        </button>
+        </button> */}
         <button className="clear-route-button" onClick={clearRouteAndMarker}>
           Clear Route
         </button>
