@@ -1,4 +1,5 @@
 import "./Main/Style/main.css";
+import "./Main/Style/dashboard.css";
 import "./Main/Style/navbar.css";
 import "./Main/Style/setting.css";
 import "./Main/Style/authentication.css";
