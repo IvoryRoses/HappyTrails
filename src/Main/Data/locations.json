@@ -1,26 +1,290 @@
 [
+  { "_comment": "HISTORICAL ONLY------------------------------------" },
   {
-    "name": "Location 1",
+    "name": "Nuestra Señora De La Candelaria Parish",
     "coordinates": [14.428034204832434, 121.42926102933706],
-    "type": "Nature",
+    "type": "Historical",
     "budget": "Low"
   },
   {
-    "name": "Location 2",
+    "name": "San Sebastian Parish Church",
+    "coordinates": [14.299721704626895, 121.4592126453885],
+    "type": "Historical",
+    "budget": "Low"
+  },
+  {
+    "name": "Saint John the Baptist Parish",
+    "coordinates": [14.340536630480583, 121.4816263358446],
+    "type": "Historical",
+    "budget": "Low"
+  },
+  {
+    "name": "Balete Tree of Kalayaan",
+    "coordinates": [14.344003256661514, 121.48872530207747],
+    "type": "Historical",
+    "budget": "Low"
+  },
+  {
+    "name": "Cathedral of Our Lady of Maulawin",
     "coordinates": [14.281268271295238, 121.41674558426978],
+    "type": "Historical",
+    "budget": "Low"
+  },
+  {
+    "name": "Emilio Jacinto Burial Place and Monument",
+    "coordinates": [14.25119506252021, 121.4081893430125],
+    "type": "Historical",
+    "budget": "Low"
+  },
+  {
+    "name": "Immaculate Conception Parish Church",
+    "coordinates": [14.283852837556589, 121.41525622240212],
+    "type": "Historical",
+    "budget": "Low"
+  },
+  { "_comment": "FOOD ONLY------------------------------------------" },
+  {
+    "name": "Papa's All Day Breakfast, Ramen by Rolling Carbs, Gracias Bake shop",
+    "coordinates": [14.42368, 121.44254],
     "type": "Food",
     "budget": "Mid"
   },
   {
-    "name": "Location 3",
-    "coordinates": [14.344003256661514, 121.48872530207747],
-    "type": "Historical",
+    "name": "Book Hive Cafe",
+    "coordinates": [14.275707597652545, 121.39961459387818],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "Muni Coffee PH",
+    "coordinates": [14.334208551451539, 121.48195907288466],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "Joy's View",
+    "coordinates": [14.326958284185176, 121.47354670860891],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "BROTHERS CAFE 101",
+    "coordinates": [14.332393700175599, 121.48166646868518],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "Brics Hideout Restobar",
+    "coordinates": [14.205509786379178, 121.49311667296809],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "Maribella Restaurant and Garden Resort",
+    "coordinates": [14.175078107541767, 121.52442054090143],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "Hulugan Falls Nanay Ganda's Tapsilogan",
+    "coordinates": [14.219869673363561, 121.48231849825382],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "YHAMSHE GRILL",
+    "coordinates": [14.30616082040382, 121.4797085987322],
+    "type": "Food",
+    "budget": "Mid"
+  },
+  {
+    "name": "Janna's Place Restaurant",
+    "coordinates": [14.300608622858151, 121.46419640184243],
+    "type": "Food",
+    "budget": "Mid"
+  },
+  {
+    "name": "Elvira's Creamy Halo-Halo and Pancit Lucban",
+    "coordinates": [14.28601393762845, 121.45806065058962],
+    "type": "Food",
+    "budget": "Mid"
+  },
+  {
+    "name": "Miguel's Garden Cafe at Kota Paradiso",
+    "coordinates": [14.449552031822353, 121.3826900240258],
+    "type": "Food",
     "budget": "High"
   },
   {
-    "name": "Location 4",
-    "coordinates": [14.31, 122.514],
+    "name": "Valiam FOOD HOUSE",
+    "coordinates": [14.441869355571907, 121.42942122270969],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "Nanay Virgie Eatery",
+    "coordinates": [14.454154359860837, 121.37740134565814],
+    "type": "Food",
+    "budget": "Low"
+  },
+  {
+    "name": "Big Boss Boodlefight",
+    "coordinates": [14.269716501289285, 121.39861148880654],
+    "type": "Food",
+    "budget": "Low"
+  },
+  { "_comment": "NATURE ONLY---------------------------------------" },
+
+  {
+    "name": "Pagsanjan Falls",
+    "coordinates": [14.263004075245053, 121.4989271751697],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Cavinti Underground River and Caves Complex",
+    "coordinates": [14.282304987140884, 121.6349527624506],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Nakulo Falls",
+    "coordinates": [14.261297055577883, 121.4999467385952],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Bumbungan Eco Park ",
+    "coordinates": [14.249723172119664, 121.50577166103945],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Pueblo El Salvador Cavinti Nature's Park and Picnic Grove",
+    "coordinates": [14.256786160704374, 121.50267699626569],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Bumbungan Twin Falls",
+    "coordinates": [14.202173905616979, 121.58608019811095],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Domelis Campsite",
+    "coordinates": [14.290855599113208, 121.53957651467881],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Camp Hogad",
+    "coordinates": [14.480434938058844, 121.48776973868034],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Kalayaan Twin Falls",
+    "coordinates": [14.321660832076448, 121.4812958306628],
+    "type": "Nature",
+    "budget": "Mid"
+  },
+  {
+    "name": "Tanawan View Deck",
+    "coordinates": [14.339392473409024, 121.49052690682193],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Hulugan Falls",
+    "coordinates": [14.213973283341856, 121.48047330344185],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Hulugan Falls Jump-off Point",
+    "coordinates": [14.216484417994128, 121.49093618717498],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Hidden Falls",
+    "coordinates": [14.21013975463714, 121.48459063174069],
+    "type": "Nature",
+    "budget": "High"
+  },
+  {
+    "name": "Pililla 54 MW Windmill",
+    "coordinates": [14.464745095935035, 121.37057480166115],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Balete Tree of Mabitac (Century Tree)",
+    "coordinates": [14.453022961620487, 121.37906291878645],
+    "type": "Nature",
+    "budget": "Mid"
+  },
+  {
+    "name": "Bayside Baywalk",
+    "coordinates": [14.279097848636688, 121.39008894068473],
+    "type": "Nature",
+    "budget": "Low"
+  },
+  {
+    "name": "Taytay Falls",
+    "coordinates": [14.113360357592972, 121.50824051456743],
+    "type": "Nature",
+    "budget": "Low"
+  },
+
+  { "_comment": "ENTERTAINMENT ONLY---------------------------------" },
+  {
+    "name": "Balai Sitang Mountain Resort",
+    "coordinates": [14.493971102623831, 121.47719174315455],
+    "type": "Entertainment",
+    "budget": "Mid"
+  },
+  {
+    "name": "Longos Cock Fighting Arena",
+    "coordinates": [14.345194020913626, 121.4834827774289],
     "type": "Entertainment",
     "budget": "High"
+  },
+  {
+    "name": "Aljenn's Resort",
+    "coordinates": [14.190525902533798, 121.50797620707354],
+    "type": "Entertainment",
+    "budget": "Low"
+  },
+  {
+    "name": "Caliraya Springs Golf Club",
+    "coordinates": [14.293747821516202, 121.55630132554286],
+    "type": "Entertainment",
+    "budget": "High"
+  },
+  {
+    "name": "Caliraya Ecoville Recreation and Farm Resort",
+    "coordinates": [14.285773447762082, 121.51563384737476],
+    "type": "Entertainment",
+    "budget": "Mid"
+  },
+  {
+    "name": "Amazing View Mountain Farm Resort",
+    "coordinates": [14.442938040417948, 121.39699219066262],
+    "type": "Entertainment",
+    "budget": "Low"
+  },
+  {
+    "name": "Balanac River Dam Cottage",
+    "coordinates": [14.201314950262857, 121.44119317489368],
+    "type": "Entertainment",
+    "budget": "Low"
+  },
+  {
+    "name": "Dalitiwan Resort",
+    "coordinates": [14.152095963744745, 121.48940674035487],
+    "type": "Entertainment",
+    "budget": "Low"
   }
 ]

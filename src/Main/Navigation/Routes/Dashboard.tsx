@@ -9,9 +9,13 @@ import {
   Polyline,
   useMap,
 } from "react-leaflet";
-import { Icon, popup } from "leaflet";
+import { Icon } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
+import FoodMarker from "../Image/Food_Marker.png";
+import NatureMarker from "../Image/Nature_Marker.png";
+import HistoricalMarker from "../Image/Historical_Marker.png";
+import EntertainmentMarker from "../Image/Entertainment_Marker.png";
 
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
 
@@ -21,8 +25,8 @@ export default function Dashboard() {
     id: string;
     geocode: [number, number]; // explicitly a tuple with two elements
     popUp: string;
-    type: string;
-    budget: string;
+    type?: string;
+    budget?: string;
   };
 
   const preferenceMarker = presetLocations.map((location) => ({
@@ -65,6 +69,26 @@ export default function Dashboard() {
   const customIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/128/149/149059.png",
     iconSize: [38, 38],
+  });
+
+  const foodIcon = new Icon({
+    iconUrl: FoodMarker,
+    iconSize: [55, 55],
+  });
+
+  const natureIcon = new Icon({
+    iconUrl: NatureMarker,
+    iconSize: [55, 55],
+  });
+
+  const historicalIcon = new Icon({
+    iconUrl: HistoricalMarker,
+    iconSize: [55, 55],
+  });
+
+  const entertainmentIcon = new Icon({
+    iconUrl: EntertainmentMarker,
+    iconSize: [55, 55],
   });
 
   // Function to generate a unique ID for each marker
@@ -129,8 +153,6 @@ export default function Dashboard() {
           popUp: `Starting at ${e.latlng.lat.toFixed(
             2
           )}, ${e.latlng.lng.toFixed(2)}`,
-          type: "",
-          budget: "",
         };
         setMarkers([newMarker]);
       },
@@ -354,16 +376,47 @@ export default function Dashboard() {
             url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {filteredMarkers.map((marker) => (
-            <Marker key={marker.geocode.join(",")} position={marker.geocode}>
-              <Popup>
-                {marker.popUp}
-                <button onClick={() => handleStartTripClick(marker)}>
-                  Start trip
-                </button>
-              </Popup>
-            </Marker>
-          ))}
+          {filteredMarkers.map((marker) => {
+            // Determine the appropriate icon based on marker type
+            let icon;
+            switch (marker.type) {
+              case "Food":
+                icon = foodIcon;
+                break;
+              case "Nature":
+                icon = natureIcon;
+                break;
+              case "Historical":
+                icon = historicalIcon;
+                break;
+              case "Entertainment":
+                icon = entertainmentIcon;
+                break;
+              default:
+                icon = customIcon;
+            }
+
+            // Check if marker.geocode is defined before attempting to join
+            if (!marker.geocode) {
+              console.error("Marker geocode is undefined", marker);
+              return null;
+            }
+
+            return (
+              <Marker
+                key={marker.geocode.join(",")}
+                position={marker.geocode}
+                icon={icon}
+              >
+                <Popup>
+                  {marker.popUp}
+                  <button onClick={() => handleStartTripClick(marker)}>
+                    Start trip
+                  </button>
+                </Popup>
+              </Marker>
+            );
+          })}
 
           {markers.map((marker: MarkerType) => (
             <Marker key={marker.id} position={marker.geocode} icon={customIcon}>
