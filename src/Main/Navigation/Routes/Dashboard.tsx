@@ -155,6 +155,7 @@ export default function Dashboard() {
           )}, ${e.latlng.lng.toFixed(2)}`,
         };
         setMarkers([newMarker]);
+        setRoute([]);
       },
     });
     return null;
@@ -292,7 +293,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className="page-content dashboardMain">
+      <div className=" dashboardMain">
         <input
           type="text"
           value={inputLocation}
@@ -370,7 +371,11 @@ export default function Dashboard() {
             Trip Length: {routeLength.toFixed(2)} km
           </div>
         )}
-        <MapContainer className="map" center={[14.1407, 121.4692]} zoom={13}>
+        <MapContainer
+          className="dashboard-map"
+          center={[14.27, 121.46]}
+          zoom={12}
+        >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"

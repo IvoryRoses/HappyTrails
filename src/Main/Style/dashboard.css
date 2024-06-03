@@ -1,10 +1,8 @@
 .leaflet-container {
-  height: 90vh;
-  margin-right: 200px;
-  margin-left: 25px;
+  height: 64.6rem;
 }
 
-.map {
+.dashboard-map {
   z-index: 1;
 }
 
