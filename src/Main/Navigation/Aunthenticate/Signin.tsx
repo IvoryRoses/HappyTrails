@@ -10,8 +10,8 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
-import SigninBG from "../Image/Signup_BG.png";
-import PadayoColor from "../Image/Padayo_Color.png";
+import SigninBG from "../Assets/Signup_BG.png";
+import PadayoColor from "../Assets/Padayo_Color.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");

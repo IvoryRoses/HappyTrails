@@ -3,7 +3,7 @@ import { auth } from "../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, FormEvent, ChangeEvent, useEffect } from "react";
-import SigninBG from "../Image/Signup_BG.png";
+import SigninBG from "../Assets/Signup_BG.png";
 
 export default function ForgetPassword() {
   const navigate = useNavigate();

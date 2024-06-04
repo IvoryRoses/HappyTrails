@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { MouseEvent } from "react";
 import { useEffect } from "react";
-import PadayoWhite from "../Image/Padayo_White.png";
-import PadayoColor from "../Image/Padayo_Color.png";
-import LandingPageBG from "../Image/Landing_Page_BG.png";
+import PadayoWhite from "../Assets/Padayo_White.png";
+import PadayoColor from "../Assets/Padayo_Color.png";
+import LandingPageBG from "../Assets/Landing_Page_BG.png";
 
 export default function LandingPage() {
   const scrollToAbout = (e: MouseEvent<HTMLAnchorElement>) => {

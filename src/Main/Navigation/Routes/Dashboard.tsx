@@ -12,10 +12,11 @@ import {
 import { Icon } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
-import FoodMarker from "../Image/Food_Marker.png";
-import NatureMarker from "../Image/Nature_Marker.png";
-import HistoricalMarker from "../Image/Historical_Marker.png";
-import EntertainmentMarker from "../Image/Entertainment_Marker.png";
+import MarkerImages from "../../Data/markerImages";
+import FoodMarker from "../Assets/Food_Marker.png";
+import NatureMarker from "../Assets/Nature_Marker.png";
+import HistoricalMarker from "../Assets/Historical_Marker.png";
+import EntertainmentMarker from "../Assets/Entertainment_Marker.png";
 
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
 
@@ -27,13 +28,15 @@ export default function Dashboard() {
     popUp: string;
     type?: string;
     budget?: string;
+    name?: string;
   };
 
   const preferenceMarker = presetLocations.map((location) => ({
     geocode: location.coordinates,
-    popUp: location.name + " " + location.type,
     type: location.type,
     budget: location.budget,
+    name: location.name,
+    image: MarkerImages[location.name],
   }));
 
   useEffect(() => {
@@ -136,6 +139,7 @@ export default function Dashboard() {
           )}, ${selectedLocation.coordinates[1].toFixed(2)}`,
           type: selectedLocation.type,
           budget: selectedLocation.budget,
+          image: selectedLocation.image,
         },
       ]);
       setInputLocation(""); // clear input location
@@ -180,7 +184,6 @@ export default function Dashboard() {
       const { lat, lng } = e.latlng;
       const radius = e.accuracy;
 
-      L.marker([lat, lng]).addTo(map).bindPopup("You are here").openPopup();
       L.circle([lat, lng], radius).addTo(map);
 
       // Add the GPS location as a marker
@@ -414,10 +417,23 @@ export default function Dashboard() {
                 icon={icon}
               >
                 <Popup>
-                  {marker.popUp}
-                  <button onClick={() => handleStartTripClick(marker)}>
-                    Start trip
-                  </button>
+                  <div className="popup-display">
+                    <img
+                      src={marker.image}
+                      style={{
+                        width: "150px",
+                        height: "150px",
+                        marginBottom: "10px",
+                      }}
+                    />
+                    <span className="marker-name">{marker.name}</span>
+                    <button
+                      className="popup-button"
+                      onClick={() => handleStartTripClick(marker)}
+                    >
+                      Start trip
+                    </button>
+                  </div>
                 </Popup>
               </Marker>
             );

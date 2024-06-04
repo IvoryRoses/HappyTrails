@@ -116,3 +116,25 @@
   border-radius: 1rem;
   gap: 0.7rem;
 }
+
+/*Popup css*/
+.popup-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-button {
+  padding: 0.3rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #b3816e;
+  color: white;
+  cursor: pointer;
+}
+
+.marker-name {
+  font-size: 14px;
+  color: #b3816e;
+  margin-bottom: 5px;
+}
