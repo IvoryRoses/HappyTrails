@@ -197,7 +197,7 @@
   },
   {
     "name": "Hulugan Falls",
-    "coordinates": [14.213973283341856, 121.48047330344185],
+    "coordinates": [14.20945, 121.48003],
     "type": "Nature",
     "budget": "Low"
   },
@@ -209,7 +209,7 @@
   },
   {
     "name": "Hidden Falls",
-    "coordinates": [14.21013975463714, 121.48459063174069],
+    "coordinates": [14.21066, 121.48172],
     "type": "Nature",
     "budget": "High"
   },
