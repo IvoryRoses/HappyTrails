@@ -336,7 +336,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className=" dashboardMain">
+      <div className="dashboard-main">
         <input
           type="text"
           value={inputLocation}
@@ -414,88 +414,94 @@ export default function Dashboard() {
             Trip Length: {routeLength.toFixed(2)} km
           </div>
         )}
-        <MapContainer
-          className="dashboard-map"
-          center={[14.27, 121.46]}
-          zoom={12}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
+        <div style={{ height: "100%" }}>
+          <MapContainer
+            className="dashboard-map"
+            center={[14.27, 121.46]}
+            zoom={12}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
 
-          {filteredMarkers.map((marker) => {
-            // Determine the appropriate icon based on marker type
-            let icon;
-            switch (marker.type) {
-              case "Food":
-                icon = foodIcon;
-                break;
-              case "Nature":
-                icon = natureIcon;
-                break;
-              case "Historical":
-                icon = historicalIcon;
-                break;
-              case "Entertainment":
-                icon = entertainmentIcon;
-                break;
-              default:
-                icon = customIcon;
-            }
+            {filteredMarkers.map((marker) => {
+              // Determine the appropriate icon based on marker type
+              let icon;
+              switch (marker.type) {
+                case "Food":
+                  icon = foodIcon;
+                  break;
+                case "Nature":
+                  icon = natureIcon;
+                  break;
+                case "Historical":
+                  icon = historicalIcon;
+                  break;
+                case "Entertainment":
+                  icon = entertainmentIcon;
+                  break;
+                default:
+                  icon = customIcon;
+              }
 
-            // Check if marker.geocode is defined before attempting to join
-            if (!marker.geocode) {
-              console.error("Marker geocode is undefined", marker);
-              return null;
-            }
+              // Check if marker.geocode is defined before attempting to join
+              if (!marker.geocode) {
+                console.error("Marker geocode is undefined", marker);
+                return null;
+              }
 
-            return (
+              return (
+                <Marker
+                  key={marker.geocode.join(",")}
+                  position={marker.geocode as [number, number]}
+                  icon={icon}
+                >
+                  <Popup>
+                    <div className="popup-display">
+                      <img
+                        src={marker.image}
+                        style={{
+                          width: "150px",
+                          height: "150px",
+                          marginBottom: "10px",
+                        }}
+                      />
+                      <span className="marker-name">{marker.name}</span>
+                      <button
+                        className="popup-button"
+                        onClick={() => handleStartTripClick(marker)}
+                      >
+                        Start trip
+                      </button>
+                    </div>
+                  </Popup>
+                </Marker>
+              );
+            })}
+
+            {markers.map((marker: MarkerType) => (
               <Marker
-                key={marker.geocode.join(",")}
-                position={marker.geocode as [number, number]}
-                icon={icon}
+                key={marker.id}
+                position={marker.geocode}
+                icon={customIcon}
               >
                 <Popup>
-                  <div className="popup-display">
-                    <img
-                      src={marker.image}
-                      style={{
-                        width: "150px",
-                        height: "150px",
-                        marginBottom: "10px",
-                      }}
-                    />
-                    <span className="marker-name">{marker.name}</span>
-                    <button
-                      className="popup-button"
-                      onClick={() => handleStartTripClick(marker)}
-                    >
-                      Start trip
-                    </button>
-                  </div>
+                  {marker.popUp}
+                  <br />
+                  <button onClick={(e) => deleteMarker(marker.id, e)}>
+                    Delete
+                  </button>
                 </Popup>
               </Marker>
-            );
-          })}
+            ))}
 
-          {markers.map((marker: MarkerType) => (
-            <Marker key={marker.id} position={marker.geocode} icon={customIcon}>
-              <Popup>
-                {marker.popUp}
-                <br />
-                <button onClick={(e) => deleteMarker(marker.id, e)}>
-                  Delete
-                </button>
-              </Popup>
-            </Marker>
-          ))}
+            {route.length > 0 && <Polyline positions={route} color="blue" />}
 
-          {route.length > 0 && <Polyline positions={route} color="blue" />}
-
-          <AddMarkerOnClick />
-          <GPSLocationHandler />
-        </MapContainer>
+            <AddMarkerOnClick />
+            <GPSLocationHandler />
+          </MapContainer>
+        </div>
         {showConfirmationForm && <ConfirmationPopup />}
       </div>
     </>

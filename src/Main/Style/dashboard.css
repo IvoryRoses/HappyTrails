@@ -1,6 +1,7 @@
 .leaflet-container {
-  height: 64.6rem;
+  height: 75rem;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .dashboard-map {
@@ -180,4 +181,8 @@
   color: #b3816e;
   cursor: pointer;
   flex: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
