@@ -1,6 +1,6 @@
 .navigation {
-  background-color: #ded2aa;
-  color: #b3816e;
+  background-color: #b3816e;
+  color: #ded2aa;
   position: fixed;
   margin-top: 11rem;
   height: 40.8rem;
@@ -23,8 +23,8 @@
   width: 250px;
   height: 80px;
   clip: rect(0, 3rem, 10rem, 0);
-  margin-left: 2rem;
-  color: #b3816e;
+  margin-left: 1.8rem;
+  color: #ded2aa;
 }
 
 .web-name {
@@ -51,8 +51,8 @@
 }
 
 .nav-link:hover {
-  background-color: #b3816e;
-  color: #ded2aa;
+  background-color: #ded2aa;
+  color: #b3816e;
   transition: all 0.5s;
 }
 

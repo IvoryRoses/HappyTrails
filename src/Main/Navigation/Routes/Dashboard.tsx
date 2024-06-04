@@ -9,7 +9,7 @@ import {
   Polyline,
   useMap,
 } from "react-leaflet";
-import { Icon } from "leaflet";
+import { Icon, LeafletMouseEvent } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
 import MarkerImages from "../../Data/markerImages";
@@ -17,6 +17,7 @@ import FoodMarker from "../Assets/Food_Marker.png";
 import NatureMarker from "../Assets/Nature_Marker.png";
 import HistoricalMarker from "../Assets/Historical_Marker.png";
 import EntertainmentMarker from "../Assets/Entertainment_Marker.png";
+import UserMarker from "../Assets/User_Marker.png";
 
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
 
@@ -29,6 +30,7 @@ export default function Dashboard() {
     type?: string;
     budget?: string;
     name?: string;
+    image?: string;
   };
 
   const preferenceMarker = presetLocations.map((location) => ({
@@ -68,10 +70,15 @@ export default function Dashboard() {
   // State to manage selected budgets
   const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
 
+  const [showConfirmationForm, setShowConfirmationForm] =
+    useState<boolean>(false);
+  const [clickEvent, setClickEvent] = useState<LeafletMouseEvent | null>(null);
+
   // Custom icon for the markers
   const customIcon = new Icon({
-    iconUrl: "https://cdn-icons-png.flaticon.com/128/149/149059.png",
-    iconSize: [38, 38],
+    iconUrl: UserMarker,
+    iconSize: [55, 55],
+    iconAnchor: [27.5, 55],
   });
 
   const foodIcon = new Icon({
@@ -133,13 +140,13 @@ export default function Dashboard() {
       setMarkers([
         {
           id: generateId(),
-          geocode: selectedLocation.coordinates,
-          popUp: `Starting at ${selectedLocation.coordinates[0].toFixed(
-            2
-          )}, ${selectedLocation.coordinates[1].toFixed(2)}`,
+          geocode: selectedLocation.coordinates as [number, number],
+          popUp: `Starting at ${
+            selectedLocation?.coordinates?.[0].toFixed(2) as string
+          }, ${selectedLocation?.coordinates?.[1].toFixed(2) as string}`,
           type: selectedLocation.type,
           budget: selectedLocation.budget,
-          image: selectedLocation.image,
+          image: selectedLocation.image as string,
         },
       ]);
       setInputLocation(""); // clear input location
@@ -151,19 +158,50 @@ export default function Dashboard() {
   function AddMarkerOnClick() {
     useMapEvents({
       click: (e) => {
-        const newMarker = {
-          id: generateId(),
-          geocode: [e.latlng.lat, e.latlng.lng],
-          popUp: `Starting at ${e.latlng.lat.toFixed(
-            2
-          )}, ${e.latlng.lng.toFixed(2)}`,
-        };
-        setMarkers([newMarker]);
-        setRoute([]);
+        setShowConfirmationForm(true);
+        setClickEvent(e); // Set the click event
       },
     });
     return null;
   }
+
+  const handleConfirmAddMarker = () => {
+    if (clickEvent) {
+      const { lat, lng } = clickEvent.latlng; // Access latlng from clickEvent
+      const newMarker = {
+        id: generateId(),
+        geocode: [lat, lng],
+        popUp: `Starting at ${lat.toFixed(2)}, ${lng.toFixed(2)}`,
+      };
+      setMarkers([newMarker]);
+      setShowConfirmationForm(false);
+      setRoute([]);
+    }
+  };
+
+  const handleCancelAddMarker = () => {
+    setShowConfirmationForm(false);
+  };
+
+  const ConfirmationPopup = () => {
+    return (
+      <div className="confirm-overlay">
+        <div className="confirm-form">
+          <text style={{ color: "#ded2aa", fontSize: "1.2rem" }}>
+            Do you want to place a pin?
+          </text>
+          <div className="confirm-choice">
+            <button className="confirm-button" onClick={handleConfirmAddMarker}>
+              Yes
+            </button>
+            <button className="confirm-button" onClick={handleCancelAddMarker}>
+              No
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   // Component to handle GPS location
   function GPSLocationHandler() {
@@ -288,9 +326,11 @@ export default function Dashboard() {
 
   const filteredMarkers = preferenceMarker.filter((marker) => {
     const typeMatch =
-      selectedTypes.length === 0 || selectedTypes.includes(marker.type);
+      selectedTypes.length === 0 ||
+      selectedTypes.includes(marker.type as string);
     const budgetMatch =
-      selectedBudgets.length === 0 || selectedBudgets.includes(marker.budget);
+      selectedBudgets.length === 0 ||
+      selectedBudgets.includes(marker.budget as string);
     return typeMatch && budgetMatch;
   });
 
@@ -413,7 +453,7 @@ export default function Dashboard() {
             return (
               <Marker
                 key={marker.geocode.join(",")}
-                position={marker.geocode}
+                position={marker.geocode as [number, number]}
                 icon={icon}
               >
                 <Popup>
@@ -456,6 +496,7 @@ export default function Dashboard() {
           <AddMarkerOnClick />
           <GPSLocationHandler />
         </MapContainer>
+        {showConfirmationForm && <ConfirmationPopup />}
       </div>
     </>
   );

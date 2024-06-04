@@ -237,12 +237,4 @@ const PopupForm = ({
   );
 };
 
-const popupProfiler = ({}) => {
-  return (
-    <div>
-      <div></div>
-    </div>
-  );
-};
-
 export default Account;

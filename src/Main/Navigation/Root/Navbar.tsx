@@ -7,7 +7,7 @@ import { BiSolidCompass } from "react-icons/bi";
 import { PiGearSixFill } from "react-icons/pi";
 import { TbInfoCircleFilled } from "react-icons/tb";
 import { CiLogout } from "react-icons/ci";
-import PadayoWhite from "../Assets/Padayo_White.png";
+import PadayoWhite from "../Assets/Padayo_Brown.png";
 
 export default function NavigationBar() {
   const location = useLocation();

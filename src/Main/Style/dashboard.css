@@ -1,5 +1,6 @@
 .leaflet-container {
   height: 64.6rem;
+  cursor: pointer;
 }
 
 .dashboard-map {
@@ -128,8 +129,8 @@
   padding: 0.3rem;
   border: none;
   border-radius: 6px;
-  background-color: #b3816e;
-  color: white;
+  background-color: #ded2aa;
+  color: #b3816e;
   cursor: pointer;
 }
 
@@ -137,4 +138,46 @@
   font-size: 14px;
   color: #b3816e;
   margin-bottom: 5px;
+}
+
+/*Confirmation Form*/
+.confirm-overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.confirm-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 19rem;
+  background: #b3816e;
+  gap: 1rem;
+}
+
+.confirm-choice {
+  display: flex;
+  gap: 3rem;
+}
+
+.confirm-button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #ded2aa;
+  color: #b3816e;
+  cursor: pointer;
+  flex: 1;
 }
