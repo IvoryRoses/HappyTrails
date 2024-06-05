@@ -94,7 +94,7 @@
 
 .GPS {
   position: absolute;
-  top: 290px; /* Adjust this value to place the button below the "Start Trip" button */
+  top: 50px; /* Adjust this value to place the button below the "Start Trip" button */
   right: 50px;
   padding: 10px 20px;
   background-color: #2196f3;
@@ -105,6 +105,7 @@
   z-index: 1000; /* Ensure the button is above the map */
 }
 
+/*Preference Panel*/
 .preference-panel {
   display: flex;
   justify-content: right;
@@ -113,7 +114,7 @@
   z-index: 1000;
   top: 287px;
   right: 0px;
-  width: 14rem;
+  width: 16rem;
   background-color: white;
   padding: 1rem;
   border-top-left-radius: 1rem;
@@ -123,6 +124,107 @@
 
 .pref-icon {
   display: flex;
+}
+
+.checkbox-wrapper-5 {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 10px;
+}
+
+.checkbox-wrapper-5 .check {
+  --size: 20px; /* Adjust size as needed */
+  position: relative;
+  background: linear-gradient(90deg, #ded2aa, #b3816e);
+  line-height: 0;
+  perspective: 400px;
+  font-size: var(--size);
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"],
+.checkbox-wrapper-5 .check label,
+.checkbox-wrapper-5 .check label::before,
+.checkbox-wrapper-5 .check label::after,
+.checkbox-wrapper-5 .check {
+  appearance: none;
+  display: inline-block;
+  border-radius: var(--size);
+  border: 0;
+  transition: left 0.35s ease-in-out;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.checkbox-wrapper-5 .check label {
+  width: calc(2.2 * var(--size));
+  height: var(--size);
+  background: #d7d7d7;
+  overflow: hidden;
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"] {
+  position: absolute;
+  z-index: 1;
+  width: calc(1 * var(--size));
+  height: calc(1 * var(--size));
+  top: calc(0.3 * var(--size));
+  left: calc(0.1 * var(--size));
+  background: linear-gradient(45deg, #dedede, #ffffff);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+  margin: 0;
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked {
+  left: calc(1.1 * var(--size));
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked + label {
+  background: transparent;
+}
+
+.checkbox-wrapper-5 .check label::before,
+.checkbox-wrapper-5 .check label::after {
+  content: "· ·";
+  position: absolute;
+  overflow: hidden;
+  left: calc(0.15 * var(--size));
+  top: calc(0.7 * var(--size));
+  height: var(--size);
+  letter-spacing: calc(-0.04 * var(--size));
+  color: #9b9b9b;
+  font-family: "Times New Roman", serif;
+  z-index: 2;
+  font-size: calc(0.6 * var(--size));
+  border-radius: 0;
+  transform-origin: 0 0 calc(-0.5 * var(--size));
+  backface-visibility: hidden;
+}
+
+.checkbox-wrapper-5 .check label::after {
+  content: "●";
+  top: calc(0.85 * var(--size));
+  left: calc(0.3 * var(--size));
+  height: calc(0.1 * var(--size));
+  width: calc(0.35 * var(--size));
+  font-size: calc(0.2 * var(--size));
+  transform-origin: 0 0 calc(-0.4 * var(--size));
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::before,
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::after {
+  left: calc(1.55 * var(--size));
+  top: calc(0.7 * var(--size));
+  line-height: calc(0.1 * var(--size));
+  transform: rotateY(360deg);
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::after {
+  height: calc(0.16 * var(--size));
+  top: calc(0.85 * var(--size));
+  left: calc(1.6 * var(--size));
+  font-size: calc(0.6 * var(--size));
+  line-height: 0;
 }
 
 /*Popup css*/

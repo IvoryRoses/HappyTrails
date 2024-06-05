@@ -299,7 +299,7 @@ export default function Dashboard() {
           ) {
             const distanceInMeters =
               data.features[0].properties.summary.distance;
-            setRouteLength(distanceInMeters);
+            setRouteLength(distanceInMeters / 1000);
           }
         } else {
           console.error("Invalid route data:", data);
@@ -327,15 +327,22 @@ export default function Dashboard() {
     setUseGPS(false);
   };
 
-  const Checkbox = ({ label, value, onChange }) => {
+  function Checkbox({ label, value, onChange }) {
     return (
-      <label>
-        <input type="checkbox" checked={value} onChange={onChange} />
-        {label}
-      </label>
+      <div className="checkbox-wrapper-5">
+        <div className="check">
+          <input
+            id={label}
+            type="checkbox"
+            checked={value}
+            onChange={onChange}
+          />
+          <label htmlFor={label}></label>
+        </div>
+        <label htmlFor={label}>{label}</label>
+      </div>
     );
-  };
-
+  }
   const handleTypeChange = (type: string) => {
     setSelectedTypes((prevSelectedTypes) =>
       prevSelectedTypes.includes(type)
