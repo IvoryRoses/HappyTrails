@@ -43,18 +43,7 @@ export default function NavigationBar() {
               <span className="nav-text">Account</span>
             </Link>
           </li>
-          <li>
-            <Link to="/history" className="nav-link">
-              <BiSolidCompass className="dashboard-icon" />
-              <span className="nav-text">History</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/setting" className="nav-link">
-              <PiGearSixFill className="dashboard-icon" />
-              <span className="nav-text">Setting</span>
-            </Link>
-          </li>
+
           <li>
             <Link to="/about" className="nav-link">
               <TbInfoCircleFilled className="dashboard-icon" />

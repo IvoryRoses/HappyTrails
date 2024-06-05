@@ -50,14 +50,6 @@ const router = createBrowserRouter([
         Component: Account,
       },
       {
-        path: "/history",
-        Component: History,
-      },
-      {
-        path: "/setting",
-        Component: Setting,
-      },
-      {
         path: "/about",
         Component: About,
       },
