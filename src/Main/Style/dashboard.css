@@ -37,7 +37,7 @@
 /*Laptop View*/
 @media only screen and (max-height: 828px) {
   .leaflet-container {
-    height: 50.4rem;
+    height: 52rem;
     cursor: pointer;
     overflow: hidden;
   }
