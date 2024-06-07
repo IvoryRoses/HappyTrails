@@ -372,73 +372,75 @@ export default function Dashboard() {
   return (
     <>
       <div className="dashboard-main">
-        <input
-          type="text"
-          value={inputLocation}
-          onChange={(e) => setInputLocation(e.target.value)}
-          placeholder="Enter your current location"
-          className="location-input"
-        />
-        <button className="geocode-button" onClick={geocodeLocation}>
-          Geocode Location
-        </button>
-        <select
-          value={selectedPresetLocation}
-          onChange={handlePresetLocationChange}
-          className="preset-location-dropdown"
-        >
-          <option value="" disabled>
-            Select a preset location
-          </option>
-          {presetLocations.map((loc) => (
-            <option key={loc.name} value={loc.name}>
-              {loc.name}
+        <div className="button-container">
+          <input
+            type="text"
+            value={inputLocation}
+            onChange={(e) => setInputLocation(e.target.value)}
+            placeholder="Enter your current location"
+            className="location-input"
+          />
+          <button className="geocode-button" onClick={geocodeLocation}>
+            Geocode Location
+          </button>
+          <select
+            value={selectedPresetLocation}
+            onChange={handlePresetLocationChange}
+            className="preset-location-dropdown"
+          >
+            <option value="" disabled>
+              Select a preset location
             </option>
-          ))}
-        </select>
-        {/* <button className="trip-start-button" onClick={fetchRoute}>
+            {presetLocations.map((loc) => (
+              <option key={loc.name} value={loc.name}>
+                {loc.name}
+              </option>
+            ))}
+          </select>
+          {/* <button className="trip-start-button" onClick={fetchRoute}>
           Start Trip
         </button> */}
-        <button className="clear-route-button" onClick={clearRouteAndMarker}>
-          Clear Route
-        </button>
-        <button className="GPS" onClick={() => setUseGPS(true)}>
-          Use GPS
-        </button>
+          <button className="clear-route-button" onClick={clearRouteAndMarker}>
+            Clear Route
+          </button>
+          <button className="GPS" onClick={() => setUseGPS(true)}>
+            Use GPS
+          </button>
+          {routeLength !== null && (
+            <div className="route-length">
+              Trip Length: {routeLength.toFixed(2)} km
+            </div>
+          )}
+        </div>
+
         <div className="preference-panel">
           <h1>Preference</h1>
-          <div className="pref-icon">
-            <img src={FoodMarker} style={{ width: "3rem", height: "3rem" }} />
+          <div className="check-icon">
+            <img src={FoodMarker} className="pref-icon" />
             <Checkbox
               label="Food"
               value={selectedTypes.includes("Food")}
               onChange={() => handleTypeChange("Food")}
             />
           </div>
-          <div className="pref-icon">
-            <img src={NatureMarker} style={{ width: "3rem", height: "3rem" }} />
+          <div className="check-icon">
+            <img src={NatureMarker} className="pref-icon" />
             <Checkbox
               label="Nature"
               value={selectedTypes.includes("Nature")}
               onChange={() => handleTypeChange("Nature")}
             />
           </div>
-          <div className="pref-icon">
-            <img
-              src={HistoricalMarker}
-              style={{ width: "3rem", height: "3rem" }}
-            />
+          <div className="check-icon">
+            <img src={HistoricalMarker} className="pref-icon" />
             <Checkbox
               label="Historical"
               value={selectedTypes.includes("Historical")}
               onChange={() => handleTypeChange("Historical")}
             />
           </div>
-          <div className="pref-icon">
-            <img
-              src={EntertainmentMarker}
-              style={{ width: "3rem", height: "3rem" }}
-            />
+          <div className="check-icon">
+            <img src={EntertainmentMarker} className="pref-icon" />
             <Checkbox
               label="Entertainment"
               value={selectedTypes.includes("Entertainment")}
@@ -462,11 +464,7 @@ export default function Dashboard() {
             onChange={() => handleBudgetChange("High")}
           />
         </div>
-        {routeLength !== null && (
-          <div className="route-length">
-            Trip Length: {routeLength.toFixed(2)} km
-          </div>
-        )}
+
         <div style={{ height: "100%" }}>
           <MapContainer
             className="dashboard-map"
