@@ -172,12 +172,6 @@
     "budget": "High"
   },
   {
-    "name": "Valiam FOOD HOUSE",
-    "coordinates": [14.441869355571907, 121.42942122270969],
-    "type": "Food",
-    "budget": "Low"
-  },
-  {
     "name": "Nanay Virgie Eatery",
     "coordinates": [14.454154359860837, 121.37740134565814],
     "type": "Food",
@@ -188,12 +182,6 @@
     "coordinates": [14.269716501289285, 121.39861148880654],
     "type": "Food",
     "budget": "Low"
-  },
-  {
-    "name": "Plato ni Tonio",
-    "coordinates": [14.19041295453397, 121.42882277712633],
-    "type": "Food",
-    "budget": "Mid"
   },
   {
     "name": "Kusina ni Isa",
@@ -208,22 +196,10 @@
     "budget": "High"
   },
   {
-    "name": "Arnoks Special Fried chicken",
-    "coordinates": [14.144075972997976, 121.47079849831529],
-    "type": "Food",
-    "budget": "Low"
-  },
-  {
     "name": "Ate Ganda's Kainan Lugaw Mami and more",
     "coordinates": [14.146431431890873, 121.47613350761296],
     "type": "Food",
     "budget": "Low"
-  },
-  {
-    "name": "MAMA DEL'S PARES & MAMI HAUZ",
-    "coordinates": [14.144086176243043, 121.47402457433505],
-    "type": "Food",
-    "budget": "Mid"
   },
   {
     "name": "Kape Kesada",
@@ -282,12 +258,6 @@
   {
     "name": "PORTSIDE UNLIWINGS",
     "coordinates": [14.37175776674741, 121.40163303860443],
-    "type": "Food",
-    "budget": "Low"
-  },
-  {
-    "name": "Kap Rino Inasal",
-    "coordinates": [14.345805430638073, 121.38829676273951],
     "type": "Food",
     "budget": "Low"
   },
@@ -408,12 +378,6 @@
   {
     "name": "Babi Bear Samgyupsal",
     "coordinates": [14.467331591298331, 121.42302044866908],
-    "type": "Food",
-    "budget": "Low"
-  },
-  {
-    "name": "Kamajo's Lomi House",
-    "coordinates": [14.463590174765654, 121.42323237515473],
     "type": "Food",
     "budget": "Low"
   },
