@@ -394,18 +394,6 @@
     "budget": "Low"
   },
   {
-    "name": "Ivann's",
-    "coordinates": [14.419637110385407, 121.4448817606422],
-    "type": "Food",
-    "budget": "High"
-  },
-  {
-    "name": "Kukuru",
-    "coordinates": [14.419600205421075, 121.44568045787177],
-    "type": "Food",
-    "budget": "Mid"
-  },
-  {
     "name": "Caleb's Kitchen",
     "coordinates": [14.419097562145149, 121.44625767816885],
     "type": "Food",
@@ -452,7 +440,7 @@
     "budget": "Low"
   },
   {
-    "name": "Bumbungan Eco Park ",
+    "name": "Bumbungan Eco Park",
     "coordinates": [14.249723172119664, 121.50577166103945],
     "type": "Nature",
     "budget": "Low"
@@ -590,12 +578,6 @@
     "budget": "Low"
   },
   {
-    "name": "Selecta, Mabato",
-    "coordinates": [14.388547987662557, 121.39949847330053],
-    "type": "Nature",
-    "budget": "Low"
-  },
-  {
     "name": "Bulusukan River & Eco Park",
     "coordinates": [14.247716811622206, 121.35256392182045],
     "type": "Nature",
@@ -632,12 +614,6 @@
     "budget": "Mid"
   },
   {
-    "name": "VF Manalo's Place",
-    "coordinates": [14.467331591317096, 121.43118509270941],
-    "type": "Nature",
-    "budget": "Low"
-  },
-  {
     "name": "Sampaloc Falls",
     "coordinates": [14.448830060798183, 121.48762307255981],
     "type": "Nature",
@@ -648,12 +624,6 @@
     "coordinates": [14.442952798765404, 121.48665200794727],
     "type": "Nature",
     "budget": "Low"
-  },
-  {
-    "name": "Beulah Land",
-    "coordinates": [14.440272773870516, 121.48584240832199],
-    "type": "Nature",
-    "budget": "Mid"
   },
   {
     "_comment": "ENTERTAINMENT ONLY-----------------------------------------------------------------------------"
