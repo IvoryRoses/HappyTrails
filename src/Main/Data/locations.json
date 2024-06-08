@@ -19,12 +19,6 @@
     "budget": "Low"
   },
   {
-    "name": "Balete Tree of Kalayaan",
-    "coordinates": [14.344003256661514, 121.48872530207747],
-    "type": "Historical",
-    "budget": "Low"
-  },
-  {
     "name": "Cathedral of Our Lady of Maulawin",
     "coordinates": [14.281268271295238, 121.41674558426978],
     "type": "Historical",
@@ -178,12 +172,6 @@
     "budget": "High"
   },
   {
-    "name": "Valiam FOOD HOUSE",
-    "coordinates": [14.441869355571907, 121.42942122270969],
-    "type": "Food",
-    "budget": "Low"
-  },
-  {
     "name": "Nanay Virgie Eatery",
     "coordinates": [14.454154359860837, 121.37740134565814],
     "type": "Food",
@@ -194,12 +182,6 @@
     "coordinates": [14.269716501289285, 121.39861148880654],
     "type": "Food",
     "budget": "Low"
-  },
-  {
-    "name": "Plato ni Tonio",
-    "coordinates": [14.19041295453397, 121.42882277712633],
-    "type": "Food",
-    "budget": "Mid"
   },
   {
     "name": "Kusina ni Isa",
@@ -214,22 +196,10 @@
     "budget": "High"
   },
   {
-    "name": "Arnoks Special Fried chicken",
-    "coordinates": [14.144075972997976, 121.47079849831529],
-    "type": "Food",
-    "budget": "Low"
-  },
-  {
     "name": "Ate Ganda's Kainan Lugaw Mami and more",
     "coordinates": [14.146431431890873, 121.47613350761296],
     "type": "Food",
     "budget": "Low"
-  },
-  {
-    "name": "MAMA DEL'S PARES & MAMI HAUZ",
-    "coordinates": [14.144086176243043, 121.47402457433505],
-    "type": "Food",
-    "budget": "Mid"
   },
   {
     "name": "Kape Kesada",
@@ -288,12 +258,6 @@
   {
     "name": "PORTSIDE UNLIWINGS",
     "coordinates": [14.37175776674741, 121.40163303860443],
-    "type": "Food",
-    "budget": "Low"
-  },
-  {
-    "name": "Kap Rino Inasal",
-    "coordinates": [14.345805430638073, 121.38829676273951],
     "type": "Food",
     "budget": "Low"
   },
@@ -400,7 +364,7 @@
     "budget": "Low"
   },
   {
-    "name": "Leona’s Kitchen",
+    "name": "Leona's Kitchen",
     "coordinates": [14.54528625208982, 121.45855873970116],
     "type": "Food",
     "budget": "Low"
@@ -418,12 +382,6 @@
     "budget": "Low"
   },
   {
-    "name": "Kamajo's Lomi House",
-    "coordinates": [14.463590174765654, 121.42323237515473],
-    "type": "Food",
-    "budget": "Low"
-  },
-  {
     "name": "Halo-halo ni Edong",
     "coordinates": [14.428392743920032, 121.45298787889554],
     "type": "Food",
@@ -434,18 +392,6 @@
     "coordinates": [14.41098570663888, 121.45108843614878],
     "type": "Food",
     "budget": "Low"
-  },
-  {
-    "name": "Ivann's",
-    "coordinates": [14.419637110385407, 121.4448817606422],
-    "type": "Food",
-    "budget": "High"
-  },
-  {
-    "name": "Kukuru",
-    "coordinates": [14.419600205421075, 121.44568045787177],
-    "type": "Food",
-    "budget": "Mid"
   },
   {
     "name": "Caleb's Kitchen",
@@ -494,7 +440,7 @@
     "budget": "Low"
   },
   {
-    "name": "Bumbungan Eco Park ",
+    "name": "Bumbungan Eco Park",
     "coordinates": [14.249723172119664, 121.50577166103945],
     "type": "Nature",
     "budget": "Low"
@@ -632,12 +578,6 @@
     "budget": "Low"
   },
   {
-    "name": "Selecta, Mabato",
-    "coordinates": [14.388547987662557, 121.39949847330053],
-    "type": "Nature",
-    "budget": "Low"
-  },
-  {
     "name": "Bulusukan River & Eco Park",
     "coordinates": [14.247716811622206, 121.35256392182045],
     "type": "Nature",
@@ -674,12 +614,6 @@
     "budget": "Mid"
   },
   {
-    "name": "VF Manalo's Place",
-    "coordinates": [14.467331591317096, 121.43118509270941],
-    "type": "Nature",
-    "budget": "Low"
-  },
-  {
     "name": "Sampaloc Falls",
     "coordinates": [14.448830060798183, 121.48762307255981],
     "type": "Nature",
@@ -690,12 +624,6 @@
     "coordinates": [14.442952798765404, 121.48665200794727],
     "type": "Nature",
     "budget": "Low"
-  },
-  {
-    "name": "Beulah Land",
-    "coordinates": [14.440272773870516, 121.48584240832199],
-    "type": "Nature",
-    "budget": "Mid"
   },
   {
     "_comment": "ENTERTAINMENT ONLY-----------------------------------------------------------------------------"
@@ -711,12 +639,6 @@
     "coordinates": [14.345194020913626, 121.4834827774289],
     "type": "Entertainment",
     "budget": "High"
-  },
-  {
-    "name": "Aljenn's Resort",
-    "coordinates": [14.190525902533798, 121.50797620707354],
-    "type": "Entertainment",
-    "budget": "Low"
   },
   {
     "name": "Caliraya Springs Golf Club",
@@ -833,7 +755,7 @@
     "budget": "Mid"
   },
   {
-    "name": "Hiraya",
+    "name": "Hiraya  ",
     "coordinates": [14.207850453741841, 121.38087607353583],
     "type": "Entertainment",
     "budget": "High"
@@ -843,12 +765,6 @@
     "coordinates": [14.262613629739452, 121.36768742999148],
     "type": "Entertainment",
     "budget": "High"
-  },
-  {
-    "name": "Atoy's Resort",
-    "coordinates": [14.220559641328142, 121.38309403794416],
-    "type": "Entertainment",
-    "budget": "Mid"
   },
   {
     "name": "Casa Venice Resort",
