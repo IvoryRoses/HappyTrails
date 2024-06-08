@@ -103,6 +103,40 @@ import Basekamp from "../LocationImage/Hammock BaseKamp.jpg";
 //import VFmanalo from "../LocationImage/Place"
 import Sampalocf from "../LocationImage/Sampaloc Falls.jpg";
 import TMfarm from "../LocationImage/Top Mount Farm.jpg";
+import Balaisitang from "../LocationImage/Balai Sitang Mountain Resort.jpg";
+import Longoscfa from "../LocationImage/LongosCockfighting.jpg";
+import Calirayasgc from "../LocationImage/Caliraya Springs Golf.jpg";
+import Calirayaecoville from "../LocationImage/Caliraya Ecoville Recreation and Farm Resort.jpg";
+import AVMfarm from "../LocationImage/Amazing View Mountain Farm Resort.jpg";
+import Balanacr from "../LocationImage/Balanac River Dam Cottage.jpg";
+import Dalitiwanr from "../LocationImage/Dalitiwan Resort.jpg";
+import Spritefalls from "../LocationImage/Sprite Falls Spring Resort.jpg";
+import Lasfamilias from "../LocationImage/Las Familias Resort.jpg";
+import Casamilagros from "../LocationImage/Casa Milagros Paete.jpg";
+import Vonwelt from "../LocationImage/Vonwelt Nature Farm.jpg";
+import Cavintiboat from "../LocationImage/Cavinti Boating Station.jpg";
+import Pagsanjanparadiso from "../LocationImage/Pagsanjan Paradise Resort.jpg";
+import Nerliza from "../LocationImage/Villa Nerliza Resort.jpg";
+import Clementec from "../LocationImage/Clemente Campsite.jpg";
+import Daddyplace from "../LocationImage/Daddy_s Place Resort.jpg";
+import Greenhouseb from "../LocationImage/Greenhouse Balian.jpg";
+import Mountainb from "../LocationImage/Mountain Breeze Resort.jpg";
+import Villagana from "../LocationImage/Villa Gaña Resort.jpg";
+import Villabella from "../LocationImage/Villa Arabella Resort.jpg";
+import Montrealg from "../LocationImage/Montreal Garden Resort.jpg";
+import Hiraya from "../LocationImage/Hiraya.jpg";
+import Lablanca from "../LocationImage/La Blanca Private Resort.jpg";
+import Casavenice from "../LocationImage/Casa Venice Resort.jpg";
+import Pitafishing from "../LocationImage/Pita Fishing Resort and Recreation Center.jpg";
+import Batisk from "../LocationImage/Batis ng kalikasan.jpg";
+import Aambonfsr from "../LocationImage/Aambon Forest Spring Resort.jpg";
+import Lilbaguio from "../LocationImage/Little Baguio_s Sunset Villa.jpg";
+import Yoyongdita from "../LocationImage/Yoyong and Dita_s Hot Spring.jpg";
+import Augustinn from "../LocationImage/August-Inn Resort.jpg";
+import Ricardong from "../LocationImage/Ricardo_s Nature Garden.jpg";
+import Lipski from "../LocationImage/Lipski Ville Resort.jpg";
+import Ladyester from "../LocationImage/Lady Ester Grand Villa Resort and Farm.jpg";
+import Hantonia from "../LocationImage/Hacienda Antonia.jpg";
 
 const markerImages = {
   //SAMPLE--------------------------------------------------------------------------
@@ -217,6 +251,40 @@ const markerImages = {
   "Sampaloc Falls": Sampalocf,
   "Top Mount Farm": TMfarm,
   //ENTERTAINMENT------------------------------------------------------------
+  "Balai Sitang Mountain Resort": Balaisitang,
+  "Longos Cock Fighting Arena": Longoscfa,
+  "Caliraya Springs Golf Club": Calirayasgc,
+  "Caliraya Ecoville Recreation and Farm Resort": Calirayaecoville,
+  "Amazing View Mountain Farm Resort": AVMfarm,
+  "Balanac River Dam Cottage": Balanacr,
+  "Dalitiwan Resort": Dalitiwanr,
+  "Sprite Falls Spring Resort": Spritefalls,
+  "Las Familias Resort": Lasfamilias,
+  "Casa Milagros Paete": Casamilagros,
+  "Vonwelt Nature Farm": Vonwelt,
+  "Cavinti Boating Station": Cavintiboat,
+  "Pagsanjan Paradise Resort": Pagsanjanparadiso,
+  "Villa Nerliza Resort": Nerliza,
+  "Clemente Campsite": Clementec,
+  "Daddy's Place Resort": Daddyplace,
+  "Greenhouse Balian": Greenhouseb,
+  "Mountain Breeze Resort": Mountainb,
+  "Villa Gaña Resort": Villagana,
+  "Villa Arabella Resort": Villabella,
+  "Montreal Garden Resort": Montrealg,
+  "Hiraya  ": Hiraya,
+  "La Blanca Private Resort": Lablanca,
+  "Casa Venice Resort": Casavenice,
+  "Pita Fishing Resort and Recreation Center": Pitafishing,
+  "Batis ng kalikasan": Batisk,
+  "Aambon Forest Spring Resort": Aambonfsr,
+  "Little Baguio's Sunset Villa": Lilbaguio,
+  "Yoyong and Dita's Hot Spring": Yoyongdita,
+  "August-Inn Resort": Augustinn,
+  "Ricardo's Nature Garden": Ricardong,
+  "Lipski Ville Resort": Lipski,
+  "Lady Ester Grand Villa Resort and Farm": Ladyester,
+  "Hacienda Antonia": Hantonia,
 };
 
 export default markerImages;

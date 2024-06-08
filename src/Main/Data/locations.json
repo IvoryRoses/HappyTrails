@@ -641,12 +641,6 @@
     "budget": "High"
   },
   {
-    "name": "Aljenn's Resort",
-    "coordinates": [14.190525902533798, 121.50797620707354],
-    "type": "Entertainment",
-    "budget": "Low"
-  },
-  {
     "name": "Caliraya Springs Golf Club",
     "coordinates": [14.293747821516202, 121.55630132554286],
     "type": "Entertainment",
@@ -761,7 +755,7 @@
     "budget": "Mid"
   },
   {
-    "name": "Hiraya",
+    "name": "Hiraya  ",
     "coordinates": [14.207850453741841, 121.38087607353583],
     "type": "Entertainment",
     "budget": "High"
@@ -771,12 +765,6 @@
     "coordinates": [14.262613629739452, 121.36768742999148],
     "type": "Entertainment",
     "budget": "High"
-  },
-  {
-    "name": "Atoy's Resort",
-    "coordinates": [14.220559641328142, 121.38309403794416],
-    "type": "Entertainment",
-    "budget": "Mid"
   },
   {
     "name": "Casa Venice Resort",
