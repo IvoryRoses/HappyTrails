@@ -12,6 +12,9 @@ import {
 import { Icon, LeafletMouseEvent } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import MarkerImages from "../../Data/markerImages";
 import FoodMarker from "../Assets/Food_Marker.png";
 import NatureMarker from "../Assets/Nature_Marker.png";
@@ -187,14 +190,17 @@ export default function Dashboard() {
     return (
       <div className="confirm-overlay">
         <div className="confirm-form">
-          <text style={{ color: "#ded2aa", fontSize: "1.2rem" }}>
+          <text style={{ color: "#ded2aa", fontSize: "1.4rem" }}>
             Do you want to place a pin?
           </text>
           <div className="confirm-choice">
-            <button className="confirm-button" onClick={handleConfirmAddMarker}>
+            <button
+              className="confirm-button "
+              onClick={handleConfirmAddMarker}
+            >
               Yes
             </button>
-            <button className="confirm-button" onClick={handleCancelAddMarker}>
+            <button className="cancel-button" onClick={handleCancelAddMarker}>
               No
             </button>
           </div>
@@ -265,28 +271,50 @@ export default function Dashboard() {
         body: JSON.stringify({
           coordinates: [
             [userMarker.geocode[1], userMarker.geocode[0]], // User marker coordinates
-            [preferenceMarker.geocode[1], preferenceMarker.geocode[0]], // Clicked preference marker coordinates
+            [preferenceMarker.geocode[1], preferenceMarker.geocode[0]], // Preference marker coordinates
           ],
         }),
       });
-      const data = await response.json();
-      console.log("Openrouteservice API response:", data);
 
-      if (data.features && data.features.length > 0) {
-        const routeCoordinates = data.features[0].geometry.coordinates.map(
-          (coord: [number, number]) => [coord[1], coord[0]]
-        );
-        setRoute(routeCoordinates);
+      if (response.ok) {
+        const data = await response.json();
+        console.log("API Response:", data);
+        if (
+          data &&
+          data.features &&
+          data.features.length > 0 &&
+          data.features[0].geometry &&
+          data.features[0].geometry.coordinates
+        ) {
+          const routeCoordinates = data.features[0].geometry.coordinates.map(
+            (coordinate: [number, number]) => [coordinate[1], coordinate[0]]
+          );
 
-        // Calculate the route length
-        const routeLengthInMeters = data.features[0].properties.segments.reduce(
-          (total: number, segment: any) => total + segment.distance,
-          0
-        );
-        setRouteLength(routeLengthInMeters / 1000); // Convert to kilometers
+          setRoute(routeCoordinates);
+
+          if (
+            data.features[0].properties &&
+            data.features[0].properties.summary &&
+            data.features[0].properties.summary.distance
+          ) {
+            const distanceInMeters =
+              data.features[0].properties.summary.distance;
+            setRouteLength(distanceInMeters / 1000);
+          }
+        } else {
+          console.error("Invalid route data:", data);
+        }
+      } else {
+        if (response.status === 404) {
+          toast.error("Location is offroad, please try somewhere else.", {
+            autoClose: 3000,
+          });
+        } else {
+          console.error("Failed to fetch route:", response.status);
+        }
       }
     } catch (error) {
-      console.error("Error fetching directions:", error);
+      console.error("Error fetching route:", error);
     }
   };
 
@@ -299,15 +327,22 @@ export default function Dashboard() {
     setUseGPS(false);
   };
 
-  const Checkbox = ({ label, value, onChange }) => {
+  function Checkbox({ label, value, onChange }) {
     return (
-      <label>
-        <input type="checkbox" checked={value} onChange={onChange} />
-        {label}
-      </label>
+      <div className="checkbox-wrapper-5">
+        <div className="check">
+          <input
+            id={label}
+            type="checkbox"
+            checked={value}
+            onChange={onChange}
+          />
+          <label htmlFor={label}></label>
+        </div>
+        <label htmlFor={label}>{label}</label>
+      </div>
     );
-  };
-
+  }
   const handleTypeChange = (type: string) => {
     setSelectedTypes((prevSelectedTypes) =>
       prevSelectedTypes.includes(type)
@@ -337,61 +372,81 @@ export default function Dashboard() {
   return (
     <>
       <div className="dashboard-main">
-        <input
-          type="text"
-          value={inputLocation}
-          onChange={(e) => setInputLocation(e.target.value)}
-          placeholder="Enter your current location"
-          className="location-input"
-        />
-        <button className="geocode-button" onClick={geocodeLocation}>
-          Geocode Location
-        </button>
-        <select
-          value={selectedPresetLocation}
-          onChange={handlePresetLocationChange}
-          className="preset-location-dropdown"
-        >
-          <option value="" disabled>
-            Select a preset location
-          </option>
-          {presetLocations.map((loc) => (
-            <option key={loc.name} value={loc.name}>
-              {loc.name}
+        <div className="button-container">
+          <input
+            type="text"
+            value={inputLocation}
+            onChange={(e) => setInputLocation(e.target.value)}
+            placeholder="Enter your current location"
+            className="location-input"
+          />
+          <button className="geocode-button" onClick={geocodeLocation}>
+            Geocode Location
+          </button>
+          <select
+            value={selectedPresetLocation}
+            onChange={handlePresetLocationChange}
+            className="preset-location-dropdown"
+          >
+            <option value="" disabled>
+              Select a preset location
             </option>
-          ))}
-        </select>
-        {/* <button className="trip-start-button" onClick={fetchRoute}>
+            {presetLocations.map((loc) => (
+              <option key={loc.name} value={loc.name}>
+                {loc.name}
+              </option>
+            ))}
+          </select>
+          {/* <button className="trip-start-button" onClick={fetchRoute}>
           Start Trip
         </button> */}
-        <button className="clear-route-button" onClick={clearRouteAndMarker}>
-          Clear Route
-        </button>
-        <button className="GPS" onClick={() => setUseGPS(true)}>
-          Use GPS
-        </button>
-        <div className="reference-panel">
+          <button className="clear-route-button" onClick={clearRouteAndMarker}>
+            Clear Route
+          </button>
+          <button className="GPS" onClick={() => setUseGPS(true)}>
+            Use GPS
+          </button>
+          {routeLength !== null && (
+            <div className="route-length">
+              Trip Length: {routeLength.toFixed(2)} km
+            </div>
+          )}
+        </div>
+
+        <div className="preference-panel">
           <h1>Preference</h1>
-          <Checkbox
-            label="Food"
-            value={selectedTypes.includes("Food")}
-            onChange={() => handleTypeChange("Food")}
-          />
-          <Checkbox
-            label="Nature"
-            value={selectedTypes.includes("Nature")}
-            onChange={() => handleTypeChange("Nature")}
-          />
-          <Checkbox
-            label="Historical"
-            value={selectedTypes.includes("Historical")}
-            onChange={() => handleTypeChange("Historical")}
-          />
-          <Checkbox
-            label="Entertainment"
-            value={selectedTypes.includes("Entertainment")}
-            onChange={() => handleTypeChange("Entertainment")}
-          />
+          <div className="check-icon">
+            <img src={FoodMarker} className="pref-icon" />
+            <Checkbox
+              label="Food"
+              value={selectedTypes.includes("Food")}
+              onChange={() => handleTypeChange("Food")}
+            />
+          </div>
+          <div className="check-icon">
+            <img src={NatureMarker} className="pref-icon" />
+            <Checkbox
+              label="Nature"
+              value={selectedTypes.includes("Nature")}
+              onChange={() => handleTypeChange("Nature")}
+            />
+          </div>
+          <div className="check-icon">
+            <img src={HistoricalMarker} className="pref-icon" />
+            <Checkbox
+              label="Historical"
+              value={selectedTypes.includes("Historical")}
+              onChange={() => handleTypeChange("Historical")}
+            />
+          </div>
+          <div className="check-icon">
+            <img src={EntertainmentMarker} className="pref-icon" />
+            <Checkbox
+              label="Entertainment"
+              value={selectedTypes.includes("Entertainment")}
+              onChange={() => handleTypeChange("Entertainment")}
+            />
+          </div>
           <h1>Budget</h1>
           <Checkbox
             label="Low"
@@ -409,11 +464,7 @@ export default function Dashboard() {
             onChange={() => handleBudgetChange("High")}
           />
         </div>
-        {routeLength !== null && (
-          <div className="route-length">
-            Trip Length: {routeLength.toFixed(2)} km
-          </div>
-        )}
+
         <div style={{ height: "100%" }}>
           <MapContainer
             className="dashboard-map"
@@ -503,6 +554,7 @@ export default function Dashboard() {
           </MapContainer>
         </div>
         {showConfirmationForm && <ConfirmationPopup />}
+        <ToastContainer position="top-center" className="dashboard-toast" />
       </div>
     </>
   );
