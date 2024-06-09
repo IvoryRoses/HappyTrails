@@ -5,6 +5,7 @@ import "./Main/Style/setting.css";
 import "./Main/Style/authentication.css";
 import "./Main/Style/front.css";
 import "./Main/Style/account.css";
+import "./Main/Style/about.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Main/Navigation/Root/Root";
 import Dashboard from "./Main/Navigation/Routes/Dashboard";

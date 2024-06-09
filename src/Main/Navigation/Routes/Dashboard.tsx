@@ -12,8 +12,12 @@ import {
 import { Icon, LeafletMouseEvent } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { auth } from "../../../firebase";
+
+import { fs } from "../../../firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 import MarkerImages from "../../Data/markerImages";
 import FoodMarker from "../Assets/Food_Marker.png";
@@ -77,6 +81,12 @@ export default function Dashboard() {
     useState<boolean>(false);
   const [clickEvent, setClickEvent] = useState<LeafletMouseEvent | null>(null);
 
+  const [mapReady, setMapReady] = useState(false);
+
+  const searchParams = new URLSearchParams(location.search);
+  const locationNameParam = searchParams.get("locationName");
+  const [leafletMap, setLeafletMap] = useState(null);
+
   // Custom icon for the markers
   const customIcon = new Icon({
     iconUrl: UserMarker,
@@ -103,6 +113,30 @@ export default function Dashboard() {
     iconUrl: EntertainmentMarker,
     iconSize: [55, 55],
   });
+
+  function useMapEffect(locationNameParam, presetLocations, leafletMap) {
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        if (mapReady && locationNameParam && leafletMap && leafletMap.setView) {
+          const matchedLocation = presetLocations.find(
+            (loc) => loc.name === decodeURIComponent(locationNameParam)
+          );
+          if (matchedLocation) {
+            leafletMap.setView(matchedLocation.coordinates, 5); // Set the view with a specific zoom level
+          } else {
+            console.error(
+              `Location "${locationNameParam}" not found in preset locations.`
+            );
+          }
+        }
+      }, 10000); // Delay execution for 3 seconds
+
+      // Cleanup function to clear the timeout in case the component unmounts
+      return () => clearTimeout(timeout);
+    }, [mapReady, locationNameParam, presetLocations, leafletMap]);
+  }
+
+  useMapEffect(locationNameParam, presetLocations, leafletMap);
 
   // Function to generate a unique ID for each marker
   const generateId = () => "_" + Math.random().toString(36).substr(2, 9);
@@ -251,6 +285,7 @@ export default function Dashboard() {
     );
   };
 
+  // Function to handle the start of a marker
   const handleStartTripClick = async (preferenceMarker: MarkerType) => {
     if (markers.length === 0) {
       console.error("User marker not found");
@@ -287,34 +322,41 @@ export default function Dashboard() {
           data.features[0].geometry.coordinates
         ) {
           const routeCoordinates = data.features[0].geometry.coordinates.map(
-            (coordinate: [number, number]) => [coordinate[1], coordinate[0]]
+            (coord: [number, number]) => [coord[1], coord[0]]
           );
-
+          const routeDistance =
+            data.features[0].properties.segments[0].distance;
           setRoute(routeCoordinates);
+          setRouteLength(routeDistance / 1000);
 
-          if (
-            data.features[0].properties &&
-            data.features[0].properties.summary &&
-            data.features[0].properties.summary.distance
-          ) {
-            const distanceInMeters =
-              data.features[0].properties.summary.distance;
-            setRouteLength(distanceInMeters / 1000);
+          // Save trip information to Firestore
+          const currentUser = auth.currentUser;
+          if (currentUser) {
+            const tripData = {
+              locationName: preferenceMarker.name,
+              timestamp: new Date().toISOString(),
+            };
+            await setDoc(
+              doc(fs, "users", currentUser.uid, "tripHistory", generateId()),
+              tripData
+            );
+          } else {
+            console.error("No user logged in!");
           }
         } else {
           console.error("Invalid route data:", data);
+          setRoute([]);
+          setRouteLength(0);
         }
       } else {
-        if (response.status === 404) {
-          toast.error("Location is offroad, please try somewhere else.", {
-            autoClose: 3000,
-          });
-        } else {
-          console.error("Failed to fetch route:", response.status);
-        }
+        console.error("Error fetching route data:", response.status);
+        setRoute([]);
+        setRouteLength(0);
       }
     } catch (error) {
-      console.error("Error fetching route:", error);
+      console.error("Error fetching route data:", error);
+      setRoute([]);
+      setRouteLength(0);
     }
   };
 
@@ -397,9 +439,6 @@ export default function Dashboard() {
               </option>
             ))}
           </select>
-          {/* <button className="trip-start-button" onClick={fetchRoute}>
-          Start Trip
-        </button> */}
           <button className="clear-route-button" onClick={clearRouteAndMarker}>
             Clear Route
           </button>
@@ -470,6 +509,7 @@ export default function Dashboard() {
             className="dashboard-map"
             center={[14.27, 121.46]}
             zoom={12}
+            whenReady={() => setMapReady(true)}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
