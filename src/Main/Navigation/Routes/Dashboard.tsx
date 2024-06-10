@@ -12,6 +12,13 @@ import {
 import { Icon, LeafletMouseEvent } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { auth } from "../../../firebase";
+
+import { fs } from "../../../firebase";
+import { doc, setDoc } from "firebase/firestore";
+
 import MarkerImages from "../../Data/markerImages";
 import FoodMarker from "../Assets/Food_Marker.png";
 import NatureMarker from "../Assets/Nature_Marker.png";
@@ -78,7 +85,7 @@ export default function Dashboard() {
 
   const searchParams = new URLSearchParams(location.search);
   const locationNameParam = searchParams.get("locationName");
-  const [leafletMap, setLeafletMap] = useState(null);
+  const [leafletMap] = useState(null);
 
   // Custom icon for the markers
   const customIcon = new Icon({
@@ -107,12 +114,16 @@ export default function Dashboard() {
     iconSize: [55, 55],
   });
 
-  function useMapEffect(locationNameParam, presetLocations, leafletMap) {
+  function useMapEffect(
+    locationNameParam: any,
+    presetLocations: any,
+    leafletMap: any
+  ) {
     useEffect(() => {
       const timeout = setTimeout(() => {
         if (mapReady && locationNameParam && leafletMap && leafletMap.setView) {
           const matchedLocation = presetLocations.find(
-            (loc) => loc.name === decodeURIComponent(locationNameParam)
+            (loc: any) => loc.name === decodeURIComponent(locationNameParam)
           );
           if (matchedLocation) {
             leafletMap.setView(matchedLocation.coordinates, 5); // Set the view with a specific zoom level
@@ -176,7 +187,7 @@ export default function Dashboard() {
           }, ${selectedLocation?.coordinates?.[1].toFixed(2) as string}`,
           type: selectedLocation.type,
           budget: selectedLocation.budget,
-          image: selectedLocation.image as string,
+          image: selectedLocation.MarkerImage as string,
         },
       ]);
       setInputLocation(""); // clear input location
@@ -251,14 +262,14 @@ export default function Dashboard() {
       };
     }, [useGPS]);
 
-    const handleLocationFound = (e) => {
+    const handleLocationFound = (e: any) => {
       const { lat, lng } = e.latlng;
       const radius = e.accuracy;
 
       L.circle([lat, lng], radius).addTo(map);
 
       // Add the GPS location as a marker
-      const newMarker = {
+      const newMarker: any = {
         id: generateId(),
         geocode: [lat, lng],
         popUp: `Starting at ${lat.toFixed(2)}, ${lng.toFixed(2)}`,
@@ -303,24 +314,53 @@ export default function Dashboard() {
           ],
         }),
       });
-      const data = await response.json();
-      console.log("Openrouteservice API response:", data);
 
-      if (data.features && data.features.length > 0) {
-        const routeCoordinates = data.features[0].geometry.coordinates.map(
-          (coord: [number, number]) => [coord[1], coord[0]]
-        );
-        setRoute(routeCoordinates);
+      if (response.ok) {
+        const data = await response.json();
+        console.log("API Response:", data);
+        if (
+          data &&
+          data.features &&
+          data.features.length > 0 &&
+          data.features[0].geometry &&
+          data.features[0].geometry.coordinates
+        ) {
+          const routeCoordinates = data.features[0].geometry.coordinates.map(
+            (coord: [number, number]) => [coord[1], coord[0]]
+          );
+          const routeDistance =
+            data.features[0].properties.segments[0].distance;
+          setRoute(routeCoordinates);
+          setRouteLength(routeDistance / 1000);
 
-        // Calculate the route length
-        const routeLengthInMeters = data.features[0].properties.segments.reduce(
-          (total: number, segment: any) => total + segment.distance,
-          0
-        );
-        setRouteLength(routeLengthInMeters / 1000); // Convert to kilometers
+          // Save trip information to Firestore
+          const currentUser = auth.currentUser;
+          if (currentUser) {
+            const tripData = {
+              locationName: preferenceMarker.name,
+              timestamp: new Date().toISOString(),
+            };
+            await setDoc(
+              doc(fs, "users", currentUser.uid, "tripHistory", generateId()),
+              tripData
+            );
+          } else {
+            console.error("No user logged in!");
+          }
+        } else {
+          console.error("Invalid route data:", data);
+          setRoute([]);
+          setRouteLength(0);
+        }
+      } else {
+        console.error("Error fetching route data:", response.status);
+        setRoute([]);
+        setRouteLength(0);
       }
     } catch (error) {
-      console.error("Error fetching directions:", error);
+      console.error("Error fetching route data:", error);
+      setRoute([]);
+      setRouteLength(0);
     }
   };
 
@@ -378,40 +418,45 @@ export default function Dashboard() {
   return (
     <>
       <div className="dashboard-main">
-        <input
-          type="text"
-          value={inputLocation}
-          onChange={(e) => setInputLocation(e.target.value)}
-          placeholder="Enter your current location"
-          className="location-input"
-        />
-        <button className="geocode-button" onClick={geocodeLocation}>
-          Geocode Location
-        </button>
-        <select
-          value={selectedPresetLocation}
-          onChange={handlePresetLocationChange}
-          className="preset-location-dropdown"
-        >
-          <option value="" disabled>
-            Select a preset location
-          </option>
-          {presetLocations.map((loc) => (
-            <option key={loc.name} value={loc.name}>
-              {loc.name}
+        <div className="button-container">
+          <input
+            type="text"
+            value={inputLocation}
+            onChange={(e) => setInputLocation(e.target.value)}
+            placeholder="Enter your current location"
+            className="location-input"
+          />
+          <button className="geocode-button" onClick={geocodeLocation}>
+            Geocode Location
+          </button>
+          <select
+            value={selectedPresetLocation}
+            onChange={handlePresetLocationChange}
+            className="preset-location-dropdown"
+          >
+            <option value="" disabled>
+              Select a preset location
             </option>
-          ))}
-        </select>
-        {/* <button className="trip-start-button" onClick={fetchRoute}>
-          Start Trip
-        </button> */}
-        <button className="clear-route-button" onClick={clearRouteAndMarker}>
-          Clear Route
-        </button>
-        <button className="GPS" onClick={() => setUseGPS(true)}>
-          Use GPS
-        </button>
-        <div className="reference-panel">
+            {presetLocations.map((loc) => (
+              <option key={loc.name} value={loc.name}>
+                {loc.name}
+              </option>
+            ))}
+          </select>
+          <button className="clear-route-button" onClick={clearRouteAndMarker}>
+            Clear Route
+          </button>
+          <button className="GPS" onClick={() => setUseGPS(true)}>
+            Use GPS
+          </button>
+          {routeLength !== null && (
+            <div className="route-length">
+              Trip Length: {routeLength.toFixed(2)} km
+            </div>
+          )}
+        </div>
+
+        <div className="preference-panel">
           <h1>Preference</h1>
           <div className="check-icon">
             <img src={FoodMarker} className="pref-icon" />
@@ -475,7 +520,7 @@ export default function Dashboard() {
               url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            {filteredMarkers.map((marker) => {
+            {filteredMarkers.map((marker: any) => {
               // Determine the appropriate icon based on marker type
               let icon;
               switch (marker.type) {
