@@ -1,10 +1,57 @@
+/*Desktop View*/
+@media only screen and (max-height: 1008px) {
+  .navigation {
+    margin-top: 18rem;
+    height: 27rem;
+    width: 100px;
+  }
+  .navigation:hover {
+    width: 300px;
+  }
+  .dashboard-icon {
+    height: 40px;
+    width: 60px;
+  }
+  .nav-logo {
+    width: 240px;
+    height: 80px;
+    margin-left: 1.6rem;
+    clip: rect(0, 3rem, 10rem, 0);
+  }
+  .nav-list {
+    margin-top: 5.8rem;
+  }
+}
+
+/*Laptop View*/
+@media only screen and (max-height: 828px) {
+  .navigation {
+    margin-top: 11rem;
+    height: 24rem;
+    width: 80px;
+  }
+  .navigation:hover {
+    width: 250px;
+  }
+  .dashboard-icon {
+    height: 30px;
+    width: 50px;
+  }
+  .nav-logo {
+    width: 200px;
+    height: 65px;
+    margin-left: 1.3rem;
+    clip: rect(0, 2.5rem, 10rem, 0);
+  }
+  .nav-list {
+    margin-top: 5.1rem;
+  }
+}
+
 .navigation {
   background-color: #b3816e;
   color: #ded2aa;
   position: fixed;
-  margin-top: 11rem;
-  height: 40.8rem;
-  width: 105px;
   transition: width 100ms ease;
   display: flex;
   flex-direction: column;
@@ -13,17 +60,9 @@
   z-index: 2;
 }
 
-.navigation:hover {
-  width: 300px;
-}
-
 .nav-logo {
   position: absolute;
   margin-top: 0.8rem;
-  width: 250px;
-  height: 80px;
-  clip: rect(0, 3rem, 10rem, 0);
-  margin-left: 1.8rem;
   color: #ded2aa;
 }
 
@@ -37,7 +76,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 5.8rem;
 }
 
 .nav-link {
@@ -69,8 +107,6 @@
 }
 
 .dashboard-icon {
-  height: 50px;
-  width: 70px;
   margin-right: 2px;
   flex-shrink: 0;
 }

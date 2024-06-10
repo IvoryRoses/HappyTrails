@@ -22,6 +22,7 @@ export default function About() {
           <FaFacebook className="browser-icon facebook-icon" />
         </a>
       </a>
+      <div className="bottom-header">THIS SECTION IS UNDER CONSTRUCTION</div>
     </>
   );
 }

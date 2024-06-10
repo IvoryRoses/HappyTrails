@@ -1,11 +1,141 @@
+/*Desktop View*/
+@media only screen and (max-height: 1008px) {
+  .authenticate {
+    margin-top: 8rem;
+    padding: 20px 20px;
+  }
+
+  .happy-text {
+    max-width: 200px;
+  }
+
+  .first-spacing {
+    padding: 15px 0px;
+    gap: 7px;
+  }
+
+  .text-header {
+    font-size: 2rem;
+  }
+
+  .inputs {
+    padding: 10px;
+  }
+
+  .text-email-pass {
+    font-size: 15px;
+  }
+
+  .forgot-padding {
+    padding-left: 17rem;
+  }
+
+  .btn-login {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .text-forget {
+    font-size: 7px;
+  }
+
+  .create-padding {
+    padding: 0rem 8.2rem;
+  }
+
+  .already-padding {
+    padding: 0rem 5.8rem;
+  }
+
+  .back-padding {
+    padding: 0rem 9rem;
+  }
+
+  .text-create,
+  .text-already,
+  .text-back {
+    font-size: 7px;
+  }
+
+  .btn-google {
+    padding: 10px;
+    gap: 20px;
+    font-size: 15px;
+  }
+}
+
+/*Laptop View*/
+@media only screen and (max-height: 828px) {
+  .authenticate {
+    margin-top: 6rem;
+    padding: 17px 17px;
+  }
+
+  .happy-text {
+    max-width: 160px;
+  }
+
+  .first-spacing {
+    padding: 10px 0px;
+    gap: 7px;
+  }
+
+  .text-header {
+    font-size: 1.6rem;
+  }
+
+  .inputs {
+    padding: 8px;
+    font-size: 0.7rem;
+  }
+
+  .text-email-pass {
+    font-size: 12px;
+  }
+
+  .forgot-padding {
+    padding-left: 13rem;
+  }
+
+  .btn-login {
+    padding: 7px;
+    font-size: 12px;
+  }
+
+  .text-forget {
+    font-size: 5.5px;
+  }
+
+  .create-padding {
+    padding: 0rem 6.2rem;
+  }
+
+  .already-padding {
+    padding: 0rem 4rem;
+  }
+
+  .back-padding {
+    padding: 0rem 7rem;
+  }
+
+  .text-create,
+  .text-already,
+  .text-back {
+    font-size: 5.5px;
+  }
+
+  .btn-google {
+    padding: 7px;
+    gap: 20px;
+    font-size: 12px;
+  }
+}
+
 /*Main*/
 .authenticate {
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 20px 20px;
-  min-height: 30vh;
-  margin-top: 8rem;
   margin-left: 38%;
   margin-right: 38%;
   border-radius: 10px;
@@ -15,8 +145,6 @@
 .first-spacing {
   display: flex;
   flex-direction: column;
-  padding: 15px 0px;
-  gap: 7px;
 }
 
 /*Every component has this*/
@@ -37,22 +165,18 @@
 .text-email-pass {
   display: flex;
   align-items: center;
-  font-size: 15px;
   color: #273b68;
 }
 
 .inputs {
-  padding: 10px;
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
 }
 
 .btn-login {
-  padding: 10px;
   border: none;
   border-radius: 6px;
-  font-size: 15px;
   font-weight: bold;
   background-color: #ded2aa;
   color: #b3816e;
@@ -74,11 +198,8 @@
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  padding: 10px;
-  gap: 20px;
   border: none;
   border-radius: 6px;
-  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 1.5px 2.5px #d6caca;
@@ -114,30 +235,18 @@
 }
 
 /*Signin.tsx*/
-.forgot-padding {
-  padding-left: 17rem;
-}
 
 .text-forget {
   display: flex;
   justify-content: right;
-  font-size: 7px;
   color: #273b68;
   text-decoration: none;
-}
-
-.create-padding {
-  padding: 0rem 8.2rem;
 }
 
 .happy-div {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
-}
-
-.happy-text {
-  max-width: 200px;
 }
 
 /*Signup.tsx*/
@@ -147,21 +256,13 @@
   padding-top: 30px;
 }
 
-.already-padding {
-  padding: 0rem 5.8rem;
-}
-
 /*ForgetPassword.tsx*/
-.back-padding {
-  padding: 0rem 9rem;
-}
 
 .text-create,
 .text-already,
 .text-back {
   display: flex;
   justify-content: center;
-  font-size: 7px;
   color: #273b68;
   text-decoration: none;
 }

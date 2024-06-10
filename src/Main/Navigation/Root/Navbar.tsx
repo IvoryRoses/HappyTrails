@@ -3,8 +3,6 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { IoHome } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
-import { BiSolidCompass } from "react-icons/bi";
-import { PiGearSixFill } from "react-icons/pi";
 import { TbInfoCircleFilled } from "react-icons/tb";
 import { CiLogout } from "react-icons/ci";
 import PadayoWhite from "../Assets/Padayo_Brown.png";
@@ -43,18 +41,7 @@ export default function NavigationBar() {
               <span className="nav-text">Account</span>
             </Link>
           </li>
-          <li>
-            <Link to="/history" className="nav-link">
-              <BiSolidCompass className="dashboard-icon" />
-              <span className="nav-text">History</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/setting" className="nav-link">
-              <PiGearSixFill className="dashboard-icon" />
-              <span className="nav-text">Setting</span>
-            </Link>
-          </li>
+
           <li>
             <Link to="/about" className="nav-link">
               <TbInfoCircleFilled className="dashboard-icon" />

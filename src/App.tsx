@@ -5,12 +5,11 @@ import "./Main/Style/setting.css";
 import "./Main/Style/authentication.css";
 import "./Main/Style/front.css";
 import "./Main/Style/account.css";
+import "./Main/Style/about.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Main/Navigation/Root/Root";
 import Dashboard from "./Main/Navigation/Routes/Dashboard";
 import Account from "./Main/Navigation/Routes/Account";
-import History from "./Main/Navigation/Routes/History";
-import Setting from "./Main/Navigation/Routes/Setting";
 import About from "./Main/Navigation/Routes/About";
 import Signup from "./Main/Navigation/Aunthenticate/Signup";
 import Signin from "./Main/Navigation/Aunthenticate/Signin";
@@ -48,14 +47,6 @@ const router = createBrowserRouter([
       {
         path: "/account",
         Component: Account,
-      },
-      {
-        path: "/history",
-        Component: History,
-      },
-      {
-        path: "/setting",
-        Component: Setting,
       },
       {
         path: "/about",

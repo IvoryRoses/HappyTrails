@@ -12,9 +12,6 @@ import {
 import { Icon, LeafletMouseEvent } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 import MarkerImages from "../../Data/markerImages";
 import FoodMarker from "../Assets/Food_Marker.png";
 import NatureMarker from "../Assets/Nature_Marker.png";
@@ -77,6 +74,12 @@ export default function Dashboard() {
     useState<boolean>(false);
   const [clickEvent, setClickEvent] = useState<LeafletMouseEvent | null>(null);
 
+  const [mapReady, setMapReady] = useState(false);
+
+  const searchParams = new URLSearchParams(location.search);
+  const locationNameParam = searchParams.get("locationName");
+  const [leafletMap, setLeafletMap] = useState(null);
+
   // Custom icon for the markers
   const customIcon = new Icon({
     iconUrl: UserMarker,
@@ -103,6 +106,30 @@ export default function Dashboard() {
     iconUrl: EntertainmentMarker,
     iconSize: [55, 55],
   });
+
+  function useMapEffect(locationNameParam, presetLocations, leafletMap) {
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        if (mapReady && locationNameParam && leafletMap && leafletMap.setView) {
+          const matchedLocation = presetLocations.find(
+            (loc) => loc.name === decodeURIComponent(locationNameParam)
+          );
+          if (matchedLocation) {
+            leafletMap.setView(matchedLocation.coordinates, 5); // Set the view with a specific zoom level
+          } else {
+            console.error(
+              `Location "${locationNameParam}" not found in preset locations.`
+            );
+          }
+        }
+      }, 10000); // Delay execution for 3 seconds
+
+      // Cleanup function to clear the timeout in case the component unmounts
+      return () => clearTimeout(timeout);
+    }, [mapReady, locationNameParam, presetLocations, leafletMap]);
+  }
+
+  useMapEffect(locationNameParam, presetLocations, leafletMap);
 
   // Function to generate a unique ID for each marker
   const generateId = () => "_" + Math.random().toString(36).substr(2, 9);
@@ -251,6 +278,7 @@ export default function Dashboard() {
     );
   };
 
+  // Function to handle the start of a marker
   const handleStartTripClick = async (preferenceMarker: MarkerType) => {
     if (markers.length === 0) {
       console.error("User marker not found");
@@ -275,46 +303,24 @@ export default function Dashboard() {
           ],
         }),
       });
+      const data = await response.json();
+      console.log("Openrouteservice API response:", data);
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log("API Response:", data);
-        if (
-          data &&
-          data.features &&
-          data.features.length > 0 &&
-          data.features[0].geometry &&
-          data.features[0].geometry.coordinates
-        ) {
-          const routeCoordinates = data.features[0].geometry.coordinates.map(
-            (coordinate: [number, number]) => [coordinate[1], coordinate[0]]
-          );
+      if (data.features && data.features.length > 0) {
+        const routeCoordinates = data.features[0].geometry.coordinates.map(
+          (coord: [number, number]) => [coord[1], coord[0]]
+        );
+        setRoute(routeCoordinates);
 
-          setRoute(routeCoordinates);
-
-          if (
-            data.features[0].properties &&
-            data.features[0].properties.summary &&
-            data.features[0].properties.summary.distance
-          ) {
-            const distanceInMeters =
-              data.features[0].properties.summary.distance;
-            setRouteLength(distanceInMeters / 1000);
-          }
-        } else {
-          console.error("Invalid route data:", data);
-        }
-      } else {
-        if (response.status === 404) {
-          toast.error("Location is offroad, please try somewhere else.", {
-            autoClose: 3000,
-          });
-        } else {
-          console.error("Failed to fetch route:", response.status);
-        }
+        // Calculate the route length
+        const routeLengthInMeters = data.features[0].properties.segments.reduce(
+          (total: number, segment: any) => total + segment.distance,
+          0
+        );
+        setRouteLength(routeLengthInMeters / 1000); // Convert to kilometers
       }
     } catch (error) {
-      console.error("Error fetching route:", error);
+      console.error("Error fetching directions:", error);
     }
   };
 
@@ -372,48 +378,40 @@ export default function Dashboard() {
   return (
     <>
       <div className="dashboard-main">
-        <div className="button-container">
-          <input
-            type="text"
-            value={inputLocation}
-            onChange={(e) => setInputLocation(e.target.value)}
-            placeholder="Enter your current location"
-            className="location-input"
-          />
-          <button className="geocode-button" onClick={geocodeLocation}>
-            Geocode Location
-          </button>
-          <select
-            value={selectedPresetLocation}
-            onChange={handlePresetLocationChange}
-            className="preset-location-dropdown"
-          >
-            <option value="" disabled>
-              Select a preset location
+        <input
+          type="text"
+          value={inputLocation}
+          onChange={(e) => setInputLocation(e.target.value)}
+          placeholder="Enter your current location"
+          className="location-input"
+        />
+        <button className="geocode-button" onClick={geocodeLocation}>
+          Geocode Location
+        </button>
+        <select
+          value={selectedPresetLocation}
+          onChange={handlePresetLocationChange}
+          className="preset-location-dropdown"
+        >
+          <option value="" disabled>
+            Select a preset location
+          </option>
+          {presetLocations.map((loc) => (
+            <option key={loc.name} value={loc.name}>
+              {loc.name}
             </option>
-            {presetLocations.map((loc) => (
-              <option key={loc.name} value={loc.name}>
-                {loc.name}
-              </option>
-            ))}
-          </select>
-          {/* <button className="trip-start-button" onClick={fetchRoute}>
+          ))}
+        </select>
+        {/* <button className="trip-start-button" onClick={fetchRoute}>
           Start Trip
         </button> */}
-          <button className="clear-route-button" onClick={clearRouteAndMarker}>
-            Clear Route
-          </button>
-          <button className="GPS" onClick={() => setUseGPS(true)}>
-            Use GPS
-          </button>
-          {routeLength !== null && (
-            <div className="route-length">
-              Trip Length: {routeLength.toFixed(2)} km
-            </div>
-          )}
-        </div>
-
-        <div className="preference-panel">
+        <button className="clear-route-button" onClick={clearRouteAndMarker}>
+          Clear Route
+        </button>
+        <button className="GPS" onClick={() => setUseGPS(true)}>
+          Use GPS
+        </button>
+        <div className="reference-panel">
           <h1>Preference</h1>
           <div className="check-icon">
             <img src={FoodMarker} className="pref-icon" />
@@ -470,6 +468,7 @@ export default function Dashboard() {
             className="dashboard-map"
             center={[14.27, 121.46]}
             zoom={12}
+            whenReady={() => setMapReady(true)}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

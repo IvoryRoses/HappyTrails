@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { auth, fs } from "../../../firebase";
 import { updateProfile } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, getDocs, collection } from "firebase/firestore";
+import { TiArrowBack } from "react-icons/ti";
+import { TiArrowForward } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
-const Account = () => {
+export default function Account() {
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
   const [userAddress, setUserAddress] = useState<string | null>("");
@@ -11,11 +14,37 @@ const Account = () => {
     null
   );
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [tripHistory, setTripHistory] = useState<
+    { locationName: string; timestamp: string }[]
+  >([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const tripsPerPage = 10;
+
+  const currentUser = auth.currentUser;
+
+  useEffect(() => {
+    const fetchTripHistory = async () => {
+      // Ensure currentUser is not null before fetching trip history
+      if (currentUser) {
+        const querySnapshot = await getDocs(
+          collection(fs, "users", currentUser.uid, "tripHistory")
+        );
+        const trips: { locationName: string; timestamp: string }[] = [];
+        querySnapshot.forEach((doc) => {
+          trips.push(doc.data() as { locationName: string; timestamp: string });
+        });
+        setTripHistory(trips);
+      }
+    };
+
+    // Call fetchTripHistory only when currentUser is not null
+    if (currentUser) {
+      fetchTripHistory();
+    }
+  }, []);
 
   useEffect(() => {
     const fetchUserData = async () => {
-      const currentUser = auth.currentUser;
-
       if (currentUser) {
         // Display details from auth
         setUserEmail(currentUser.email ?? null);
@@ -70,6 +99,22 @@ const Account = () => {
     }
   };
 
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : prevPage));
+  };
+
+  const startIndex = (currentPage - 1) * tripsPerPage;
+  const currentTrips = tripHistory
+    .sort(
+      (a, b) =>
+        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+    )
+    .slice(startIndex, startIndex + tripsPerPage);
+
   return (
     <div className="account-page">
       <div className="account-app">
@@ -95,43 +140,59 @@ const Account = () => {
             />
           )}
         </div>
-        <div className="account-profiler">
-          <p className="p-t account-profile-header">User Preferences</p>
-          <label>
-            <input type="checkbox" /> Food and Cuisine
-          </label>
-          <label>
-            <input type="checkbox" /> Historical and Cultural Heritage Sites
-          </label>
-          <label>
-            <input type="checkbox" /> Nature and Sightseeing
-          </label>
-          <label>
-            <input type="checkbox" /> Entertainment
-          </label>
-          <p className="p-t account-profile-header">Budget Estimate</p>
-          <label>
-            <input type="checkbox" /> Low
-          </label>
-          <label>
-            <input type="checkbox" /> Medium
-          </label>
-          <label>
-            <input type="checkbox" checked /> High
-          </label>
-          <p className="p-t account-profile-header">Mode of Transport</p>
-          <label>
-            <input type="checkbox" /> Public
-          </label>
-          <label>
-            <input type="checkbox" /> Private
-          </label>
-          <button className="p-t open-popup-btn">Update</button>
+        <div className="account-history">
+          <p className="account-profile-header" style={{ textAlign: "center" }}>
+            History
+          </p>
+          <div
+            className="category-history"
+            style={{ backgroundColor: "#b98f68" }}
+          >
+            <p>Name</p>
+            <p>Time & Date </p>
+            <p>Revisit</p>
+          </div>
+          <div id="dashboard-history" className="dashbaord-history">
+            {tripHistory.length === 0 ? (
+              <p>No Past Trip Recorded.</p>
+            ) : (
+              <ul>
+                {currentTrips.map((trip, index) => (
+                  <li key={index} className="trip-item">
+                    <div className="trip-name">{trip.locationName}</div>
+                    <div className="trip-tripstamp">
+                      {new Date(trip.timestamp).toLocaleString()}
+                    </div>
+                    <div className="trip-action">
+                      <Link
+                        to={`/dashboard?locationName=${encodeURIComponent(
+                          trip.locationName
+                        )}`}
+                      >
+                        <button>Revisit</button>
+                      </Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          {tripHistory.length > tripsPerPage && (
+            <div className="pagination">
+              <button onClick={handlePrevPage}>
+                <TiArrowBack className="react-icon" />
+              </button>
+              <div style={{ alignContent: "center" }}>{currentPage}</div>
+              <button onClick={handleNextPage}>
+                <TiArrowForward className="react-icon" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
-};
+}
 
 // PopupForm component
 const PopupForm = ({
@@ -236,5 +297,3 @@ const PopupForm = ({
     </div>
   );
 };
-
-export default Account;
