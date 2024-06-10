@@ -3,8 +3,6 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { IoHome } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
-import { BiSolidCompass } from "react-icons/bi";
-import { PiGearSixFill } from "react-icons/pi";
 import { TbInfoCircleFilled } from "react-icons/tb";
 import { CiLogout } from "react-icons/ci";
 import PadayoWhite from "../Assets/Padayo_Brown.png";

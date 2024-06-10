@@ -10,8 +10,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Main/Navigation/Root/Root";
 import Dashboard from "./Main/Navigation/Routes/Dashboard";
 import Account from "./Main/Navigation/Routes/Account";
-import History from "./Main/Navigation/Routes/History";
-import Setting from "./Main/Navigation/Routes/Setting";
 import About from "./Main/Navigation/Routes/About";
 import Signup from "./Main/Navigation/Aunthenticate/Signup";
 import Signin from "./Main/Navigation/Aunthenticate/Signin";
