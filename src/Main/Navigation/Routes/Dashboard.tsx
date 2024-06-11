@@ -157,8 +157,11 @@ export default function Dashboard() {
       console.log("Geocoding API response:", data);
 
       if (data.features && data.features.length > 0) {
-        const [lng, lat] = data.features[0].geometry.coordinates;
-        const newMarker = {
+        const [lng, lat] = data.features[0].geometry.coordinates as [
+          number,
+          number
+        ];
+        const newMarker: MarkerType = {
           id: generateId(),
           geocode: [lat, lng],
           popUp: `Starting at ${lat.toFixed(2)}, ${lng.toFixed(2)}`,
@@ -373,7 +376,7 @@ export default function Dashboard() {
     setUseGPS(false);
   };
 
-  function Checkbox({ label, value, onChange }) {
+  function Checkbox({ label, value, onChange }: any) {
     return (
       <div className="checkbox-wrapper-5">
         <div className="check">

@@ -1,5 +1,4 @@
 [
-  { "_comment": "HISTORICAL ONLY------------------------------------" },
   {
     "name": "Nuestra Señora De La Candelaria Parish",
     "coordinates": [14.428034204832434, 121.42926102933706],
@@ -95,9 +94,6 @@
     "coordinates": [14.234343034162086, 121.36484113119064],
     "type": "Historical",
     "budget": "Low"
-  },
-  {
-    "_comment": "FOOD ONLY-----------------------------------------------------------------------------------------------"
   },
   {
     "name": "Papa's All Day Breakfast, Ramen by Rolling Carbs, Gracias Bake shop",
@@ -418,10 +414,6 @@
     "budget": "Low"
   },
   {
-    "_comment": "NATURE ONLY------------------------------------------------------------------------------------------------"
-  },
-
-  {
     "name": "Pagsanjan Falls",
     "coordinates": [14.263004075245053, 121.4989271751697],
     "type": "Nature",
@@ -624,9 +616,6 @@
     "coordinates": [14.442952798765404, 121.48665200794727],
     "type": "Nature",
     "budget": "Low"
-  },
-  {
-    "_comment": "ENTERTAINMENT ONLY-----------------------------------------------------------------------------"
   },
   {
     "name": "Balai Sitang Mountain Resort",
