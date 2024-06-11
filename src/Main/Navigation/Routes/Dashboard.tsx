@@ -40,12 +40,14 @@ export default function Dashboard() {
     image?: string;
   };
 
+  type MarkerImagesType = { [key: string]: any };
+
   const preferenceMarker = presetLocations.map((location) => ({
     geocode: location.coordinates,
     type: location.type,
     budget: location.budget,
     name: location.name,
-    image: MarkerImages[location.name],
+    image: (MarkerImages as MarkerImagesType)[location.name],
   }));
 
   useEffect(() => {
@@ -190,7 +192,9 @@ export default function Dashboard() {
           }, ${selectedLocation?.coordinates?.[1].toFixed(2) as string}`,
           type: selectedLocation.type,
           budget: selectedLocation.budget,
-          image: selectedLocation.MarkerImage as string,
+          image: (MarkerImages as MarkerImagesType)[
+            selectedLocation.name
+          ] as string,
         },
       ]);
       setInputLocation(""); // clear input location
@@ -212,7 +216,7 @@ export default function Dashboard() {
   const handleConfirmAddMarker = () => {
     if (clickEvent) {
       const { lat, lng } = clickEvent.latlng; // Access latlng from clickEvent
-      const newMarker = {
+      const newMarker: MarkerType = {
         id: generateId(),
         geocode: [lat, lng],
         popUp: `Starting at ${lat.toFixed(2)}, ${lng.toFixed(2)}`,
