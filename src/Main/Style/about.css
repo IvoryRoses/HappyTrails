@@ -162,7 +162,7 @@
   padding: 1rem;
   text-align: center;
   font-size: 3rem;
-  background-color: #b3816e;
-  color: #ded2aa;
+  background-color: red;
+  color: black;
   z-index: 1;
 }

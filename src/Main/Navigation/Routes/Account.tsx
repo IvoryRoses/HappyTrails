@@ -194,6 +194,7 @@ export default function Account() {
           )}
         </div>
       </div>
+      <div className="bottom-header">THIS SECTION IS UNDER CONSTRUCTION</div>
     </div>
   );
 }
