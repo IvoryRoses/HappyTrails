@@ -20,6 +20,10 @@ export default function Account() {
   const [currentPage, setCurrentPage] = useState(1);
   const tripsPerPage = 10;
 
+  useEffect(() => {
+    document.body.style.backgroundColor = "#8fa894";
+  }, []);
+
   const currentUser = auth.currentUser;
 
   useEffect(() => {

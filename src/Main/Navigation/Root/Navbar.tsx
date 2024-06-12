@@ -41,7 +41,6 @@ export default function NavigationBar() {
               <span className="nav-text">Account</span>
             </Link>
           </li>
-
           <li>
             <Link to="/about" className="nav-link">
               <TbInfoCircleFilled className="dashboard-icon" />

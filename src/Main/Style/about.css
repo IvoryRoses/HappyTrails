@@ -1,3 +1,159 @@
+.about-first {
+  display: flex;
+  justify-content: center;
+  background-color: #c6f1cf;
+  padding-bottom: 10rem;
+}
+
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #b3816e;
+  padding: 2rem;
+  margin-top: 13rem;
+  gap: 2rem;
+  width: 75rem;
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+.about-text-header {
+  font-size: 3.2rem;
+  text-align: center;
+  color: #b3816e;
+  text-shadow: 2px 2px black;
+  background-color: #ded2aa;
+
+  border-radius: 1rem;
+  padding: 0.3rem;
+}
+
+.about-text-para {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-text-para p {
+  font-size: 1.7rem;
+  margin-left: 29rem;
+  margin-right: 4rem;
+  text-align: center;
+}
+
+.about-text-suggestion {
+  font-size: 2.3rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.about-second {
+  display: flex;
+  justify-content: center;
+}
+
+.about-text-suggestion a {
+  color: #477c5b;
+}
+
+.team-container {
+  background: #b3816e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 29rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.team-container img {
+  width: 10rem;
+  height: 10rem;
+  margin: 1rem;
+}
+
+.team-align {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  gap: 2rem;
+  text-align: center;
+}
+
+.team-align .one {
+  background-color: #ded2aa;
+  border-radius: 0.5rem;
+}
+
+.two {
+  background-color: #ded2aa;
+  border-radius: 0.5rem;
+}
+
+.three {
+  background-color: #ded2aa;
+  border-radius: 0.5rem;
+}
+
+.four {
+  background-color: #ded2aa;
+  border-radius: 0.5rem;
+}
+
+.bg-map,
+.bg-first-top,
+.bg-first-bottom,
+.bg-first-right,
+.bg-marker,
+.bg-arrow {
+  position: absolute;
+}
+
+.bg-map {
+  width: 28rem;
+  height: 19rem;
+  top: 25rem;
+  left: 17rem;
+  z-index: 3;
+}
+
+.bg-first-top {
+  top: 0;
+}
+
+.bg-first-bottom {
+  top: 50rem;
+  left: -5rem;
+  width: 30rem;
+  height: 45rem;
+}
+
+.bg-first-right {
+  top: 56rem;
+  right: -5rem;
+  width: 30rem;
+  height: 45rem;
+}
+
+.bg-marker {
+  top: 127rem;
+  left: 29.5rem;
+  width: 3rem;
+  height: 5rem;
+  z-index: 3;
+}
+
+.bg-arrow {
+  top: 59rem;
+  left: 55rem;
+  width: 5rem;
+  height: 5rem;
+  z-index: 3;
+}
+
 .bottom-header {
   position: fixed;
   bottom: 0px;
