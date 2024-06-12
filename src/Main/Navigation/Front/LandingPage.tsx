@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import PadayoWhite from "../Assets/Padayo_White.png";
 import PadayoColor from "../Assets/Padayo_Color.png";
 import LandingPageBG from "../Assets/Landing_Page_BG.png";
+import Polaroid from "../Assets/Land-Pola.png";
 
 export default function LandingPage() {
   const scrollToAbout = (e: MouseEvent<HTMLAnchorElement>) => {
@@ -67,6 +68,7 @@ export default function LandingPage() {
         <h1 className="about-text" id="about">
           About Us
         </h1>
+        <img src={Polaroid} className="bg-pola" />
         <p className="bruh-text">
           With Padayo, travelers can say goodbye to the hassle of traditional
           trip planning and hello to seamless, stress-free exploration. Whether

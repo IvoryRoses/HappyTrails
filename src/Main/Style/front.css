@@ -14,7 +14,7 @@
   }
 
   .about-text {
-    margin-top: 47rem;
+    margin-top: 60rem;
     margin-right: 107rem;
     left: 5rem;
     font-size: 2rem;
@@ -25,6 +25,11 @@
     margin-left: 5rem;
     margin-right: 5rem;
     font-size: 1.5rem;
+    margin-right: 50rem;
+  }
+
+  .bg-pola {
+    top: 67rem;
   }
 }
 
@@ -40,7 +45,7 @@
   }
 
   .about-text {
-    margin-top: 37rem;
+    margin-top: 50rem;
     margin-right: 85rem;
     left: 4rem;
     font-size: 1.6rem;
@@ -51,6 +56,11 @@
     margin-left: 4rem;
     margin-right: 5rem;
     font-size: 1.2rem;
+    margin-right: 40rem;
+  }
+
+  .bg-pola {
+    top: 53rem;
   }
 }
 
@@ -133,6 +143,13 @@
   right: 0px;
   width: 95%;
   position: absolute;
+  z-index: 1;
+}
+
+.bg-pola {
+  position: absolute;
+  right: 0px;
+  width: 50%;
   z-index: 1;
 }
 

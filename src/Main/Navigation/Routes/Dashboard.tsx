@@ -12,7 +12,7 @@ import {
 import { Icon, LeafletMouseEvent } from "leaflet";
 import L from "leaflet";
 import presetLocations from "../../Data/locations.json";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { auth } from "../../../firebase";
 
@@ -296,10 +296,11 @@ export default function Dashboard() {
     );
   };
 
-  // Function to handle the start of a marker
   const handleStartTripClick = async (preferenceMarker: MarkerType) => {
     if (markers.length === 0) {
-      console.error("User marker not found");
+      toast.error("Please add a start marker on the map first.", {
+        autoClose: 3000,
+      });
       return;
     }
 
@@ -360,6 +361,11 @@ export default function Dashboard() {
           setRouteLength(0);
         }
       } else {
+        if (response.status === 404) {
+          toast.error("Location is offroad, please try somewhere else.", {
+            autoClose: 3000,
+          });
+        }
         console.error("Error fetching route data:", response.status);
         setRoute([]);
         setRouteLength(0);
