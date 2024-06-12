@@ -1,13 +1,13 @@
 [
   {
     "name": "Nuestra Señora De La Candelaria Parish",
-    "coordinates": [14.428034204832434, 121.42926102933706],
+    "coordinates": [14.42813, 121.42922],
     "type": "Historical",
     "budget": "Low"
   },
   {
     "name": "San Sebastian Parish Church",
-    "coordinates": [14.299721704626895, 121.4592126453885],
+    "coordinates": [14.297452310989186, 121.45925872469873],
     "type": "Historical",
     "budget": "Low"
   },
@@ -43,7 +43,7 @@
   },
   {
     "name": "St. Gregory the Great Parish Church",
-    "coordinates": [14.148171144677265, 121.47092425880477],
+    "coordinates": [14.146464567225332, 121.47112279960706],
     "type": "Historical",
     "budget": "Low"
   },
@@ -61,42 +61,42 @@
   },
   {
     "name": "The Roman Catholic Parish of San Santiago Apostol",
-    "coordinates": [14.365511978422951, 121.48183800955161],
+    "coordinates": [14.364555833447413, 121.48141152037068],
     "type": "Historical",
     "budget": "Low"
   },
   {
     "name": "Three Crosses of Paete",
-    "coordinates": [14.366010859813935, 121.49200894528924],
+    "coordinates": [14.365001833476219, 121.49218587394603],
     "type": "Historical",
     "budget": "Low"
   },
   {
     "name": "Diocesan Shrine and Parish of Our Lady of Guadalupe",
-    "coordinates": [14.274578091623587, 121.45637896405889],
+    "coordinates": [14.273388709120018, 121.45623779888614],
     "type": "Historical",
     "budget": "Low"
   },
   {
     "name": "Saint Peter of Alcantara Parish Church",
-    "coordinates": [14.381818544196502, 121.47886105235872],
+    "coordinates": [14.380905249247093, 121.47888952624595],
     "type": "Historical",
     "budget": "Low"
   },
   {
     "name": "Nuestra Senora dela Natividad Parish",
-    "coordinates": [14.404996179862827, 121.46820069146277],
+    "coordinates": [14.403684166873687, 121.46823960718591],
     "type": "Historical",
     "budget": "Low"
   },
   {
     "name": "National Shrine and Parish of San Antonio",
-    "coordinates": [14.234343034162086, 121.36484113119064],
+    "coordinates": [14.233720235419568, 121.36458953752827],
     "type": "Historical",
     "budget": "Low"
   },
   {
-    "name": "Papa's All Day Breakfast, Ramen by Rolling Carbs, Gracias Bake shop",
+    "name": "Rolling Carbs Sushi Bar and Ramen",
     "coordinates": [14.42368, 121.44254],
     "type": "Food",
     "budget": "Mid"
@@ -445,7 +445,7 @@
   },
   {
     "name": "Bumbungan Twin Falls",
-    "coordinates": [14.202173905616979, 121.58608019811095],
+    "coordinates": [14.198774761474587, 121.5849642140103],
     "type": "Nature",
     "budget": "Low"
   },
@@ -475,7 +475,7 @@
   },
   {
     "name": "Hulugan Falls",
-    "coordinates": [14.213973283341856, 121.48047330344185],
+    "coordinates": [14.21173953963019, 121.47993211511792],
     "type": "Nature",
     "budget": "Low"
   },
@@ -487,7 +487,7 @@
   },
   {
     "name": "Hidden Falls",
-    "coordinates": [14.21013975463714, 121.48459063174069],
+    "coordinates": [14.21025, 121.48197],
     "type": "Nature",
     "budget": "High"
   },
@@ -501,7 +501,7 @@
     "name": "Balete Tree of Mabitac (Century Tree)",
     "coordinates": [14.453022961620487, 121.37906291878645],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Low"
   },
   {
     "name": "Bayside Baywalk",
@@ -511,7 +511,7 @@
   },
   {
     "name": "Taytay Falls",
-    "coordinates": [14.113360357592972, 121.50824051456743],
+    "coordinates": [14.114601481576146, 121.50530608549198],
     "type": "Nature",
     "budget": "Low"
   },
@@ -535,7 +535,7 @@
   },
   {
     "name": "Matabungca Falls",
-    "coordinates": [14.369026045729914, 121.48968828513276],
+    "coordinates": [14.36491, 121.48646],
     "type": "Nature",
     "budget": "Low"
   },
@@ -559,7 +559,7 @@
   },
   {
     "name": "Buntot Palos Falls",
-    "coordinates": [14.419528516266501, 121.49477631890775],
+    "coordinates": [14.4045, 121.4802],
     "type": "Nature",
     "budget": "Low"
   },
@@ -571,7 +571,7 @@
   },
   {
     "name": "Bulusukan River & Eco Park",
-    "coordinates": [14.247716811622206, 121.35256392182045],
+    "coordinates": [14.245674717999801, 121.35203104639635],
     "type": "Nature",
     "budget": "Low"
   },
@@ -607,7 +607,7 @@
   },
   {
     "name": "Sampaloc Falls",
-    "coordinates": [14.448830060798183, 121.48762307255981],
+    "coordinates": [14.4433, 121.4853],
     "type": "Nature",
     "budget": "Mid"
   },

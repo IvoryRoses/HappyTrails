@@ -158,8 +158,7 @@ const markerImages = {
   "Nuestra Senora dela Natividad Parish": Natividad,
   "National Shrine and Parish of San Antonio": Santonio,
   //FOOD------------------------------------------------------------------------------
-  "Papa's All Day Breakfast, Ramen by Rolling Carbs, Gracias Bake shop":
-    Rollingcarb,
+  "Rolling Carbs Sushi Bar and Ramen": Rollingcarb,
   "Book Hive Cafe": Bookhive,
   "Muni Coffee PH": Muni,
   "Joy's View": Joy,
