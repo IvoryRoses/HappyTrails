@@ -1,5 +1,5 @@
 import "leaflet/dist/leaflet.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -85,11 +85,7 @@ export default function Dashboard() {
     useState<boolean>(false);
   const [clickEvent, setClickEvent] = useState<LeafletMouseEvent | null>(null);
 
-  const [mapReady, setMapReady] = useState(false);
-
-  const searchParams = new URLSearchParams(location.search);
-  const locationNameParam = searchParams.get("locationName");
-  const [leafletMap] = useState(null);
+  const mapRef = useRef<typeof MapContainer>(null);
 
   // Custom icon for the markers
   const customIcon = new Icon({
@@ -117,34 +113,6 @@ export default function Dashboard() {
     iconUrl: EntertainmentMarker,
     iconSize: [55, 55],
   });
-
-  function useMapEffect(
-    locationNameParam: any,
-    presetLocations: any,
-    leafletMap: any
-  ) {
-    useEffect(() => {
-      const timeout = setTimeout(() => {
-        if (mapReady && locationNameParam && leafletMap && leafletMap.setView) {
-          const matchedLocation = presetLocations.find(
-            (loc: any) => loc.name === decodeURIComponent(locationNameParam)
-          );
-          if (matchedLocation) {
-            leafletMap.setView(matchedLocation.coordinates, 5); // Set the view with a specific zoom level
-          } else {
-            console.error(
-              `Location "${locationNameParam}" not found in preset locations.`
-            );
-          }
-        }
-      }, 10000); // Delay execution for 3 seconds
-
-      // Cleanup function to clear the timeout in case the component unmounts
-      return () => clearTimeout(timeout);
-    }, [mapReady, locationNameParam, presetLocations, leafletMap]);
-  }
-
-  useMapEffect(locationNameParam, presetLocations, leafletMap);
 
   // Function to generate a unique ID for each marker
   const generateId = () => "_" + Math.random().toString(36).substr(2, 9);
@@ -202,6 +170,14 @@ export default function Dashboard() {
       setInputLocation(""); // clear input location
     }
     setSelectedPresetLocation(e.target.value);
+  };
+
+  //back to laguna
+  const handleBackToLagunaClick = () => {
+    const map = mapRef.current;
+    if (map) {
+      map.flyTo([14.27, 121.46], 12);
+    }
   };
 
   // Component to handle map clicks
@@ -478,6 +454,9 @@ export default function Dashboard() {
           <button className="GPS" onClick={() => setUseGPS(true)}>
             Use GPS
           </button>
+          <button className="GPS" onClick={handleBackToLagunaClick}>
+            Back to Laguna
+          </button>
           {routeLength !== null && (
             <div className="route-length">
               Trip Length: {routeLength.toFixed(2)} km
@@ -542,7 +521,7 @@ export default function Dashboard() {
             className="dashboard-map"
             center={[14.27, 121.46]}
             zoom={12}
-            whenReady={() => setMapReady(true)}
+            ref={mapRef}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
