@@ -4,7 +4,7 @@ import FirstBottom from "../Assets/Account Assets/About-First-Bottom.png";
 import FirstRight from "../Assets/Account Assets/About_First_Right.png";
 import SecondBottom from "../Assets/Account Assets/About-Second-Bottom.png";
 import Seb from "../Assets/Account Assets/Seb.png";
-import Fred from "../Assets/Account Assets/fred.png";
+import Fred from "../Assets/Account Assets/Fred.png";
 import Just from "../Assets/Account Assets/Just.png";
 import Alex from "../Assets/Account Assets/Alex.png";
 import Marker from "../Assets/Account Assets/Red-Marker.png";
