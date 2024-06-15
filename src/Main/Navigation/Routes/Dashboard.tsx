@@ -76,6 +76,8 @@ export default function Dashboard() {
   // State to manage selected types
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
+  const [priceRange, setPriceRange] = useState<number>(0);
+
   // State to manage selected budgets
   const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
 
@@ -384,6 +386,7 @@ export default function Dashboard() {
     setRouteLength(0);
     setSelectedPresetLocation(""); // clear selected preset location
     setUseGPS(false);
+    setSelectedBudgets([]);
   };
 
   function Checkbox({ label, value, onChange }: any) {
@@ -410,12 +413,25 @@ export default function Dashboard() {
     );
   };
 
-  const handleBudgetChange = (budget: string) => {
-    setSelectedBudgets((prevSelectedBudgets) =>
-      prevSelectedBudgets.includes(budget)
-        ? prevSelectedBudgets.filter((b) => b !== budget)
-        : [...prevSelectedBudgets, budget]
-    );
+  const handlePriceRangeChange = (inputValue: number) => {
+    // Update price range state
+    setPriceRange(inputValue);
+
+    // Update selected budgets based on price range
+    if (inputValue < 500) {
+      setSelectedBudgets(["Low"]);
+    } else if (inputValue >= 501 && inputValue <= 999) {
+      setSelectedBudgets(["Mid"]);
+    } else if (inputValue >= 1000) {
+      setSelectedBudgets(["High"]);
+    } else {
+      setSelectedBudgets([]); // Clear selected budgets if no valid range is selected
+    }
+  };
+
+  const clearPrice = () => {
+    setSelectedBudgets([]);
+    setPriceRange(Number(0));
   };
 
   const filteredMarkers = preferenceMarker.filter((marker) => {
@@ -440,7 +456,7 @@ export default function Dashboard() {
             className="location-input"
           />
           <button className="geocode-button" onClick={geocodeLocation}>
-            Geocode Location
+            Search Location
           </button>
           <select
             value={selectedPresetLocation}
@@ -504,21 +520,21 @@ export default function Dashboard() {
             />
           </div>
           <h1>Budget</h1>
-          <Checkbox
-            label="Low"
-            value={selectedBudgets.includes("Low")}
-            onChange={() => handleBudgetChange("Low")}
+          <input
+            className="price-input"
+            type="number"
+            placeholder="Enter price range: e.g., 1000"
+            value={priceRange}
+            onChange={(e) => setPriceRange(Number(e.target.value))}
           />
-          <Checkbox
-            label="Mid"
-            value={selectedBudgets.includes("Mid")}
-            onChange={() => handleBudgetChange("Mid")}
-          />
-          <Checkbox
-            label="High"
-            value={selectedBudgets.includes("High")}
-            onChange={() => handleBudgetChange("High")}
-          />
+          <div className="price-button-container">
+            <button
+              onClick={() => handlePriceRangeChange(priceRange as number)}
+            >
+              Enter
+            </button>
+            <button onClick={() => clearPrice()}>Clear</button>
+          </div>
         </div>
 
         <div style={{ height: "100%" }}>
