@@ -206,8 +206,4 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 1.5rem;
 }
 
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
 /*Update  */

@@ -17,7 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { auth } from "../../../firebase";
 
 import { fs } from "../../../firebase";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, getDocs, collection } from "firebase/firestore";
 
 import MarkerImages from "../../Data/markerImages";
 import FoodMarker from "../Assets/Food_Marker.png";
@@ -25,6 +25,7 @@ import NatureMarker from "../Assets/Nature_Marker.png";
 import HistoricalMarker from "../Assets/Historical_Marker.png";
 import EntertainmentMarker from "../Assets/Entertainment_Marker.png";
 import UserMarker from "../Assets/User_Marker.png";
+import { TiArrowBack, TiArrowForward } from "react-icons/ti";
 
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
 
@@ -85,7 +86,9 @@ export default function Dashboard() {
     useState<boolean>(false);
   const [clickEvent, setClickEvent] = useState<LeafletMouseEvent | null>(null);
 
-  const mapRef = useRef<typeof MapContainer>(null);
+  const [historyPopup, setHistoryPopup] = useState(false);
+
+  const mapRef = useRef<L.Map | null>(null);
 
   // Custom icon for the markers
   const customIcon = new Icon({
@@ -363,6 +366,17 @@ export default function Dashboard() {
     setSelectedPresetLocation(""); // clear selected preset location
     setUseGPS(false);
     setSelectedBudgets([]);
+    const map = mapRef.current;
+    if (map) {
+      map.eachLayer((layer) => {
+        if (
+          layer instanceof L.Circle &&
+          layer.options.className === "gps-circle"
+        ) {
+          map.removeLayer(layer);
+        }
+      });
+    }
   };
 
   function Checkbox({ label, value, onChange }: any) {
@@ -381,12 +395,17 @@ export default function Dashboard() {
       </div>
     );
   }
+
   const handleTypeChange = (type: string) => {
     setSelectedTypes((prevSelectedTypes) =>
       prevSelectedTypes.includes(type)
         ? prevSelectedTypes.filter((t) => t !== type)
         : [...prevSelectedTypes, type]
     );
+  };
+
+  const handleHistoryPopup = () => {
+    setHistoryPopup(!historyPopup);
   };
 
   const handlePriceRangeChange = (inputValue: number) => {
@@ -457,6 +476,12 @@ export default function Dashboard() {
           <button className="GPS" onClick={handleBackToLagunaClick}>
             Back to Laguna
           </button>
+          <button className="GPS" onClick={handleHistoryPopup}>
+            History
+          </button>
+          {historyPopup && (
+            <HistoryPopup handleClose={handleHistoryPopup} mapRef={mapRef} />
+          )}
           {routeLength !== null && (
             <div className="route-length">
               Trip Length: {routeLength.toFixed(2)} km
@@ -611,3 +636,122 @@ export default function Dashboard() {
     </>
   );
 }
+
+interface HistoryPopupProps {
+  handleClose: () => void;
+  mapRef: React.MutableRefObject<L.Map | null>; // Adjust the type as per your useRef declaration
+}
+
+//History Popup Container
+const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
+  const [tripHistory, setTripHistory] = useState<
+    { locationName: string; timestamp: string }[]
+  >([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const tripsPerPage = 10;
+
+  const currentUser = auth.currentUser;
+
+  const handleRevisit = (locationName: string) => {
+    const location = presetLocations.find((loc) => loc.name === locationName);
+
+    if (location && mapRef.current) {
+      handleClose();
+      const [lat, lng] = location.coordinates;
+      mapRef.current.flyTo([lat, lng], 15); // Adjust zoom level as needed
+    }
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : prevPage));
+  };
+
+  useEffect(() => {
+    const fetchTripHistory = async () => {
+      // Ensure currentUser is not null before fetching trip history
+      if (currentUser) {
+        const querySnapshot = await getDocs(
+          collection(fs, "users", currentUser.uid, "tripHistory")
+        );
+        const trips: { locationName: string; timestamp: string }[] = [];
+        querySnapshot.forEach((doc) => {
+          trips.push(doc.data() as { locationName: string; timestamp: string });
+        });
+        setTripHistory(trips);
+      }
+    };
+
+    if (currentUser) {
+      fetchTripHistory();
+    }
+  }, []);
+
+  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      handleClose();
+    }
+  };
+
+  const startIndex = (currentPage - 1) * tripsPerPage;
+  const currentTrips = tripHistory
+    .sort(
+      (a, b) =>
+        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+    )
+    .slice(startIndex, startIndex + tripsPerPage);
+
+  return (
+    <div className="history-popup" onClick={handleOutsideClick}>
+      <div className="history-container">
+        <p className="account-profile-header" style={{ textAlign: "center" }}>
+          History
+        </p>
+        <div
+          className="category-history"
+          style={{ backgroundColor: "#b98f68" }}
+        >
+          <p>Name</p>
+          <p>Time & Date </p>
+          <p>Revisit</p>
+        </div>
+        <div id="dashboard-history" className="dashbaord-history">
+          {tripHistory.length === 0 ? (
+            <p>No Past Trip Recorded.</p>
+          ) : (
+            <ul>
+              {currentTrips.map((trip, index) => (
+                <li key={index} className="trip-item">
+                  <div className="trip-name">{trip.locationName}</div>
+                  <div className="trip-tripstamp">
+                    {new Date(trip.timestamp).toLocaleString()}
+                  </div>
+                  <div className="trip-action">
+                    <button onClick={() => handleRevisit(trip.locationName)}>
+                      Revisit
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        {tripHistory.length > tripsPerPage && (
+          <div className="pagination">
+            <button onClick={handlePrevPage}>
+              <TiArrowBack className="react-icon" />
+            </button>
+            <div style={{ alignContent: "center" }}>{currentPage}</div>
+            <button onClick={handleNextPage}>
+              <TiArrowForward className="react-icon" />
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
