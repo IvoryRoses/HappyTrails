@@ -13,11 +13,10 @@
     background-color: #4caf50;
     color: white;
     border-radius: 5px;
-    z-index: 1000; /* Ensure the text is above the map */
+    z-index: 999; /* Ensure the text is above the map */
   }
 
   .preference-panel {
-    z-index: 1000;
     width: 15rem;
     top: 16rem;
     gap: 0.5rem;
@@ -75,7 +74,7 @@
   height: 6%;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 999;
 }
 
 .location-input {
@@ -83,7 +82,7 @@
   width: 200px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  z-index: 1000; /* Ensure the input box is above the map */
+  z-index: 999; /* Ensure the input box is above the map */
 }
 
 .geocode-button {
@@ -93,7 +92,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1000; /* Ensure the button is above the map */
+  z-index: 999; /* Ensure the button is above the map */
 }
 
 .geocode-button:hover {
@@ -107,7 +106,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1000; /* Ensure the button is above the map */
+  z-index: 999; /* Ensure the button is above the map */
 }
 
 .clear-route-button:hover {
@@ -119,7 +118,7 @@
   background-color: #4caf50;
   color: white;
   border-radius: 5px;
-  z-index: 1000; /* Ensure the text is above the map */
+  z-index: 999; /* Ensure the text is above the map */
 }
 
 .preset-location-dropdown {
@@ -127,7 +126,7 @@
   width: 220px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  z-index: 1000; /* Ensure the dropdown is above the map */
+  z-index: 999; /* Ensure the dropdown is above the map */
 }
 
 .GPS {
@@ -138,7 +137,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1000; /* Ensure the button is above the map */
+  z-index: 999; /* Ensure the button is above the map */
 }
 
 /*Preference Panel*/
@@ -147,14 +146,13 @@
   justify-content: right;
   flex-direction: column;
   position: absolute;
-  z-index: 1000;
   right: 0px;
   background-color: #b3816e;
   padding: 1rem;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   color: #ded2aa;
-  z-index: 1000;
+  z-index: 500;
 }
 
 .check-icon {
@@ -326,7 +324,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 999;
 }
 
 .confirm-form {
@@ -371,4 +369,28 @@
   text-align: center;
   max-width: 600px;
   padding: 2rem;
+}
+
+/*HistoryPopup*/
+.history-popup {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.history-container {
+  position: relative;
+  width: 70rem;
+  height: 45rem;
+  background-color: #b3816e;
+  border-radius: 10px;
+  border: 5px solid #ded2aa;
+  z-index: 1000;
 }

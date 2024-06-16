@@ -41,22 +41,15 @@ export default function Signup() {
 
   const handleGoogle = async () => {
     const provider = new GoogleAuthProvider();
+
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
       if (user) {
-        const isEmailVerified = user.emailVerified;
-
-        if (isEmailVerified) {
-          await signOut(auth);
-          navigate("/signup");
-          toast.warning("You already have an account. Please log in.");
-        } else {
-          toast.success(
-            "Sign up successful. Please verify your email before logging in."
-          );
-        }
+        await signOut(auth);
+        navigate("/signup");
+        toast.success("Sign Up Successful");
       } else {
         console.error("Google sign-in failed: user is null");
         toast.error("Sign up with Google failed. Please try again.");
