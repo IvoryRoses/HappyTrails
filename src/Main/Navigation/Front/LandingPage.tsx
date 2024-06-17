@@ -1,26 +1,17 @@
 import { Link } from "react-router-dom";
 import { MouseEvent } from "react";
 import { useEffect } from "react";
-import PadayoWhite from "../Assets/Padayo_White.png";
+import PadayoGreen from "../Assets/Padayo_Green.png";
 import PadayoColor from "../Assets/Padayo_Color.png";
 import LandingPageBG from "../Assets/Landing_Page_BG.png";
 import Polaroid from "../Assets/Land-Pola.png";
+import LeavesBG from "../Assets/Leaves_BG.png";
+import { LiaArrowRightSolid } from "react-icons/lia";
 
 export default function LandingPage() {
   const scrollToAbout = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const aboutElement = document.querySelector("#about") as HTMLElement;
-    if (aboutElement) {
-      window.scrollTo({
-        top: aboutElement.offsetTop - 200,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const scrollToHome = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const aboutElement = document.querySelector("#home") as HTMLElement;
     if (aboutElement) {
       window.scrollTo({
         top: aboutElement.offsetTop,
@@ -30,58 +21,80 @@ export default function LandingPage() {
   };
 
   useEffect(() => {
-    document.body.style.backgroundColor = "#E5EBE6";
+    document.body.style.backgroundColor = "#eff8f1";
   }, []);
 
   return (
     <>
-      <div className="trial">
-        <nav className="nav-front">
-          <a onClick={scrollToHome}>
-            <img src={PadayoWhite} className="web-name" />
-          </a>
-          <ul>
-            <li>
-              <a href="#about" onClick={scrollToAbout}>
-                About Us
-              </a>
-            </li>
-            <li>
-              <Link to="/signin">Log In</Link>
-            </li>
-            <li>
-              <button className="front-signup-btn">
-                <Link to="/signup">Sign Up</Link>
-              </button>
-            </li>
-          </ul>
-        </nav>
-        <div className="padayo">
-          <img src={PadayoColor} className="padayo-logo" id="home" />
-          <h1 className="padayo-text">
-            Gain new perspectives and explore your way!
-          </h1>
+      <nav className="nav-front">
+        <a>
+          <img src={PadayoGreen} className="web-name" />
+        </a>
+        <ul>
+          <li>
+            <a
+              href="#about"
+              onClick={scrollToAbout}
+              className="padayo-navbar-about"
+            >
+              About us
+            </a>
+          </li>
+          <li>
+            <Link to="/signin" style={{ zIndex: "5" }}>
+              <button className="front-signup-btn">Sign In</button>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      <div>
+        <div className="padayo-main">
+          <div className="padayo-main-container">
+            <img src={PadayoColor} className="padayo-logo" />
+            <h1 className="padayo-text">
+              Gain new perspectives and explore your way!
+            </h1>
+            <Link
+              to="/signup"
+              className="padayo-main-button"
+              style={{ zIndex: "5" }}
+            >
+              Start Exploring
+              <LiaArrowRightSolid className="arrow-icon" />
+            </Link>
+          </div>
         </div>
-        <div>
-          <img src={LandingPageBG} className="bg-grass" />
+
+        <div className="padayo-about">
+          <div>
+            <h1 className="padayo-about-header" id="about">
+              About Us
+            </h1>
+
+            <div className="padayo-about-text-container">
+              <p>
+                With Padayo, travelers can say goodbye to the hassle of
+                traditional trip planning and hello to seamless, stress-free
+                exploration. Whether you're a solo adventurer, a family on
+                vacation, or a group of friends seeking adventure.
+              </p>
+              <p>
+                Padayo caters to your every need, offering tailored
+                recommendations, detailed information about local landmarks and
+                businesses, and intuitive navigation features to guide you every
+                step of the way. From historic landmarks to trendy cafes, Padayo
+                ensures that every traveler finds exactly what they're looking
+                for. No matter where the road takes you Padayo will guarantee
+                your travels are hassle-free!
+              </p>
+            </div>
+          </div>
         </div>
-        <h1 className="about-text" id="about">
-          About Us
-        </h1>
-        <img src={Polaroid} className="bg-pola" />
-        <p className="bruh-text">
-          With Padayo, travelers can say goodbye to the hassle of traditional
-          trip planning and hello to seamless, stress-free exploration. Whether
-          you're a solo adventurer, a family on vacation, or a group of friends
-          seeking adventure, Padayo caters to your every need, offering tailored
-          recommendations, detailed information about local landmarks and
-          businesses, and intuitive navigation features to guide you every step
-          of the way. From historic landmarks to trendy cafes, Padayo ensures
-          that every traveler finds exactly what they're looking for. No matter
-          where the road takes you Padayo will guarantee your travels are
-          hassle-free!
-        </p>
       </div>
+      <img src={LandingPageBG} className="bg-grass" />
+      <img src={Polaroid} className="bg-pola" />
+      <img src={LeavesBG} className="bg-leaves" />
     </>
   );
 }

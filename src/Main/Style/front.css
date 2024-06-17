@@ -2,79 +2,269 @@
   box-sizing: border-box;
 }
 
+/*Desktop*/
 @media only screen and (max-height: 1008px) {
-  .padayo {
-    top: 13rem;
+  .padayo-main {
+    padding: 10rem 0rem 33rem 0rem;
+  }
+
+  .padayo-main-container {
+    padding-left: 5rem;
+  }
+
+  .padayo-logo {
+    width: 35rem;
+    height: 15rem;
   }
 
   .padayo-text {
-    margin-right: 85rem;
-    font-size: 2rem;
-    padding-left: 3rem;
+    margin-right: 77rem;
+    font-size: 3rem;
+    padding-left: 1.5rem;
   }
 
-  .about-text {
-    margin-top: 60rem;
+  .padayo-about-header {
+    padding-top: 20rem;
     margin-right: 107rem;
     left: 5rem;
     font-size: 2rem;
   }
 
-  .bruh-text {
+  .padayo-about-text-container p {
     margin-top: 2rem;
     margin-left: 5rem;
-    margin-right: 5rem;
     font-size: 1.5rem;
-    margin-right: 50rem;
+    margin-right: 60rem;
+    line-height: 3rem;
+  }
+
+  .padayo-main-button {
+    margin-top: 2rem;
+    margin-left: 7rem;
+    margin-right: 83rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    border-radius: 2rem;
   }
 
   .bg-pola {
     top: 67rem;
   }
-}
 
-@media only screen and (max-height: 828px) {
-  .padayo {
-    top: 11rem;
+  .bg-grass {
+    top: -1rem;
+    right: -10rem;
+    height: 69rem;
+    width: 78rem;
   }
 
-  .padayo-text {
-    margin-right: 67rem;
-    font-size: 1.6rem;
-    padding-left: 2rem;
-  }
-
-  .about-text {
-    margin-top: 50rem;
-    margin-right: 85rem;
-    left: 4rem;
-    font-size: 1.6rem;
-  }
-
-  .bruh-text {
-    margin-top: 1.4rem;
-    margin-left: 4rem;
-    margin-right: 5rem;
-    font-size: 1.2rem;
-    margin-right: 40rem;
+  .bg-leaves {
+    top: 44.5rem;
+    left: 9rem;
+    width: 29rem;
+    height: 8rem;
   }
 
   .bg-pola {
-    top: 53rem;
+    top: 90rem;
+    right: 10rem;
+    width: 40rem;
+    height: 40rem;
+  }
+
+  .arrow-icon {
+    margin-left: 5px;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .padayo-about {
+    background-size: cover;
+    padding-bottom: 10rem;
+  }
+
+  .nav-front {
+    font-size: 1.5rem;
+    gap: 2rem;
+    padding: 3.5rem 5rem 0rem 4rem;
+  }
+
+  .web-name {
+    width: 4.5rem;
+    height: 6rem;
+  }
+
+  .front-signup-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
   }
 }
 
+/*Laptop*/
+@media only screen and (max-height: 828px) {
+  .padayo-main {
+    padding: 8rem 0rem 26rem 0rem;
+  }
+
+  .padayo-main-container {
+    padding-left: 4rem;
+  }
+
+  .padayo-logo {
+    width: 28rem;
+    height: 12rem;
+  }
+
+  .padayo-text {
+    margin-right: 61rem;
+    font-size: 2.4rem;
+    padding-left: 1rem;
+  }
+
+  .padayo-about-header {
+    padding-top: 16rem;
+    margin-right: 60rem;
+    left: 4rem;
+    font-size: 1.5rem;
+  }
+
+  .padayo-about-text-container p {
+    margin-top: 2rem;
+    margin-left: 4rem;
+    font-size: 1.2rem;
+    margin-right: 48rem;
+    line-height: 2.3rem;
+  }
+
+  .padayo-main-button {
+    margin-top: 1.3rem;
+    margin-left: 5.5rem;
+    margin-right: 66.5rem;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border-radius: 2rem;
+  }
+
+  .bg-grass {
+    top: -0.8rem;
+    right: -7.7rem;
+    height: 55.3rem;
+    width: 62.1rem;
+  }
+
+  .bg-leaves {
+    top: 35.5rem;
+    left: 7rem;
+    width: 23.5rem;
+    height: 6rem;
+  }
+
+  .bg-pola {
+    top: 72rem;
+    right: 6rem;
+    width: 34rem;
+    height: 34rem;
+  }
+
+  .arrow-icon {
+    margin-left: 5px;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .padayo-about {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 8rem;
+  }
+
+  .nav-front {
+    font-size: 1.2rem;
+    gap: 1.4rem;
+    padding: 2.5rem 4rem 0rem 3rem;
+  }
+
+  .web-name {
+    width: 4rem;
+    height: 5.2rem;
+  }
+
+  .front-signup-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+/*Global*/
+
+.padayo-main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.padayo-logo {
+  z-index: 3;
+}
+
+.padayo-text {
+  margin-top: 1rem;
+  color: #487e5c;
+  z-index: 3;
+}
+
+.padayo-main-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, #487e5c, #63741b);
+  color: white;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.padayo-about {
+  background-image: url(../Navigation/Assets/Church_BG.png);
+}
+
+.padayo-about-header {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.padayo-about-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: justify;
+  color: white;
+}
+
+.bg-grass {
+  position: absolute;
+}
+
+.bg-pola {
+  position: absolute;
+}
+
+.bg-leaves {
+  position: absolute;
+}
+
+/*Navigation Bar Landing Page*/
 .nav-front {
   top: 0;
-  background-color: #b5c18e;
-  color: white;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  gap: 2rem;
-  padding: 0rem 2rem;
-  z-index: 3;
+  color: #639073;
+  z-index: 10;
   flex-shrink: 0;
 }
 
@@ -84,6 +274,7 @@
   list-style: none;
   display: flex;
   gap: 2rem;
+  flex-grow: 1;
 }
 
 .nav-front a {
@@ -96,70 +287,24 @@
   align-items: center;
 }
 
+.nav-front li:last-child {
+  margin-left: auto;
+}
+
 .web-name {
-  width: 10rem;
-  height: 5rem;
   z-index: 2;
-  cursor: pointer;
 }
 
 .front-signup-btn {
-  padding: 12px;
   border: none;
-  border-radius: 18px;
-  font-size: 15px;
-  font-weight: bold;
-  background-color: #ded2aa;
+  border-radius: 2rem;
+  background-image: linear-gradient(90deg, #f3c283, #ffae5a);
   transition-duration: 0.4s;
-  color: #b3816e;
+  color: #639073;
   cursor: pointer;
+  z-index: 5;
 }
 
 .front-signup-btn:hover {
-  background-color: #b3816e;
-  color: #ded2aa;
   transition-duration: 0.4s;
-}
-
-.padayo {
-  position: relative;
-  left: 2rem;
-  margin-right: 2rem;
-  z-index: 2;
-}
-
-.padayo-logo {
-  z-index: 2;
-  width: 25%;
-}
-
-.padayo-text {
-  margin-top: 1rem;
-  color: #487e5c;
-}
-
-.bg-grass {
-  top: 1rem;
-  right: 0px;
-  width: 95%;
-  position: absolute;
-  z-index: 1;
-}
-
-.bg-pola {
-  position: absolute;
-  right: 0px;
-  width: 50%;
-  z-index: 1;
-}
-
-.about-text {
-  position: relative;
-  z-index: 2;
-  color: #487e5c;
-}
-
-.bruh-text {
-  text-align: justify;
-  color: #487e5c;
 }
