@@ -6,19 +6,9 @@
     overflow: hidden;
   }
 
-  .route-length {
-    top: 130px; /* Adjust this value to place the text below the buttons */
-    right: 50px;
-    padding: 10px 30px;
-    background-color: #4caf50;
-    color: white;
-    border-radius: 5px;
-    z-index: 999; /* Ensure the text is above the map */
-  }
-
   .preference-panel {
-    width: 15rem;
-    top: 16rem;
+    width: 23rem;
+    top: 10rem;
     gap: 0.5rem;
     font-size: 1rem;
   }
@@ -42,8 +32,8 @@
   }
 
   .preference-panel {
-    width: 13rem;
-    top: 11rem;
+    width: 23rem;
+    top: 4rem;
     gap: 0.5rem;
     font-size: 0.8rem;
   }
@@ -64,82 +54,6 @@
   z-index: 1;
 }
 
-.button-container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  height: 6%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
-.location-input {
-  padding: 10px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  z-index: 999; /* Ensure the input box is above the map */
-}
-
-.geocode-button {
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 999; /* Ensure the button is above the map */
-}
-
-.geocode-button:hover {
-  background-color: #45a049;
-}
-
-.clear-route-button {
-  padding: 10px;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 999; /* Ensure the button is above the map */
-}
-
-.clear-route-button:hover {
-  background-color: rgb(206, 0, 0);
-}
-
-.route-length {
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border-radius: 5px;
-  z-index: 999; /* Ensure the text is above the map */
-}
-
-.preset-location-dropdown {
-  padding: 10px;
-  width: 220px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  z-index: 999; /* Ensure the dropdown is above the map */
-}
-
-.GPS {
-  right: 50px;
-  padding: 10px 20px;
-  background-color: #2196f3;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 999; /* Ensure the button is above the map */
-}
-
 /*Preference Panel*/
 .preference-panel {
   display: flex;
@@ -155,8 +69,134 @@
   z-index: 500;
 }
 
+.location-wrapper {
+  position: relative;
+}
+
+.location-input {
+  height: 40px;
+  width: 100%;
+  background: white;
+  color: black;
+  border-radius: 1rem;
+  border: none;
+  padding-left: 1rem;
+  padding-right: 5.2rem;
+  font-size: 1.2rem;
+}
+
+.gps-button {
+  position: absolute;
+  right: 0;
+  height: 40px;
+  width: 5rem;
+  color: black;
+  background: #42f188;
+  border-radius: 1rem;
+  border-width: 1.5px;
+  cursor: pointer;
+}
+
+.gps-button:hover {
+  background-color: #45a049;
+}
+
+.geocode-button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.geocode-button:hover {
+  background-color: #45a049;
+}
+
+.clear-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.laguna-button {
+  padding: 10px;
+  background-color: #d4c7a3;
+  color: black;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.laguna-button:hover {
+  background-color: #d4c7a375;
+}
+
+.clear-route-button {
+  padding: 10px;
+  background-color: #ff713a;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+}
+
+.clear-route-button:hover {
+  background-color: #ff723a8a;
+}
+
+.price-input {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 1rem;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.price-button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-button-container button {
+  border-radius: 1rem;
+  padding: 10px 1rem;
+  color: black;
+  background-color: #d4c7a3;
+  border: none;
+  font-size: 1rem;
+  transition-duration: 0.4s;
+}
+
+.price-button-container button:hover {
+  background-color: #d4c7a37c;
+}
+
 .check-icon {
   display: flex;
+}
+
+.route-length {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.history-button {
+  display: flex;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 /*Checkbox*/
@@ -283,36 +323,6 @@
   margin-bottom: 5px;
 }
 
-.price-input {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.price-button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.price-button-container button {
-  border-radius: 8px;
-  padding: 4px;
-  color: #ded2aa;
-  background-color: #b3816e;
-  border: 1px solid #ded2aa;
-  font-size: 1rem;
-  transition-duration: 0.4s;
-}
-
-.price-button-container button:hover {
-  color: #b3816e;
-  background-color: #ded2aa;
-  border: 1px solid #b3816e;
-}
-
 /*Confirmation Form*/
 .confirm-overlay {
   position: fixed;
@@ -371,6 +381,12 @@
   padding: 2rem;
 }
 
+.popup-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /*HistoryPopup*/
 .history-popup {
   position: fixed;
@@ -386,6 +402,30 @@
 }
 
 .history-container {
+  position: relative;
+  width: 70rem;
+  height: 45rem;
+  background-color: #b3816e;
+  border-radius: 10px;
+  border: 5px solid #ded2aa;
+  z-index: 1000;
+}
+
+/*ManualPopup*/
+.manual-popup {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.manual-container {
   position: relative;
   width: 70rem;
   height: 45rem;

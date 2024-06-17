@@ -25,9 +25,16 @@ import NatureMarker from "../Assets/Nature_Marker.png";
 import HistoricalMarker from "../Assets/Historical_Marker.png";
 import EntertainmentMarker from "../Assets/Entertainment_Marker.png";
 import UserMarker from "../Assets/User_Marker.png";
+import Manual from "../Assets/Manual.png";
 import { TiArrowBack, TiArrowForward } from "react-icons/ti";
+import { FaTrashAlt, FaHistory, FaQuestion } from "react-icons/fa";
 
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
+
+interface HistoryPopupProps {
+  handleClose: () => void;
+  mapRef: React.MutableRefObject<L.Map | null>; // Adjust the type as per your useRef declaration
+}
 
 export default function Dashboard() {
   // Define the type for markers
@@ -67,10 +74,6 @@ export default function Dashboard() {
   // State to hold the user input location
   const [inputLocation, setInputLocation] = useState<string>("");
 
-  // State to hold the selected preset location
-  const [selectedPresetLocation, setSelectedPresetLocation] =
-    useState<string>("");
-
   // State to track GPS activation
   const [useGPS, setUseGPS] = useState<boolean>(false);
 
@@ -87,6 +90,8 @@ export default function Dashboard() {
   const [clickEvent, setClickEvent] = useState<LeafletMouseEvent | null>(null);
 
   const [historyPopup, setHistoryPopup] = useState(false);
+
+  const [showManual, setShowManual] = useState(false);
 
   const mapRef = useRef<L.Map | null>(null);
 
@@ -142,37 +147,26 @@ export default function Dashboard() {
           popUp: `Starting at ${lat.toFixed(2)}, ${lng.toFixed(2)}`,
         };
         setMarkers([newMarker]);
+        const map = mapRef.current;
+        if (map) {
+          map.flyTo([lat, lng], 15); // Adjust the zoom level as needed
+        }
       }
     } catch (error) {
       console.error("Error fetching geocoding data:", error);
     }
   };
 
-  // Function to handle preset location selection
-  const handlePresetLocationChange = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const selectedLocation = presetLocations.find(
-      (loc) => loc.name === e.target.value
-    );
-    if (selectedLocation) {
-      setMarkers([
-        {
-          id: generateId(),
-          geocode: selectedLocation.coordinates as [number, number],
-          popUp: `Starting at ${
-            selectedLocation?.coordinates?.[0].toFixed(2) as string
-          }, ${selectedLocation?.coordinates?.[1].toFixed(2) as string}`,
-          type: selectedLocation.type,
-          budget: selectedLocation.budget,
-          image: (MarkerImages as MarkerImagesType)[
-            selectedLocation.name
-          ] as string,
-        },
-      ]);
-      setInputLocation(""); // clear input location
+  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+
+    if (!target.closest(".manual-container")) {
+      setShowManual(false);
     }
-    setSelectedPresetLocation(e.target.value);
+  };
+
+  const handleManual = () => {
+    setShowManual(!showManual);
   };
 
   //back to laguna
@@ -363,7 +357,6 @@ export default function Dashboard() {
     setMarkers([]);
     setRoute([]);
     setRouteLength(0);
-    setSelectedPresetLocation(""); // clear selected preset location
     setUseGPS(false);
     setSelectedBudgets([]);
     const map = mapRef.current;
@@ -442,54 +435,50 @@ export default function Dashboard() {
   return (
     <>
       <div className="dashboard-main">
-        <div className="button-container">
-          <input
-            type="text"
-            value={inputLocation}
-            onChange={(e) => setInputLocation(e.target.value)}
-            placeholder="Enter your current location"
-            className="location-input"
-          />
+        <div className="preference-panel">
+          <div className="location-wrapper">
+            <input
+              type="text"
+              value={inputLocation}
+              onChange={(e) => setInputLocation(e.target.value)}
+              placeholder="Enter your current location"
+              className="location-input"
+            />
+            <button className="gps-button" onClick={() => setUseGPS(true)}>
+              Use GPS
+            </button>
+          </div>
           <button className="geocode-button" onClick={geocodeLocation}>
             Search Location
           </button>
-          <select
-            value={selectedPresetLocation}
-            onChange={handlePresetLocationChange}
-            className="preset-location-dropdown"
-          >
-            <option value="" disabled>
-              Select a preset location
-            </option>
-            {presetLocations.map((loc) => (
-              <option key={loc.name} value={loc.name}>
-                {loc.name}
-              </option>
-            ))}
-          </select>
-          <button className="clear-route-button" onClick={clearRouteAndMarker}>
-            Clear Route
-          </button>
-          <button className="GPS" onClick={() => setUseGPS(true)}>
-            Use GPS
-          </button>
-          <button className="GPS" onClick={handleBackToLagunaClick}>
-            Back to Laguna
-          </button>
-          <button className="GPS" onClick={handleHistoryPopup}>
-            History
-          </button>
-          {historyPopup && (
-            <HistoryPopup handleClose={handleHistoryPopup} mapRef={mapRef} />
-          )}
-          {routeLength !== null && (
-            <div className="route-length">
-              Trip Length: {routeLength.toFixed(2)} km
-            </div>
-          )}
-        </div>
-
-        <div className="preference-panel">
+          <div className="clear-wrapper">
+            <button className="laguna-button" onClick={handleBackToLagunaClick}>
+              Back to Laguna
+            </button>
+            <button
+              className="clear-route-button"
+              onClick={clearRouteAndMarker}
+            >
+              <FaTrashAlt style={{ marginRight: "3px" }} />
+              Clear Route
+            </button>
+          </div>
+          <h1 style={{ color: "#ded2aa" }}>Budget</h1>
+          <input
+            className="price-input"
+            type="number"
+            placeholder="Enter price range: e.g., 1000"
+            value={priceRange}
+            onChange={(e) => setPriceRange(Number(e.target.value))}
+          />
+          <div className="price-button-container">
+            <button
+              onClick={() => handlePriceRangeChange(priceRange as number)}
+            >
+              Enter
+            </button>
+            <button onClick={() => clearPrice()}>Clear</button>
+          </div>
           <h1>Preference</h1>
           <div className="check-icon">
             <img src={FoodMarker} className="pref-icon" />
@@ -523,21 +512,34 @@ export default function Dashboard() {
               onChange={() => handleTypeChange("Entertainment")}
             />
           </div>
-          <h1>Budget</h1>
-          <input
-            className="price-input"
-            type="number"
-            placeholder="Enter price range: e.g., 1000"
-            value={priceRange}
-            onChange={(e) => setPriceRange(Number(e.target.value))}
-          />
-          <div className="price-button-container">
-            <button
-              onClick={() => handlePriceRangeChange(priceRange as number)}
-            >
-              Enter
+          {routeLength !== null && (
+            <p className="route-length">
+              Trip Length: {routeLength.toFixed(2)} km
+            </p>
+          )}
+          <div className="popup-wrapper">
+            <button className="history-button" onClick={handleHistoryPopup}>
+              <FaHistory style={{ marginRight: "8px" }} />
+              History
             </button>
-            <button onClick={() => clearPrice()}>Clear</button>
+            {historyPopup && (
+              <HistoryPopup handleClose={handleHistoryPopup} mapRef={mapRef} />
+            )}
+            <FaQuestion
+              onClick={handleManual}
+              style={{ width: "1.5rem", height: "1.5rem", cursor: "pointer" }}
+            />
+            {showManual && (
+              <div className="manual-popup" onClick={handleOutsideClick}>
+                <div className="manual-container">
+                  <img
+                    src={Manual}
+                    style={{ height: "44.4rem", width: "69.4rem" }}
+                    alt="Manual"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -635,11 +637,6 @@ export default function Dashboard() {
       </div>
     </>
   );
-}
-
-interface HistoryPopupProps {
-  handleClose: () => void;
-  mapRef: React.MutableRefObject<L.Map | null>; // Adjust the type as per your useRef declaration
 }
 
 //History Popup Container
