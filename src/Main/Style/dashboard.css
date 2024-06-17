@@ -21,6 +21,11 @@
   .checkbox-wrapper-5 .check {
     --size: 20px; /* Adjust size as needed */
   }
+
+  .manual-container {
+    width: 80rem;
+    height: 55rem;
+  }
 }
 
 /*Laptop View*/
@@ -41,6 +46,11 @@
   .pref-icon {
     width: 3rem;
     height: 3rem;
+  }
+
+  .manual-container {
+    width: 65rem;
+    height: 45rem;
   }
 }
 
@@ -427,10 +437,14 @@
 
 .manual-container {
   position: relative;
-  width: 70rem;
-  height: 45rem;
   background-color: #b3816e;
   border-radius: 10px;
   border: 5px solid #ded2aa;
   z-index: 1000;
+}
+
+.manual-container {
+  background-image: url(../Navigation/Assets/Manual.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }

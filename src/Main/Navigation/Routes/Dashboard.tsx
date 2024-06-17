@@ -25,7 +25,6 @@ import NatureMarker from "../Assets/Nature_Marker.png";
 import HistoricalMarker from "../Assets/Historical_Marker.png";
 import EntertainmentMarker from "../Assets/Entertainment_Marker.png";
 import UserMarker from "../Assets/User_Marker.png";
-import Manual from "../Assets/Manual.png";
 import { TiArrowBack, TiArrowForward } from "react-icons/ti";
 import { FaTrashAlt, FaHistory, FaQuestion } from "react-icons/fa";
 
@@ -232,13 +231,20 @@ export default function Dashboard() {
   // Component to handle GPS location
   function GPSLocationHandler() {
     const map = useMap();
+    const gpsCircleRef = useRef<L.Circle | null>(null);
 
     useEffect(() => {
       if (useGPS) {
         map.locate({ setView: true, watch: true });
         map.on("locationfound", handleLocationFound);
+      } else {
+        // Stop watching location and remove circle when useGPS is false
+        map.stopLocate();
+        if (gpsCircleRef.current) {
+          map.removeLayer(gpsCircleRef.current);
+          gpsCircleRef.current = null;
+        }
       }
-
       return () => {
         map.off("locationfound", handleLocationFound);
       };
@@ -248,7 +254,16 @@ export default function Dashboard() {
       const { lat, lng } = e.latlng;
       const radius = e.accuracy;
 
-      L.circle([lat, lng], radius).addTo(map);
+      if (gpsCircleRef.current) {
+        map.removeLayer(gpsCircleRef.current);
+      }
+
+      const newCircle = L.circle([lat, lng], {
+        radius,
+        className: "gps-circle",
+      }).addTo(map);
+
+      gpsCircleRef.current = newCircle;
 
       // Add the GPS location as a marker
       const newMarker: any = {
@@ -531,13 +546,7 @@ export default function Dashboard() {
             />
             {showManual && (
               <div className="manual-popup" onClick={handleOutsideClick}>
-                <div className="manual-container">
-                  <img
-                    src={Manual}
-                    style={{ height: "44.4rem", width: "69.4rem" }}
-                    alt="Manual"
-                  />
-                </div>
+                <div className="manual-container"></div>
               </div>
             )}
           </div>
