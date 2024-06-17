@@ -2,7 +2,7 @@
 @media only screen and (max-height: 1008px) {
   .navigation {
     margin-top: 18rem;
-    height: 27rem;
+    height: 22rem;
     width: 100px;
   }
   .navigation:hover {
@@ -27,7 +27,7 @@
 @media only screen and (max-height: 828px) {
   .navigation {
     margin-top: 11rem;
-    height: 24rem;
+    height: 19.5rem;
     width: 80px;
   }
   .navigation:hover {

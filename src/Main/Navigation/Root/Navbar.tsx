@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { IoHome } from "react-icons/io5";
-import { MdAccountCircle } from "react-icons/md";
 import { TbInfoCircleFilled } from "react-icons/tb";
 import { CiLogout } from "react-icons/ci";
 import PadayoWhite from "../Assets/Padayo_Brown.png";
@@ -33,12 +32,6 @@ export default function NavigationBar() {
             <Link to="/dashboard" className="nav-link">
               <IoHome className="dashboard-icon" />
               <span className="nav-text">Dashboard</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/account" className="nav-link">
-              <MdAccountCircle className="dashboard-icon" />
-              <span className="nav-text">Account</span>
             </Link>
           </li>
           <li>

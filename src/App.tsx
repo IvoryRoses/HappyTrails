@@ -9,7 +9,6 @@ import "./Main/Style/about.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Main/Navigation/Root/Root";
 import Dashboard from "./Main/Navigation/Routes/Dashboard";
-import Account from "./Main/Navigation/Routes/Account";
 import About from "./Main/Navigation/Routes/About";
 import Signup from "./Main/Navigation/Aunthenticate/Signup";
 import Signin from "./Main/Navigation/Aunthenticate/Signin";
@@ -43,10 +42,6 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         Component: Dashboard,
-      },
-      {
-        path: "/account",
-        Component: Account,
       },
       {
         path: "/about",

@@ -185,6 +185,13 @@
   transition-duration: 0.4s;
 }
 
+label {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0rem;
+  gap: 10px;
+}
+
 .price-button-container button:hover {
   background-color: #d4c7a37c;
 }
