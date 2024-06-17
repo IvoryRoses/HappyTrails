@@ -55,25 +55,25 @@ export default function About() {
           <h1>Behind The Project: Padayo</h1>
           <div className="team-align">
             <div className="one">
-              <p>Abuyo, Sebastian</p>
+              <p>Sebastian Abuyo</p>
               <img src={Seb} />
               <p>Project Manager</p>
               <p>Lead Programmer</p>
             </div>
             <div className="two">
-              <p>Romero, Justine</p>
+              <p>Justine Romero</p>
               <img src={Just} />
               <p>Asst. Project Manager</p>
-              <p>Algoritm Specialist</p>
+              <p>Algorithm Specialist</p>
             </div>
             <div className="three">
-              <p>Atienza, Dominic Fred</p>
+              <p>Fred Dominic Atienza</p>
               <img src={Fred} />
               <p>Document Manager</p>
               <p>UI Designer</p>
             </div>
             <div className="four">
-              <p>Roman, Alessandra</p>
+              <p>Alessandra Roman</p>
               <img src={Alex} />
               <p>Lead Researcher</p>
               <p>Data Manager</p>
