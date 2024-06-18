@@ -79,7 +79,7 @@ export default function Dashboard() {
   // State to manage selected types
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
-  const [priceRange, setPriceRange] = useState<number>(0);
+  const [priceRange, setPriceRange] = useState<string>("");
 
   // State to manage selected budgets
   const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
@@ -416,16 +416,18 @@ export default function Dashboard() {
     setHistoryPopup(!historyPopup);
   };
 
-  const handlePriceRangeChange = (inputValue: number) => {
+  const handlePriceRangeChange = (inputValue: string) => {
+    const numericValue = Number(inputValue);
+
     // Update price range state
     setPriceRange(inputValue);
 
     // Update selected budgets based on price range
-    if (inputValue < 500) {
+    if (numericValue >= 1 && numericValue <= 500) {
       setSelectedBudgets(["Low"]);
-    } else if (inputValue >= 501 && inputValue <= 999) {
+    } else if (numericValue >= 501 && numericValue <= 999) {
       setSelectedBudgets(["Mid"]);
-    } else if (inputValue >= 1000) {
+    } else if (numericValue >= 1000) {
       setSelectedBudgets(["High"]);
     } else {
       setSelectedBudgets([]); // Clear selected budgets if no valid range is selected
@@ -434,7 +436,7 @@ export default function Dashboard() {
 
   const clearPrice = () => {
     setSelectedBudgets([]);
-    setPriceRange(Number(0));
+    setPriceRange("");
   };
 
   const filteredMarkers = preferenceMarker.filter((marker) => {
@@ -478,21 +480,19 @@ export default function Dashboard() {
               Clear Route
             </button>
           </div>
-          <h1 style={{ color: "#ded2aa" }}>Budget</h1>
-          <input
-            className="price-input"
-            type="number"
-            placeholder="Enter price range: e.g., 1000"
-            value={priceRange}
-            onChange={(e) => setPriceRange(Number(e.target.value))}
-          />
-          <div className="price-button-container">
-            <button
-              onClick={() => handlePriceRangeChange(priceRange as number)}
-            >
-              Enter
+          <h1>Budget</h1>
+          <div className="price-wrapper">
+            <input
+              className="price-input"
+              type="number"
+              placeholder="Enter price range: e.g., 1000"
+              value={priceRange}
+              onChange={(e) => handlePriceRangeChange(e.target.value)}
+            />
+
+            <button className="price-clear-button" onClick={() => clearPrice()}>
+              Clear
             </button>
-            <button onClick={() => clearPrice()}>Clear</button>
           </div>
           <h1>Preference</h1>
           <div className="check-icon">
@@ -714,30 +714,30 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
   return (
     <div className="history-popup" onClick={handleOutsideClick}>
       <div className="history-container">
-        <p className="account-profile-header" style={{ textAlign: "center" }}>
-          History
-        </p>
-        <div
-          className="category-history"
-          style={{ backgroundColor: "#b98f68" }}
-        >
-          <p>Name</p>
-          <p>Time & Date </p>
-          <p>Revisit</p>
+        <div className="history-header">
+          <p className="main-header" style={{ textAlign: "left" }}>
+            History
+          </p>
+          <p className="second-header"> | Repeat past travels</p>
         </div>
-        <div id="dashboard-history" className="dashbaord-history">
+        <div id="dashboard-history" className="dashboard-history">
           {tripHistory.length === 0 ? (
             <p>No Past Trip Recorded.</p>
           ) : (
             <ul>
               {currentTrips.map((trip, index) => (
                 <li key={index} className="trip-item">
-                  <div className="trip-name">{trip.locationName}</div>
-                  <div className="trip-tripstamp">
-                    {new Date(trip.timestamp).toLocaleString()}
+                  <div className="history-items">
+                    <div className="trip-name">{trip.locationName}</div>
+                    <div className="trip-tripstamp">
+                      {new Date(trip.timestamp).toLocaleString()}
+                    </div>
                   </div>
                   <div className="trip-action">
-                    <button onClick={() => handleRevisit(trip.locationName)}>
+                    <button
+                      className="trip-button"
+                      onClick={() => handleRevisit(trip.locationName)}
+                    >
                       Revisit
                     </button>
                   </div>

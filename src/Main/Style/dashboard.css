@@ -160,29 +160,41 @@
   background-color: #ff723a8a;
 }
 
+.price-wrapper {
+  position: relative;
+}
+
 .price-input {
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 1rem;
-  padding: 10px;
-  font-size: 1rem;
-}
-
-.price-button-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
-}
-
-.price-button-container button {
-  border-radius: 1rem;
-  padding: 10px 1rem;
+  height: 40px;
+  width: 100%;
+  background: white;
   color: black;
-  background-color: #d4c7a3;
+  border-radius: 1rem;
   border: none;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  padding-right: 5.2rem;
+}
+
+.price-input::placeholder {
   font-size: 1rem;
-  transition-duration: 0.4s;
+}
+
+.price-clear-button {
+  position: absolute;
+  right: 0;
+  height: 40px;
+  width: 5rem;
+  color: black;
+  border-radius: 1rem;
+  border-width: 1.5px;
+  background-color: #d4c7a3;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.price-clear-button:hover {
+  background-color: #d4c7a37c;
 }
 
 label {
@@ -190,10 +202,6 @@ label {
   flex-direction: row;
   padding: 1rem 0rem;
   gap: 10px;
-}
-
-.price-button-container button:hover {
-  background-color: #d4c7a37c;
 }
 
 .check-icon {
@@ -420,12 +428,91 @@ label {
 
 .history-container {
   position: relative;
-  width: 70rem;
-  height: 45rem;
-  background-color: #b3816e;
+  width: 50rem;
+  max-height: 55rem;
+  min-height: 30rem;
+  padding: 2rem;
+  background-color: #eff8f1;
   border-radius: 10px;
-  border: 5px solid #ded2aa;
+  border: 5px solid #d4c7a3;
+  color: #57696c;
   z-index: 1000;
+}
+
+.history-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.main-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.second-header {
+  font-size: 1.5rem;
+}
+
+.dashboard-history {
+  border: 4px solid #d4c7a3;
+}
+
+.trip-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem;
+}
+
+.trip-item div {
+  text-align: left;
+}
+
+.trip-item:nth-child(odd) {
+  background-color: #d4c7a3;
+}
+
+.trip-item:nth-child(even) {
+  background-color: #eff8f1;
+}
+
+.trip-name {
+  align-items: left;
+}
+
+.trip-action {
+  align-items: right;
+}
+
+.trip-button {
+  padding: 6px;
+  background-color: #b3816e;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 9.3rem;
+}
+
+.pagination button {
+  padding: 0.2rem 0.5rem;
+  background-color: #570e06;
+  color: #9e736a;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.pagination button:hover {
+  background-color: #6b2914;
 }
 
 /*ManualPopup*/
