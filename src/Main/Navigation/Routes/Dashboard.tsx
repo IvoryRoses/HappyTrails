@@ -28,6 +28,8 @@ import UserMarker from "../Assets/User_Marker.png";
 import { TiArrowBack, TiArrowForward } from "react-icons/ti";
 import { FaTrashAlt, FaHistory, FaQuestion } from "react-icons/fa";
 
+import { MoonLoader } from "react-spinners";
+
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
 
 interface HistoryPopupProps {
@@ -657,6 +659,8 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const tripsPerPage = 10;
 
+  const [loading, setLoading] = useState(true);
+
   const currentUser = auth.currentUser;
 
   const handleRevisit = (locationName: string) => {
@@ -689,6 +693,7 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
           trips.push(doc.data() as { locationName: string; timestamp: string });
         });
         setTripHistory(trips);
+        setLoading(false);
       }
     };
 
@@ -721,7 +726,11 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
           <p className="second-header"> | Repeat past travels</p>
         </div>
         <div id="dashboard-history" className="dashboard-history">
-          {tripHistory.length === 0 ? (
+          {loading ? (
+            <div className="history-loader">
+              <MoonLoader color="black" loading={loading} size={70} />
+            </div>
+          ) : tripHistory.length === 0 ? (
             <p>No Past Trip Recorded.</p>
           ) : (
             <ul>

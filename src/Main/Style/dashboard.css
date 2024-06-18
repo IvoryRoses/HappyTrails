@@ -456,10 +456,6 @@ label {
   font-size: 1.5rem;
 }
 
-.dashboard-history {
-  border: 4px solid #d4c7a3;
-}
-
 .trip-item {
   display: flex;
   justify-content: space-between;
@@ -473,10 +469,12 @@ label {
 
 .trip-item:nth-child(odd) {
   background-color: #d4c7a3;
+  padding-left: 0.9rem;
 }
 
 .trip-item:nth-child(even) {
   background-color: #eff8f1;
+  border: 4px solid #d4c7a3;
 }
 
 .trip-name {
@@ -513,6 +511,17 @@ label {
 
 .pagination button:hover {
   background-color: #6b2914;
+}
+
+.history-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 /*ManualPopup*/
