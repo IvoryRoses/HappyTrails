@@ -25,8 +25,8 @@ import NatureMarker from "../Assets/Nature_Marker.png";
 import HistoricalMarker from "../Assets/Historical_Marker.png";
 import EntertainmentMarker from "../Assets/Entertainment_Marker.png";
 import UserMarker from "../Assets/User_Marker.png";
-import { TiArrowBack, TiArrowForward } from "react-icons/ti";
 import { FaTrashAlt, FaHistory, FaQuestion } from "react-icons/fa";
+import { FaRightLong, FaLeftLong } from "react-icons/fa6";
 
 import { MoonLoader } from "react-spinners";
 
@@ -757,13 +757,11 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
         </div>
         {tripHistory.length > tripsPerPage && (
           <div className="pagination">
-            <button onClick={handlePrevPage}>
-              <TiArrowBack className="react-icon" />
-            </button>
-            <div style={{ alignContent: "center" }}>{currentPage}</div>
-            <button onClick={handleNextPage}>
-              <TiArrowForward className="react-icon" />
-            </button>
+            <FaLeftLong className="react-icon" onClick={handlePrevPage} />
+            <div style={{ alignContent: "center", fontSize: "1.5rem" }}>
+              {currentPage}
+            </div>
+            <FaRightLong className="react-icon" onClick={handleNextPage} />
           </div>
         )}
       </div>

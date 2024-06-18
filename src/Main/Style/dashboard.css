@@ -77,6 +77,7 @@
   border-bottom-left-radius: 1rem;
   color: #ded2aa;
   z-index: 500;
+  font-family: harabara;
 }
 
 .location-wrapper {
@@ -292,7 +293,6 @@ label {
   height: var(--size);
   letter-spacing: calc(-0.04 * var(--size));
   color: #9b9b9b;
-  font-family: "Times New Roman", serif;
   z-index: 2;
   font-size: calc(0.6 * var(--size));
   border-radius: 0;
@@ -437,6 +437,7 @@ label {
   border: 5px solid #d4c7a3;
   color: #57696c;
   z-index: 1000;
+  font-family: harabara;
 }
 
 .history-header {
@@ -470,6 +471,7 @@ label {
 .trip-item:nth-child(odd) {
   background-color: #d4c7a3;
   padding-left: 0.9rem;
+  padding-right: 0.9rem;
 }
 
 .trip-item:nth-child(even) {
@@ -522,6 +524,12 @@ label {
   align-items: center;
   height: 100%;
   width: 100%;
+}
+
+.react-icon {
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
 }
 
 /*ManualPopup*/
