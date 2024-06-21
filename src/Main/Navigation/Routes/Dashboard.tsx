@@ -631,8 +631,8 @@ export default function Dashboard() {
                       <img
                         src={marker.image}
                         style={{
-                          width: "180px", //made this wider from 150
-                          height: "150px",
+                          width: "250px", //made this wider from 150
+                          height: "200px",
                           marginBottom: "10px",
                         }}
                       />
