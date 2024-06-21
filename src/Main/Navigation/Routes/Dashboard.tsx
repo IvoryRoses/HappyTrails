@@ -32,23 +32,23 @@ import { MoonLoader } from "react-spinners";
 
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
 
+// Define the type for markers
+type MarkerType = {
+  id: string;
+  geocode: [number, number]; // explicitly a tuple with two elements
+  popUp: string;
+  type?: string;
+  budget?: string;
+  name?: string;
+  image?: string;
+};
+
 interface HistoryPopupProps {
   handleClose: () => void;
   mapRef: React.MutableRefObject<L.Map | null>; // Adjust the type as per your useRef declaration
 }
 
 export default function Dashboard() {
-  // Define the type for markers
-  type MarkerType = {
-    id: string;
-    geocode: [number, number]; // explicitly a tuple with two elements
-    popUp: string;
-    type?: string;
-    budget?: string;
-    name?: string;
-    image?: string;
-  };
-
   type MarkerImagesType = { [key: string]: any };
 
   const preferenceMarker = presetLocations.map((location) => ({
@@ -57,6 +57,7 @@ export default function Dashboard() {
     budget: location.budget,
     name: location.name,
     image: (MarkerImages as MarkerImagesType)[location.name],
+    ref: useRef<any>(null),
   }));
 
   useEffect(() => {
@@ -93,6 +94,8 @@ export default function Dashboard() {
   const [historyPopup, setHistoryPopup] = useState(false);
 
   const [showManual, setShowManual] = useState(false);
+
+  const [userMarker, setUserMarker] = useState<MarkerType | null>(null);
 
   const mapRef = useRef<L.Map | null>(null);
 
@@ -177,6 +180,25 @@ export default function Dashboard() {
       map.flyTo([14.27, 121.46], 12);
     }
   };
+
+  const handleBackToUserClick = () => {
+    const map = mapRef.current;
+    if (map && userMarker) {
+      map.flyTo(userMarker.geocode, 15);
+    } else {
+      toast.error("No User Marker Found", {
+        autoClose: 3000,
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (markers.length > 0) {
+      setUserMarker(markers[0]); // Assuming user marker is the first marker in the array
+    } else {
+      setUserMarker(null);
+    }
+  }, [markers]);
 
   // Component to handle map clicks
   function AddMarkerOnClick() {
@@ -312,6 +334,7 @@ export default function Dashboard() {
             [userMarker.geocode[1], userMarker.geocode[0]], // User marker coordinates
             [preferenceMarker.geocode[1], preferenceMarker.geocode[0]], // Preference marker coordinates
           ],
+          preference: "shortest",
         }),
       });
 
@@ -419,7 +442,7 @@ export default function Dashboard() {
   };
 
   const handlePriceRangeChange = (inputValue: string) => {
-    const numericValue = Number(inputValue);
+    const numericValue = parseInt(inputValue.replace(/\D/g, ""), 10);
 
     // Update price range state
     setPriceRange(inputValue);
@@ -474,14 +497,15 @@ export default function Dashboard() {
             <button className="laguna-button" onClick={handleBackToLagunaClick}>
               Back to Laguna
             </button>
-            <button
-              className="clear-route-button"
-              onClick={clearRouteAndMarker}
-            >
-              <FaTrashAlt style={{ marginRight: "3px" }} />
-              Clear Route
+            <button className="user-button" onClick={handleBackToUserClick}>
+              Back to User
             </button>
           </div>
+          <button className="clear-route-button" onClick={clearRouteAndMarker}>
+            <FaTrashAlt style={{ marginRight: "3px" }} />
+            Clear Route
+          </button>
+
           <h1>Budget</h1>
           <div className="price-wrapper">
             <input
@@ -491,7 +515,6 @@ export default function Dashboard() {
               value={priceRange}
               onChange={(e) => handlePriceRangeChange(e.target.value)}
             />
-
             <button className="price-clear-button" onClick={() => clearPrice()}>
               Clear
             </button>
@@ -540,7 +563,11 @@ export default function Dashboard() {
               History
             </button>
             {historyPopup && (
-              <HistoryPopup handleClose={handleHistoryPopup} mapRef={mapRef} />
+              <HistoryPopup
+                handleClose={handleHistoryPopup}
+                mapRef={mapRef}
+                preferenceMarker={preferenceMarker}
+              />
             )}
             <FaQuestion
               onClick={handleManual}
@@ -597,6 +624,7 @@ export default function Dashboard() {
                   key={marker.geocode.join(",")}
                   position={marker.geocode as [number, number]}
                   icon={icon}
+                  ref={marker.ref}
                 >
                   <Popup>
                     <div className="popup-display">
@@ -611,7 +639,13 @@ export default function Dashboard() {
                       <span className="marker-name">{marker.name}</span>
                       <button
                         className="popup-button"
-                        onClick={() => handleStartTripClick(marker)}
+                        onClick={() => {
+                          handleStartTripClick(marker);
+                          const map = mapRef.current;
+                          if (map) {
+                            map.closePopup();
+                          }
+                        }}
                       >
                         Start trip
                       </button>
@@ -651,7 +685,11 @@ export default function Dashboard() {
 }
 
 //History Popup Container
-const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
+const HistoryPopup: React.FC<HistoryPopupProps & { preferenceMarker: any }> = ({
+  handleClose,
+  mapRef,
+  preferenceMarker,
+}) => {
   const [tripHistory, setTripHistory] = useState<
     { locationName: string; timestamp: string }[]
   >([]);
@@ -664,12 +702,17 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
   const currentUser = auth.currentUser;
 
   const handleRevisit = (locationName: string) => {
-    const location = presetLocations.find((loc) => loc.name === locationName);
+    const markerToRevisit = preferenceMarker.find(
+      (marker: MarkerType) => marker.name === locationName
+    );
 
-    if (location && mapRef.current) {
+    if (markerToRevisit && markerToRevisit.ref.current) {
       handleClose();
-      const [lat, lng] = location.coordinates;
-      mapRef.current.flyTo([lat, lng], 15); // Adjust zoom level as needed
+      const map = mapRef.current;
+      if (map) {
+        map.flyTo(markerToRevisit.geocode, 15); // Fly to the marker's coordinates
+        markerToRevisit.ref.current.openPopup(); // Open the marker's popup
+      }
     }
   };
 
