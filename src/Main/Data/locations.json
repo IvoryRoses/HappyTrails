@@ -3,822 +3,1096 @@
     "name": "Nuestra Señora De La Candelaria Parish",
     "coordinates": [14.42813, 121.42922],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "San Sebastian Parish Church",
     "coordinates": [14.297452310989186, 121.45925872469873],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Saint John the Baptist Parish",
     "coordinates": [14.340536630480583, 121.4816263358446],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Cathedral of Our Lady of Maulawin",
     "coordinates": [14.281268271295238, 121.41674558426978],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Emilio Jacinto Burial Place and Monument",
     "coordinates": [14.25119506252021, 121.4081893430125],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Immaculate Conception Parish Church",
     "coordinates": [14.283852837556589, 121.41525622240212],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Labanan sa Maimpis",
     "coordinates": [14.175930439054005, 121.4315556685637],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "St. Gregory the Great Parish Church",
     "coordinates": [14.146464567225332, 121.47112279960706],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Puente del Capricho",
     "coordinates": [14.146402687284363, 121.46682882694574],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Jose Rizal Monument",
     "coordinates": [14.145855524885533, 121.47140099094213],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "The Roman Catholic Parish of San Santiago Apostol",
     "coordinates": [14.364555833447413, 121.48141152037068],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Three Crosses of Paete",
     "coordinates": [14.365001833476219, 121.49218587394603],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Diocesan Shrine and Parish of Our Lady of Guadalupe",
     "coordinates": [14.273388709120018, 121.45623779888614],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Saint Peter of Alcantara Parish Church",
     "coordinates": [14.380905249247093, 121.47888952624595],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Nuestra Senora dela Natividad Parish",
     "coordinates": [14.403684166873687, 121.46823960718591],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "National Shrine and Parish of San Antonio",
     "coordinates": [14.233720235419568, 121.36458953752827],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Rolling Carbs Sushi Bar and Ramen",
     "coordinates": [14.42368, 121.44254],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Book Hive Cafe",
     "coordinates": [14.275707597652545, 121.39961459387818],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Muni Coffee PH",
     "coordinates": [14.334208551451539, 121.48195907288466],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Joy's View",
     "coordinates": [14.326958284185176, 121.47354670860891],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "BROTHERS CAFE 101",
     "coordinates": [14.332393700175599, 121.48166646868518],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Brics Hideout Restobar",
     "coordinates": [14.205509786379178, 121.49311667296809],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Maribella Restaurant and Garden Resort",
     "coordinates": [14.175078107541767, 121.52442054090143],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Hulugan Falls Nanay Ganda's Tapsilogan",
     "coordinates": [14.219869673363561, 121.48231849825382],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "YHAMSHE GRILL",
     "coordinates": [14.30616082040382, 121.4797085987322],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Janna's Place Restaurant",
     "coordinates": [14.300608622858151, 121.46419640184243],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Elvira's Creamy Halo-Halo and Pancit Lucban",
     "coordinates": [14.28601393762845, 121.45806065058962],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Miguel's Garden Cafe at Kota Paradiso",
     "coordinates": [14.449552031822353, 121.3826900240258],
     "type": "Food",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Nanay Virgie Eatery",
     "coordinates": [14.454154359860837, 121.37740134565814],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Big Boss Boodlefight",
     "coordinates": [14.269716501289285, 121.39861148880654],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Kusina ni Isa",
     "coordinates": [14.147837003931377, 121.4802954556095],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Kusina mo'to",
     "coordinates": [14.14686062132072, 121.48419339837126],
     "type": "Food",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Ate Ganda's Kainan Lugaw Mami and more",
     "coordinates": [14.146431431890873, 121.47613350761296],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Kape Kesada",
     "coordinates": [14.364657910057062, 121.48304245214966],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Reese & Kyle's Lomi&Goto by Adors",
     "coordinates": [14.369057150328453, 121.51532956099082],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Le Maison Yelo Lane",
     "coordinates": [14.274233572393497, 121.44824505206047],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Calle Arco Restaurant",
     "coordinates": [14.273992861021991, 121.45312598771002],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Alberto's Heritage Cafe",
     "coordinates": [14.249282096679462, 121.43498574801758],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Fatty With Double Chin",
     "coordinates": [14.238240374153053, 121.43315441359532],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Casa Verde Pagsanjan",
     "coordinates": [14.275764287855448, 121.44907483452516],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Alvin's Cuisine",
     "coordinates": [14.270043353763908, 121.45745825238392],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Manay's Eatery",
     "coordinates": [14.382716847313633, 121.47641273705308],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "PORTSIDE UNLIWINGS",
     "coordinates": [14.37175776674741, 121.40163303860443],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "BOSS Prince Eatery",
     "coordinates": [14.369000828340672, 121.40018202137836],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Food O'Clock",
     "coordinates": [14.36824402524055, 121.40002952282785],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Padyok Cafe and Restaurant",
     "coordinates": [14.390938734044557, 121.47954640659071],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Café Emeterio",
     "coordinates": [14.388044524129036, 121.47701605989482],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Ala eh TONIO's Burger",
     "coordinates": [14.385772620233158, 121.47618860539795],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Liliosa Garden Cafe",
     "coordinates": [14.379330709616385, 121.47756908684048],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Tea korner",
     "coordinates": [14.384608178834382, 121.40544164067937],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Jess Gotohan",
     "coordinates": [14.396226397024272, 121.47607961165198],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "KM107",
     "coordinates": [14.395185321017953, 121.47390412651141],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Naz Coffee",
     "coordinates": [14.395363607158556, 121.47619179272927],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "The Brickoven Café",
     "coordinates": [14.244870895837957, 121.36802876793813],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Glorious Café",
     "coordinates": [14.233741567409481, 121.35953143743895],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Aramielle",
     "coordinates": [14.233783165293097, 121.36686996108484],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Herbs And Beans",
     "coordinates": [14.234723396567427, 121.36727375006727],
     "type": "Food",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Cafe Norma PH",
     "coordinates": [14.248313751137987, 121.37860381508582],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Konstrak coffee",
     "coordinates": [14.246260513026865, 121.37115997337855],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Speranza Plus (ThebeanLab and Kaye's tea)",
     "coordinates": [14.480313570510539, 121.43727403745471],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Leona's Kitchen",
     "coordinates": [14.54528625208982, 121.45855873970116],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Luna Hills Cafe Resort",
     "coordinates": [14.535218759216095, 121.46704566095255],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Babi Bear Samgyupsal",
     "coordinates": [14.467331591298331, 121.42302044866908],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Halo-halo ni Edong",
     "coordinates": [14.428392743920032, 121.45298787889554],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Kath Reever",
     "coordinates": [14.41098570663888, 121.45108843614878],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Caleb's Kitchen",
     "coordinates": [14.419097562145149, 121.44625767816885],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Boss D Ramen",
     "coordinates": [14.416200268557125, 121.44720697702176],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Dash Espresso",
     "coordinates": [14.279491697884025, 121.41696236084577],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "SECRET BREW",
     "coordinates": [14.278918998248306, 121.40986615868691],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Pagsanjan Falls",
     "coordinates": [14.263004075245053, 121.4989271751697],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Cavinti Underground River and Caves Complex",
     "coordinates": [14.282304987140884, 121.6349527624506],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Nakulo Falls",
     "coordinates": [14.261297055577883, 121.4999467385952],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Bumbungan Eco Park",
     "coordinates": [14.249723172119664, 121.50577166103945],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Pueblo El Salvador Cavinti Nature's Park and Picnic Grove",
     "coordinates": [14.256786160704374, 121.50267699626569],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Bumbungan Twin Falls",
     "coordinates": [14.198774761474587, 121.5849642140103],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Domelis Campsite",
     "coordinates": [14.290855599113208, 121.53957651467881],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Camp Hogad",
     "coordinates": [14.480434938058844, 121.48776973868034],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Kalayaan Twin Falls",
     "coordinates": [14.321660832076448, 121.4812958306628],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Tanawan View Deck",
     "coordinates": [14.339392473409024, 121.49052690682193],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Hulugan Falls",
     "coordinates": [14.21173953963019, 121.47993211511792],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Hulugan Falls Jump-off Point",
     "coordinates": [14.216484417994128, 121.49093618717498],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Hidden Falls",
     "coordinates": [14.21025, 121.48197],
     "type": "Nature",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Pililla 54 MW Windmill",
     "coordinates": [14.464745095935035, 121.37057480166115],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Balete Tree of Mabitac (Century Tree)",
     "coordinates": [14.453022961620487, 121.37906291878645],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Bayside Baywalk",
     "coordinates": [14.279097848636688, 121.39008894068473],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Taytay Falls",
     "coordinates": [14.114601481576146, 121.50530608549198],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "RedDoorz @ Hilarion's Farm",
     "coordinates": [14.148390471046923, 121.48799154044023],
     "type": "Nature",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "AIDA AURORA NATURES FARM",
     "coordinates": [14.137030506732204, 121.4838093048591],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "APA Farms Mini Zoo",
     "coordinates": [14.138536013876402, 121.46326523276561],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Matabungca Falls",
     "coordinates": [14.36491, 121.48646],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Wawa Park",
     "coordinates": [14.364099615425127, 121.47394796128582],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Talon Sirena",
     "coordinates": [14.388624175455833, 121.50637917310215],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Mt. Pingas Pilgrimage Park",
     "coordinates": [14.37942692680911, 121.48562391896147],
     "type": "Nature",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Buntot Palos Falls",
     "coordinates": [14.4045, 121.4802],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Ambon-Ambon Falls",
     "coordinates": [14.41541555998079, 121.48122197616613],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Bulusukan River & Eco Park",
     "coordinates": [14.245674717999801, 121.35203104639635],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Aplaya Marker",
     "coordinates": [14.260761359738975, 121.35248521487134],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Three Falls (Marilag Falls)",
     "coordinates": [14.533897537987977, 121.45478176107794],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Sta. Maria Laguna Viewing Deck",
     "coordinates": [14.541365640018212, 121.45942504005664],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Lihim na Lagusan",
     "coordinates": [14.549812491931206, 121.46337890990326],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Hammock BaseKamp",
     "coordinates": [14.53397034062365, 121.47963913873176],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Sampaloc Falls",
     "coordinates": [14.4433, 121.4853],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Top Mount Farm",
     "coordinates": [14.442952798765404, 121.48665200794727],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Balai Sitang Mountain Resort",
     "coordinates": [14.493971102623831, 121.47719174315455],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Longos Cock Fighting Arena",
     "coordinates": [14.345194020913626, 121.4834827774289],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Caliraya Springs Golf Club",
     "coordinates": [14.293747821516202, 121.55630132554286],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Caliraya Ecoville Recreation and Farm Resort",
     "coordinates": [14.285773447762082, 121.51563384737476],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Amazing View Mountain Farm Resort",
     "coordinates": [14.442938040417948, 121.39699219066262],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Balanac River Dam Cottage",
     "coordinates": [14.201314950262857, 121.44119317489368],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Dalitiwan Resort",
     "coordinates": [14.152095963744745, 121.48940674035487],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Sprite Falls Spring Resort",
     "coordinates": [14.137893469944105, 121.49875707971044],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Las Familias Resort",
     "coordinates": [14.144990402868645, 121.49668232470098],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Casa Milagros Paete",
     "coordinates": [14.367435803775283, 121.47953816436771],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Vonwelt Nature Farm",
     "coordinates": [14.237048821847836, 121.45733334334362],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Cavinti Boating Station",
     "coordinates": [14.2656120444099, 121.47548605975233],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Pagsanjan Paradise Resort",
     "coordinates": [14.26536733847523, 121.46679092014374],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Villa Nerliza Resort",
     "coordinates": [14.352229886394886, 121.38971927839333],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Clemente Campsite",
     "coordinates": [14.38892157101352, 121.3852382353169],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Daddy's Place Resort",
     "coordinates": [14.406838500041474, 121.46443968001522],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Greenhouse Balian",
     "coordinates": [14.405973559268212, 121.480592862406],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Mountain Breeze Resort",
     "coordinates": [14.407973744096958, 121.47244381704897],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Villa Gaña Resort",
     "coordinates": [14.411051566044934, 121.47883739211248],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Villa Arabella Resort",
     "coordinates": [14.220463758819564, 121.39667886744596],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Montreal Garden Resort",
     "coordinates": [14.208328888429872, 121.37817447026586],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Hiraya  ",
     "coordinates": [14.207850453741841, 121.38087607353583],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "La Blanca Private Resort",
     "coordinates": [14.262613629739452, 121.36768742999148],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Casa Venice Resort",
     "coordinates": [14.221284841546277, 121.39590976627004],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Pita Fishing Resort and Recreation Center",
     "coordinates": [14.238246031672489, 121.36854728987302],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Batis ng kalikasan",
     "coordinates": [14.50609647982242, 121.41098183127143],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Aambon Forest Spring Resort",
     "coordinates": [14.536311588105798, 121.46884435942894],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Little Baguio's Sunset Villa",
     "coordinates": [14.5425011953777, 121.46013254527391],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Yoyong and Dita's Hot Spring",
     "coordinates": [14.45841454499142, 121.42787557739882],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "August-Inn Resort",
     "coordinates": [14.428821698283338, 121.46345938893471],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Ricardo's Nature Garden",
     "coordinates": [14.262767917036816, 121.42833410213395],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Lipski Ville Resort",
     "coordinates": [14.286920415294121, 121.40427408539307],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Lady Ester Grand Villa Resort and Farm",
     "coordinates": [14.236642300639053, 121.40763512650622],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "1",
+    "details": "test"
   },
   {
     "name": "Hacienda Antonia",
     "coordinates": [14.242882148799506, 121.41666558959562],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "1",
+    "details": "test"
   }
 ]
