@@ -204,6 +204,7 @@
   justify-content: center;
   flex-direction: column;
   z-index: 3;
+  font-family: league;
 }
 
 .padayo-logo {
@@ -236,6 +237,7 @@
   position: relative;
   z-index: 2;
   color: white;
+  font-family: harabara;
 }
 
 .padayo-about-text-container {
