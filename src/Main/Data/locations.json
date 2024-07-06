@@ -137,19 +137,107 @@
   },
   {
     "name": "Minor Basilica of St. Michael the Archangel",
-    "coordinates": [14.445569249195598, 120.90693807323181],
+    "coordinates": [14.026173647694073, 121.59100215286388],
     "type": "Historical",
     "budget": "Low",
     "rating": "4.5",
-    "details": "test"
+    "details": "The influence of Chinese architecture in Tayabas is pronounced in the design of the basilica. Stone lions in front of the building show a link to the presence of Chinese traders before the Spanish colonial era."
   },
   {
-    "name": "Lorem Ipsum",
-    "coordinates": [14.445569249195598, 120.90693807323181],
+    "name": "Manuel Quezon Monument",
+    "coordinates": [14.025013062933223, 121.59267663759721],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Monument dedicated to Manuel L. Quezon, second official president of the Philippines"
+  },
+  {
+    "name": "Casa Comunidad De Tayabas",
+    "coordinates": [14.025802655908779, 121.5917327335294],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "Constructed in 1831 when Don Diego Enriquez was gobernadorcillo, it is primarily designed as a guesthouse for visiting Spanish dignitaries."
+  },
+  {
+    "name": "Hermano Pule Monument",
+    "coordinates": [13.963238639846258, 121.565672839611],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "3.5",
+    "details": "Monument Dedicated to Hermano Pule or more commonly known by the name of Apolinario Dela Cruz."
+  },
+  {
+    "name": "Hermano Pule Monument - Lucban",
+    "coordinates": [14.146962196352595, 121.54509241280988],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Monument Dedicated to Hermano Pule or more commonly known by the name of Apolinario Dela Cruz"
+  },
+  {
+    "name": "Cape Santiago Lighthouse",
+    "coordinates": [13.782546509760843, 120.65326072899974],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Oldest working lighthouse in Batangas and one of the oldest working lighthouses in the Philippines."
+  },
+  {
+    "name": "Minor Basilica of St. Martin of Tours",
+    "coordinates": [13.892864105762516, 120.92665941313795],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Considered to be the largest church building in the Philippines and in Asia, standing 88.6 meters long and 48 meters wide."
+  },
+  {
+    "name": "Pacific War Memorial Museum",
+    "coordinates": [14.385336998277747, 120.57410644497352],
     "type": "Historical",
     "budget": "Low",
     "rating": "4.6",
-    "details": "test"
+    "details": "World War II museum with weapons, photos & memorabilia & a domed white memorial."
+  },
+  {
+    "name": "Malabrigo Lighthouse",
+    "coordinates": [13.613191236220791, 121.2588487030579],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.4",
+    "details": "Completed and lit in 1896, it is one of the oldest working lighthouses in the Philippines as well as the best preserved lighthouse in the country. It serves as a guide for ships passing through the Verde Island Passage going to either Batangas Bay or Sibuyan Sea."
+  },
+  {
+    "name": "Antipolo Cathedral",
+    "coordinates": [14.599147614463885, 121.17719637993012],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "popular pilgrimage site as many devotees paid reverence to Our Lady of Peace and Good Voyage, including Philippine national hero and polymath José Rizal, who visited the shrine as a boy with his father, Francisco Mercado, on June 6, 1868."
+  },
+  {
+    "name": "Puente de Malagonlong",
+    "coordinates": [14.019975876512497, 121.61565250683658],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "N/A",
+    "details": "One of the oldest bridges as well as the longest bridge made during the Spanish era"
+  },
+  {
+    "name": "Pintô Art Museum",
+    "coordinates": [14.590628448435206, 121.16221837669983],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Contemporary art museum complex in Antipolo, Rizal, Philippines."
+  },
+  {
+    "name": "Museo ni Baldomero Aguinaldo",
+    "coordinates": [14.447991572113951, 120.92353855229638],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "The Baldomero Aguinaldo Shrine is a single-detached house built by Baldomero Aguinaldo, cousin of Emilio Aguinaldo during the American colonial period in 1906 at Binakayan, Kawit, Cavite"
   },
   {
     "name": "Rolling Carbs Sushi Bar and Ramen",
