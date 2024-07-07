@@ -82,10 +82,12 @@ export default function Dashboard() {
   // State to manage selected types
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
-  const [priceRange, setPriceRange] = useState<string>("");
+  const [minPriceRange, setMinPriceRange] = useState<string>("");
+  const [maxPriceRange, setMaxPriceRange] = useState<string>("");
 
   // State to manage selected budgets
-  const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
+  const [minBudget, setMinBudget] = useState<string>("");
+  const [maxBudget, setMaxBudget] = useState<string>("");
 
   const [showConfirmationForm, setShowConfirmationForm] =
     useState<boolean>(false);
@@ -302,14 +304,6 @@ export default function Dashboard() {
     return null;
   }
 
-  // Function to handle the deletion of a marker
-  const deleteMarker = (id: string, event: React.MouseEvent) => {
-    event.stopPropagation();
-    setMarkers((prevMarkers) =>
-      prevMarkers.filter((marker) => marker.id !== id)
-    );
-  };
-
   const handleStartTripClick = async (preferenceMarker: MarkerType) => {
     if (markers.length === 0) {
       toast.error("Please add a start marker on the map first.", {
@@ -361,6 +355,7 @@ export default function Dashboard() {
           if (currentUser) {
             const tripData = {
               locationName: preferenceMarker.name,
+              locationType: preferenceMarker.type,
               timestamp: new Date().toISOString(),
             };
             await setDoc(
@@ -398,7 +393,7 @@ export default function Dashboard() {
     setRoute([]);
     setRouteLength(0);
     setUseGPS(false);
-    setSelectedBudgets([]);
+    setMinBudget("");
     const map = mapRef.current;
     if (map) {
       map.eachLayer((layer) => {
@@ -441,36 +436,70 @@ export default function Dashboard() {
     setHistoryPopup(!historyPopup);
   };
 
-  const handlePriceRangeChange = (inputValue: string) => {
+  const handleMinPriceRangeChange = (inputValue: string) => {
     const numericValue = parseInt(inputValue.replace(/\D/g, ""), 10);
 
     // Update price range state
-    setPriceRange(inputValue);
+    setMinPriceRange(inputValue);
 
-    // Update selected budgets based on price range
+    // Update selected budget based on price range
     if (numericValue >= 1 && numericValue <= 500) {
-      setSelectedBudgets(["Low"]);
+      setMinBudget("Low");
     } else if (numericValue >= 501 && numericValue <= 999) {
-      setSelectedBudgets(["Mid"]);
+      setMinBudget("Mid");
     } else if (numericValue >= 1000) {
-      setSelectedBudgets(["High"]);
+      setMinBudget("High");
     } else {
-      setSelectedBudgets([]); // Clear selected budgets if no valid range is selected
+      setMinBudget(""); // Clear selected budget if no valid range is selected
+    }
+  };
+
+  const handleMaxPriceRangeChange = (inputValue: string) => {
+    const numericValue = parseInt(inputValue.replace(/\D/g, ""), 10);
+
+    // Update price range state
+    setMaxPriceRange(inputValue);
+
+    // Update selected budget based on price range
+    if (numericValue >= 1 && numericValue <= 500) {
+      setMaxBudget("Low");
+    } else if (numericValue >= 501 && numericValue <= 999) {
+      setMaxBudget("Mid");
+    } else if (numericValue >= 1000) {
+      setMaxBudget("High");
+    } else {
+      setMaxBudget(""); // Clear selected budget if no valid range is selected
     }
   };
 
   const clearPrice = () => {
-    setSelectedBudgets([]);
-    setPriceRange("");
+    setMinBudget("");
+    setMaxBudget("");
+    setMinPriceRange("");
+    setMaxPriceRange("");
   };
 
   const filteredMarkers = preferenceMarker.filter((marker) => {
     const typeMatch =
       selectedTypes.length === 0 ||
       selectedTypes.includes(marker.type as string);
-    const budgetMatch =
-      selectedBudgets.length === 0 ||
-      selectedBudgets.includes(marker.budget as string);
+
+    let budgetMatch = true;
+    const budgetLevels = ["Low", "Mid", "High"];
+
+    const minIndex = budgetLevels.indexOf(minBudget);
+    const maxIndex = budgetLevels.indexOf(maxBudget);
+    const markerIndex = budgetLevels.indexOf(marker.budget as string);
+
+    if (minIndex !== -1 && maxIndex !== -1 && markerIndex !== -1) {
+      if (minIndex <= markerIndex && markerIndex <= maxIndex) {
+        budgetMatch = true;
+      } else {
+        budgetMatch = false;
+      }
+    } else {
+      budgetMatch = true;
+    }
     return typeMatch && budgetMatch;
   });
 
@@ -511,9 +540,16 @@ export default function Dashboard() {
             <input
               className="price-input"
               type="number"
-              placeholder="Enter price range: e.g., 1000"
-              value={priceRange}
-              onChange={(e) => handlePriceRangeChange(e.target.value)}
+              placeholder="Enter minimum price range"
+              value={minPriceRange}
+              onChange={(e) => handleMinPriceRangeChange(e.target.value)}
+            />
+            <input
+              className="price-input"
+              type="number"
+              placeholder="Enter maximum price range"
+              value={maxPriceRange}
+              onChange={(e) => handleMaxPriceRangeChange(e.target.value)}
             />
             <button className="price-clear-button" onClick={() => clearPrice()}>
               Clear
@@ -629,6 +665,7 @@ export default function Dashboard() {
                   <Popup>
                     <div className="popup-display">
                       <img
+                        onClick={handleHistoryPopup}
                         src={marker.image}
                         style={{
                           width: "250px", //made this wider from 150
@@ -637,6 +674,7 @@ export default function Dashboard() {
                         }}
                       />
                       <span className="marker-name">{marker.name}</span>
+                      <span className="marker-name">{marker.budget}</span>
                       <button
                         className="popup-button"
                         onClick={() => {
@@ -662,11 +700,7 @@ export default function Dashboard() {
                 icon={customIcon}
               >
                 <Popup>
-                  {marker.popUp}
-                  <br />
-                  <button onClick={(e) => deleteMarker(marker.id, e)}>
-                    Delete
-                  </button>
+                  <h1>you</h1>
                 </Popup>
               </Marker>
             ))}
@@ -691,7 +725,7 @@ const HistoryPopup: React.FC<HistoryPopupProps & { preferenceMarker: any }> = ({
   preferenceMarker,
 }) => {
   const [tripHistory, setTripHistory] = useState<
-    { locationName: string; timestamp: string }[]
+    { locationName: string; locationType: string; timestamp: string }[]
   >([]);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -731,9 +765,19 @@ const HistoryPopup: React.FC<HistoryPopupProps & { preferenceMarker: any }> = ({
         const querySnapshot = await getDocs(
           collection(fs, "users", currentUser.uid, "tripHistory")
         );
-        const trips: { locationName: string; timestamp: string }[] = [];
+        const trips: {
+          locationName: string;
+          locationType: string;
+          timestamp: string;
+        }[] = [];
         querySnapshot.forEach((doc) => {
-          trips.push(doc.data() as { locationName: string; timestamp: string });
+          trips.push(
+            doc.data() as {
+              locationName: string;
+              locationType: string;
+              timestamp: string;
+            }
+          );
         });
         setTripHistory(trips);
         setLoading(false);
@@ -786,6 +830,7 @@ const HistoryPopup: React.FC<HistoryPopupProps & { preferenceMarker: any }> = ({
                     </div>
                   </div>
                   <div className="trip-action">
+                    <div className="trip-type">{trip.locationType}</div>
                     <button
                       className="trip-button"
                       onClick={() => handleRevisit(trip.locationName)}

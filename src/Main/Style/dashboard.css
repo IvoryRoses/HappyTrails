@@ -504,8 +504,14 @@ label {
   align-items: left;
 }
 
+.trip-type {
+  justify-content: center;
+}
+
 .trip-action {
-  align-items: right;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
 }
 
 .trip-button {
