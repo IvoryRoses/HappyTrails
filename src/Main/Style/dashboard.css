@@ -185,6 +185,10 @@
   position: relative;
 }
 
+.price-seperator {
+  display: flex;
+}
+
 .price-input {
   height: 40px;
   width: 100%;
@@ -194,7 +198,7 @@
   border: none;
   font-size: 1.2rem;
   padding-left: 1rem;
-  padding-right: 5.2rem;
+  padding-right: 1rem;
 }
 
 .price-input::placeholder {

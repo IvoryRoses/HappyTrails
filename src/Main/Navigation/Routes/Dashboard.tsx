@@ -25,7 +25,7 @@ import NatureMarker from "../Assets/Nature_Marker.png";
 import HistoricalMarker from "../Assets/Historical_Marker.png";
 import EntertainmentMarker from "../Assets/Entertainment_Marker.png";
 import UserMarker from "../Assets/User_Marker.png";
-import { FaTrashAlt, FaHistory, FaQuestion } from "react-icons/fa";
+import { FaTrashAlt, FaHistory, FaQuestion, FaRegStar } from "react-icons/fa";
 import { FaRightLong, FaLeftLong } from "react-icons/fa6";
 
 import { MoonLoader } from "react-spinners";
@@ -41,6 +41,9 @@ type MarkerType = {
   budget?: string;
   name?: string;
   image?: string;
+  rating?: number;
+  detail?: string;
+  locID?: number;
 };
 
 interface HistoryPopupProps {
@@ -56,6 +59,9 @@ export default function Dashboard() {
     type: location.type,
     budget: location.budget,
     name: location.name,
+    rating: location.rating,
+    detail: location.details,
+    locID: location.locid,
     image: (MarkerImages as MarkerImagesType)[location.name],
     ref: useRef<any>(null),
   }));
@@ -436,6 +442,65 @@ export default function Dashboard() {
     setHistoryPopup(!historyPopup);
   };
 
+  const handleSuggestion = () => {
+    const filteredMarkers = preferenceMarker.filter((marker) => {
+      // Check type match
+      const typeMatch =
+        selectedTypes.length === 0 ||
+        selectedTypes.includes(marker.type as string);
+
+      // Check budget match
+      let budgetMatch = true;
+      const budgetLevels = ["Low", "Mid", "High"];
+      const minIndex = budgetLevels.indexOf(minBudget);
+      const maxIndex = budgetLevels.indexOf(maxBudget);
+      const markerIndex = budgetLevels.indexOf(marker.budget as string);
+
+      if (minIndex !== -1 && maxIndex !== -1 && markerIndex !== -1) {
+        if (minIndex <= markerIndex && markerIndex <= maxIndex) {
+          budgetMatch = true;
+        } else {
+          budgetMatch = false;
+        }
+      } else {
+        budgetMatch = true; // Handle case where budget levels are not properly set
+      }
+
+      return typeMatch && budgetMatch;
+    });
+
+    // Check if there are markers available after filtering
+    if (filteredMarkers.length === 0) {
+      console.error("No markers available based on type and budget conditions");
+      toast.error(
+        "No suitable locations found. Please adjust your preferences.",
+        {
+          autoClose: 3000,
+        }
+      );
+      return;
+    }
+
+    // Select a random marker from the filtered list
+    const randomIndex = Math.floor(Math.random() * filteredMarkers.length);
+    const randomMarker = filteredMarkers[randomIndex];
+
+    if (randomMarker && randomMarker.geocode) {
+      const map = mapRef.current;
+      if (map) {
+        map.flyTo(randomMarker.geocode as [number, number], 15);
+        if (randomMarker.ref.current) {
+          randomMarker.ref.current.openPopup();
+        }
+      }
+    } else {
+      console.error("Random marker or its geocode is undefined");
+      toast.error("Failed to suggest a location. Please try again.", {
+        autoClose: 3000,
+      });
+    }
+  };
+
   const handleMinPriceRangeChange = (inputValue: string) => {
     const numericValue = parseInt(inputValue.replace(/\D/g, ""), 10);
 
@@ -537,20 +602,22 @@ export default function Dashboard() {
 
           <h1>Budget</h1>
           <div className="price-wrapper">
-            <input
-              className="price-input"
-              type="number"
-              placeholder="Enter minimum price range"
-              value={minPriceRange}
-              onChange={(e) => handleMinPriceRangeChange(e.target.value)}
-            />
-            <input
-              className="price-input"
-              type="number"
-              placeholder="Enter maximum price range"
-              value={maxPriceRange}
-              onChange={(e) => handleMaxPriceRangeChange(e.target.value)}
-            />
+            <div className="price-seperator">
+              <input
+                className="price-input"
+                type="number"
+                placeholder="Minimum"
+                value={minPriceRange}
+                onChange={(e) => handleMinPriceRangeChange(e.target.value)}
+              />
+              <input
+                className="price-input"
+                type="number"
+                placeholder="Maximum"
+                value={maxPriceRange}
+                onChange={(e) => handleMaxPriceRangeChange(e.target.value)}
+              />
+            </div>
             <button className="price-clear-button" onClick={() => clearPrice()}>
               Clear
             </button>
@@ -605,6 +672,9 @@ export default function Dashboard() {
                 preferenceMarker={preferenceMarker}
               />
             )}
+            <button className="history-button" onClick={handleSuggestion}>
+              Suggestion
+            </button>
             <FaQuestion
               onClick={handleManual}
               style={{ width: "1.5rem", height: "1.5rem", cursor: "pointer" }}
@@ -664,6 +734,7 @@ export default function Dashboard() {
                 >
                   <Popup>
                     <div className="popup-display">
+                      <span className="marker-name">{marker.name}</span>
                       <img
                         onClick={handleHistoryPopup}
                         src={marker.image}
@@ -673,8 +744,11 @@ export default function Dashboard() {
                           marginBottom: "10px",
                         }}
                       />
-                      <span className="marker-name">{marker.name}</span>
-                      <span className="marker-name">{marker.budget}</span>
+                      <span className="marker-name">
+                        <FaRegStar /> {marker.rating}
+                      </span>
+                      <span className="marker-name">{marker.detail}</span>
+                      <span>{marker.budget}</span>
                       <button
                         className="popup-button"
                         onClick={() => {

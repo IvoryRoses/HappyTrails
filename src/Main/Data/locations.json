@@ -1515,7 +1515,7 @@
     "name": "Nasugbu Beachfront",
     "coordinates": [14.077172604336868, 120.62362756610815],
     "type": "Entertainment",
-    "budget": "Medium",
+    "budget": "Mid",
     "rating": "4.6",
     "details": "Popular Beach in Nasugbu",
     "locid": 169
@@ -1524,7 +1524,7 @@
     "name": "Manuel Uy Beach",
     "coordinates": [13.804817457082331, 120.63883559842394],
     "type": "Entertainment",
-    "budget": "Medium",
+    "budget": "Mid",
     "rating": "4.1",
     "details": "Resort Hotel in Calatagan",
     "locid": 170
@@ -1551,7 +1551,7 @@
     "name": "Fantasy World",
     "coordinates": [14.021929094147765, 120.87285694429671],
     "type": "Entertainment",
-    "budget": "Medium",
+    "budget": "Mid",
     "rating": "3.5",
     "details": "Abandoned Castle Themed Park in Lemery",
     "locid": 173
@@ -1560,7 +1560,7 @@
     "name": "Sky Ranch Tagaytay",
     "coordinates": [14.104827928062463, 120.93807576555106],
     "type": "Entertainment",
-    "budget": "Medium",
+    "budget": "Mid",
     "rating": "4.3",
     "details": "Amusement park in Tagaytay",
     "locid": 174
@@ -1578,7 +1578,7 @@
     "name": "Masungi Georeserve",
     "coordinates": [14.610218256105837, 121.32172426499963],
     "type": "Entertainment",
-    "budget": "Medium",
+    "budget": "Mid",
     "rating": "4.8",
     "details": "Nature preserve in Tanay, Rizal",
     "locid": 176
