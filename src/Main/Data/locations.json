@@ -3,822 +3,1584 @@
     "name": "Nuestra Señora De La Candelaria Parish",
     "coordinates": [14.42813, 121.42922],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "The church is known for its 126 steps connecting the local road to the main church on top of the hill.It has a Spanish style fa\u00e7ade. Due to natural calamities and war, only the belfry connected to the church is the remaining original structure of the original 1618 church.",
+    "locid": 1
   },
   {
     "name": "San Sebastian Parish Church",
     "coordinates": [14.297452310989186, 121.45925872469873],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "First stone church in Laguna and the first Franciscan building outside Manila made out of stone.",
+    "locid": 2
   },
   {
     "name": "Saint John the Baptist Parish",
     "coordinates": [14.340536630480583, 121.4816263358446],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Catholic Church venerating St. John the Baptist, popular tourist destination during Holy Week",
+    "locid": 3
   },
   {
     "name": "Cathedral of Our Lady of Maulawin",
     "coordinates": [14.281268271295238, 121.41674558426978],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "Catholic Church venerating the Lady of Mulauwin, popular tourist destination during Holy Week",
+    "locid": 4
   },
   {
     "name": "Emilio Jacinto Burial Place and Monument",
     "coordinates": [14.25119506252021, 121.4081893430125],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "The monument for Emilio Jacinto in Himlayang Pilipino was created by the sculptor Florante Caedo and unveiled on December 15, 1976.",
+    "locid": 5
   },
   {
     "name": "Immaculate Conception Parish Church",
     "coordinates": [14.283852837556589, 121.41525622240212],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Well-known Church venerating the Virgin Mary, established at the year 1602, and was burned during the 1945 Philippine Campaign of WWII",
+    "locid": 6
   },
   {
     "name": "Labanan sa Maimpis",
     "coordinates": [14.175930439054005, 121.4315556685637],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "5",
+    "details": "Memorial for the Battle between the Spanish force and the Katipuneros of Laguna led by General Emilio Jacinto, 27 February 1898",
+    "locid": 7
   },
   {
     "name": "St. Gregory the Great Parish Church",
     "coordinates": [14.146464567225332, 121.47112279960706],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "One of the oldest Roman Catholic churches in the Philippines located in the municipality of Majayjay in Laguna",
+    "locid": 8
   },
   {
     "name": "Puente del Capricho",
     "coordinates": [14.146402687284363, 121.46682882694574],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Puente de Capriccio was initiated by Spanish franciscan priest Victoriano del Moral. The bridge symbolizes the defiance of Filipino workers against the oppressive Spanish colonialists during the colonial period.",
+    "locid": 9
   },
   {
     "name": "Jose Rizal Monument",
     "coordinates": [14.145855524885533, 121.47140099094213],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "It is believed that the monument of Rizal in Majayjay was built on the year 1904, eight years after his execution in Bagumbayan, Manila (now Rizal / Luneta Park) on December 30, 1896. The construction of the monument was done under the auspices of Municipal President (Mayor) Don Antonio Escobar (1904-1905). Rizal\u2019s death day can be seen on the side of its monument stairs.",
+    "locid": 10
   },
   {
     "name": "The Roman Catholic Parish of San Santiago Apostol",
     "coordinates": [14.364555833447413, 121.48141152037068],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "The main attraction of the church is the original ceiling mural done by the famous painter Sim\u00f3n Flores (1839\u20131904). Not to be missed are his original painting of the Holy Family, the artesian well (dug in the 1800s) in the patio \u2013 the first well in the country to be so situated, and the rare betis tree nearby donated by sociologist Randy David, a native of the town. A two-minute walk from the church is the restored David House, ancestral home of the sociologist, which they christened as Bale Pinauid or Bahay Pawid.",
+    "locid": 11
   },
   {
     "name": "Three Crosses of Paete",
     "coordinates": [14.365001833476219, 121.49218587394603],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "The Tatlong Krus are three crosses on the peak of mount Humarap, part of the mountain of Sierra Madre located in Paete, in the province of Laguna, along the northeastern coast of Luzon island in the Philippines. The Three Crosses started out with three wooden crosses and now are made of concrete",
+    "locid": 12
   },
   {
     "name": "Diocesan Shrine and Parish of Our Lady of Guadalupe",
     "coordinates": [14.273388709120018, 121.45623779888614],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Our Lady of Guadalupe Parish Church, designated as the Diocesan Shrine of Our Lady of Guadalupe of the Roman Catholic Diocese of San Pablo, is the only Roman Catholic church in Pagsanjan, Laguna, Philippines, and the oldest church in the Philippines under the patronage of Our Lady of Guadalupe.",
+    "locid": 13
   },
   {
     "name": "Saint Peter of Alcantara Parish Church",
     "coordinates": [14.380905249247093, 121.47888952624595],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "The St. Peter of Alcantara Parish Church, designated as the Diocesan Shrine of Nuestra Se\u00f1ora de los Dolores de Turumba, is a Roman Catholic church in Pakil, Laguna, Philippines. It enshrines the Our Lady of Turumba painting.",
+    "locid": 14
   },
   {
     "name": "Nuestra Senora dela Natividad Parish",
     "coordinates": [14.403684166873687, 121.46823960718591],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "The Nuestra Señora dela Natividad Parish, commonly known as Pangil Church, is a Roman Catholic church in Natividad, Pangil, Laguna, Philippines. The statue of the pregnant Virgin Mary is said to be a gift from King Carlos III of Spain",
+    "locid": 15
   },
   {
     "name": "National Shrine and Parish of San Antonio",
     "coordinates": [14.233720235419568, 121.36458953752827],
     "type": "Historical",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Has the 4th Oldest Surviving Bell in the Phillipines, and is the First Antonine Church in the Philippines",
+    "locid": 16
+  },
+  {
+    "name": "Aguinaldo Shrine (Museo ni Emilio Aguinaldo)",
+    "coordinates": [14.445569249195598, 120.90693807323181],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Contains the historical memorabilia and interred remains of the First Philippine President, Emilio Aguinaldo",
+    "locid": 17
+  },
+  {
+    "name": "Minor Basilica of St. Michael the Archangel",
+    "coordinates": [14.026173647694073, 121.59100215286388],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "The influence of Chinese architecture in Tayabas is pronounced in the design of the basilica. Stone lions in front of the building show a link to the presence of Chinese traders before the Spanish colonial era.",
+    "locid": 18
+  },
+  {
+    "name": "Manuel Quezon Monument",
+    "coordinates": [14.025013062933223, 121.59267663759721],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Monument dedicated to Manuel L. Quezon, second official president of the Philippines",
+    "locid": 19
+  },
+  {
+    "name": "Casa Comunidad De Tayabas",
+    "coordinates": [14.025802655908779, 121.5917327335294],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "Constructed in 1831 when Don Diego Enriquez was gobernadorcillo, it is primarily designed as a guesthouse for visiting Spanish dignitaries.",
+    "locid": 20
+  },
+  {
+    "name": "Hermano Pule Monument",
+    "coordinates": [13.963238639846258, 121.565672839611],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "3.5",
+    "details": "Monument Dedicated to Hermano Pule or more commonly known by the name of Apolinario Dela Cruz.",
+    "locid": 21
+  },
+  {
+    "name": "Hermano Pule Monument - Lucban",
+    "coordinates": [14.146962196352595, 121.54509241280988],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Monument Dedicated to Hermano Pule or more commonly known by the name of Apolinario Dela Cruz",
+    "locid": 22
+  },
+  {
+    "name": "Cape Santiago Lighthouse",
+    "coordinates": [13.782546509760843, 120.65326072899974],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Oldest working lighthouse in Batangas and one of the oldest working lighthouses in the Philippines.",
+    "locid": 23
+  },
+  {
+    "name": "Minor Basilica of St. Martin of Tours",
+    "coordinates": [13.892864105762516, 120.92665941313795],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Considered to be the largest church building in the Philippines and in Asia, standing 88.6 meters long and 48 meters wide.",
+    "locid": 24
+  },
+  {
+    "name": "Pacific War Memorial Museum",
+    "coordinates": [14.385336998277747, 120.57410644497352],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "World War II museum with weapons, photos & memorabilia & a domed white memorial.",
+    "locid": 25
+  },
+  {
+    "name": "Malabrigo Lighthouse",
+    "coordinates": [13.613191236220791, 121.2588487030579],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.4",
+    "details": "Completed and lit in 1896, it is one of the oldest working lighthouses in the Philippines as well as the best preserved lighthouse in the country. It serves as a guide for ships passing through the Verde Island Passage going to either Batangas Bay or Sibuyan Sea.",
+    "locid": 26
+  },
+  {
+    "name": "Antipolo Cathedral",
+    "coordinates": [14.599147614463885, 121.17719637993012],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "popular pilgrimage site as many devotees paid reverence to Our Lady of Peace and Good Voyage, including Philippine national hero and polymath Jos\u00e9 Rizal, who visited the shrine as a boy with his father, Francisco Mercado, on June 6, 1868.",
+    "locid": 27
+  },
+  {
+    "name": "Puente de Malagonlong",
+    "coordinates": [14.019975876512497, 121.61565250683658],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "N/A",
+    "details": "One of the oldest bridges as well as the longest bridge made during the Spanish era",
+    "locid": 28
+  },
+  {
+    "name": "Pinto Art Museum",
+    "coordinates": [14.590628448435206, 121.16221837669983],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Contemporary art museum complex in Antipolo, Rizal, Philippines.",
+    "locid": 29
+  },
+  {
+    "name": "Museo ni Baldomero Aguinaldo",
+    "coordinates": [14.447991572113951, 120.92353855229638],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "The Baldomero Aguinaldo Shrine is a single-detached house built by Baldomero Aguinaldo, cousin of Emilio Aguinaldo during the American colonial period in 1906 at Binakayan, Kawit, Cavite",
+    "locid": 30
   },
   {
     "name": "Rolling Carbs Sushi Bar and Ramen",
     "coordinates": [14.42368, 121.44254],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.5",
+    "details": "Sushi Bar that also serves Ramen and Pizza",
+    "locid": 31
   },
   {
     "name": "Book Hive Cafe",
     "coordinates": [14.275707597652545, 121.39961459387818],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "BH Pizza, White Bunny Milktea, Matcha Latte",
+    "locid": 32
   },
   {
     "name": "Muni Coffee PH",
     "coordinates": [14.334208551451539, 121.48195907288466],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Brownie, Caramel Macchiato and Brownies, Hazelnut Latte",
+    "locid": 33
   },
   {
     "name": "Joy's View",
     "coordinates": [14.326958284185176, 121.47354670860891],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Quesadillas and Pasta",
+    "locid": 34
   },
   {
     "name": "BROTHERS CAFE 101",
     "coordinates": [14.332393700175599, 121.48166646868518],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.4",
+    "details": "Salted Caramel Latte, Smoked Butterscotch, Red Velvet Cheesecake",
+    "locid": 35
   },
   {
     "name": "Brics Hideout Restobar",
     "coordinates": [14.205509786379178, 121.49311667296809],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Sizzling Sisig, Pinakbet, Coffee",
+    "locid": 36
   },
   {
     "name": "Maribella Restaurant and Garden Resort",
     "coordinates": [14.175078107541767, 121.52442054090143],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "Tapsilog, Carabao Meat, Sinigang Na Sugpo, Butter Garlic Shrimp",
+    "locid": 37
   },
   {
     "name": "Hulugan Falls Nanay Ganda's Tapsilogan",
     "coordinates": [14.219869673363561, 121.48231849825382],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Tapsilog",
+    "locid": 38
   },
   {
     "name": "YHAMSHE GRILL",
     "coordinates": [14.30616082040382, 121.4797085987322],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.2",
+    "details": "Pork Steak, Sinigang, Kare-Kare Bagnet, Grilled Pork, Sizzling Burger Steak",
+    "locid": 39
   },
   {
     "name": "Janna's Place Restaurant",
     "coordinates": [14.300608622858151, 121.46419640184243],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.4",
+    "details": "Chef Salad, Salmon, Grilled squid",
+    "locid": 40
   },
   {
     "name": "Elvira's Creamy Halo-Halo and Pancit Lucban",
     "coordinates": [14.28601393762845, 121.45806065058962],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.5",
+    "details": "Halo-Halo and Pancit Lucban",
+    "locid": 41
   },
   {
     "name": "Miguel's Garden Cafe at Kota Paradiso",
     "coordinates": [14.449552031822353, 121.3826900240258],
     "type": "Food",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.5",
+    "details": "Special Beef Tapa, Michelle's Supreme Pizza, Caramel Latte",
+    "locid": 42
   },
   {
     "name": "Nanay Virgie Eatery",
     "coordinates": [14.454154359860837, 121.37740134565814],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Bulalo and Goto",
+    "locid": 43
   },
   {
     "name": "Big Boss Boodlefight",
     "coordinates": [14.269716501289285, 121.39861148880654],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.4",
+    "details": "Traditional Filipino Boodlefight",
+    "locid": 44
   },
   {
     "name": "Kusina ni Isa",
     "coordinates": [14.147837003931377, 121.4802954556095],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Pancit Bihon, Calamares and Tapsilog",
+    "locid": 45
   },
   {
     "name": "Kusina mo'to",
     "coordinates": [14.14686062132072, 121.48419339837126],
     "type": "Food",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.5",
+    "details": "Chicken Wings",
+    "locid": 46
   },
   {
     "name": "Ate Ganda's Kainan Lugaw Mami and more",
     "coordinates": [14.146431431890873, 121.47613350761296],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Lugaw Espesyal",
+    "locid": 47
   },
   {
     "name": "Kape Kesada",
     "coordinates": [14.364657910057062, 121.48304245214966],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Egg Sandwich, Coffee and Dalandan Juice",
+    "locid": 48
   },
   {
     "name": "Reese & Kyle's Lomi&Goto by Adors",
     "coordinates": [14.369057150328453, 121.51532956099082],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Lugaw, Lomi and Goto",
+    "locid": 49
   },
   {
     "name": "Le Maison Yelo Lane",
     "coordinates": [14.274233572393497, 121.44824505206047],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.6",
+    "details": "Four Cheese Pizza, Mango Bingsu, Grilled Salmon Steak",
+    "locid": 50
   },
   {
     "name": "Calle Arco Restaurant",
     "coordinates": [14.273992861021991, 121.45312598771002],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.3",
+    "details": "Pinakbet, Sinigang na baka with Langka, Garlic Chicken",
+    "locid": 51
   },
   {
     "name": "Alberto's Heritage Cafe",
     "coordinates": [14.249282096679462, 121.43498574801758],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.6",
+    "details": "Crispy Chicken Burger, Mediterranean Tuna Pasta, Hawaiian Pizza",
+    "locid": 52
   },
   {
     "name": "Fatty With Double Chin",
     "coordinates": [14.238240374153053, 121.43315441359532],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.3",
+    "details": "Burgers, Quarter Pounder and Double Cheese Burger",
+    "locid": 53
   },
   {
     "name": "Casa Verde Pagsanjan",
     "coordinates": [14.275764287855448, 121.44907483452516],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Lechon Manok, Lechon Kawali",
+    "locid": 54
   },
   {
     "name": "Alvin's Cuisine",
     "coordinates": [14.270043353763908, 121.45745825238392],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Burgers and Katsu Meals",
+    "locid": 55
   },
   {
     "name": "Manay's Eatery",
     "coordinates": [14.382716847313633, 121.47641273705308],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.3",
+    "details": "Crispy Lechon Kawali, Sizzling Squid, Chopsuey",
+    "locid": 56
   },
   {
     "name": "PORTSIDE UNLIWINGS",
     "coordinates": [14.37175776674741, 121.40163303860443],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Fries, Salted Ego, Classic Unli Wings with Garlic Rice, Cheese Bomb, Cucumber Lemonade, Blue Lemonade, Nachos",
+    "locid": 57
   },
   {
     "name": "BOSS Prince Eatery",
     "coordinates": [14.369000828340672, 121.40018202137836],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Pancit Bihon Pork Sisig Sizzling Tofu, Chicken Fillet, Lomi Overload",
+    "locid": 58
   },
   {
     "name": "Food O'Clock",
     "coordinates": [14.36824402524055, 121.40002952282785],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Beef Bulgogi and Beef Spicy Korean BBQ",
+    "locid": 59
   },
   {
     "name": "Padyok Cafe and Restaurant",
     "coordinates": [14.390938734044557, 121.47954640659071],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "Carbonara, Sinigang na Salmon Belly and Kare-Kare",
+    "locid": 60
   },
   {
-    "name": "Café Emeterio",
+    "name": "Cafe Emeterio",
     "coordinates": [14.388044524129036, 121.47701605989482],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.4",
+    "details": "Beef Biryani and Pizza",
+    "locid": 61
   },
   {
     "name": "Ala eh TONIO's Burger",
     "coordinates": [14.385772620233158, 121.47618860539795],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Bulik Burger, Buttered Porkchop, Chicken Mami, Buttered Chicken",
+    "locid": 62
   },
   {
     "name": "Liliosa Garden Cafe",
     "coordinates": [14.379330709616385, 121.47756908684048],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Spanish Latte, Mocha Latte",
+    "locid": 63
   },
   {
     "name": "Tea korner",
     "coordinates": [14.384608178834382, 121.40544164067937],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Okinawa Cream Cheese",
+    "locid": 64
   },
   {
     "name": "Jess Gotohan",
     "coordinates": [14.396226397024272, 121.47607961165198],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Bulalo, Chicken Sisig, Lugaw and Goto",
+    "locid": 65
   },
   {
     "name": "KM107",
     "coordinates": [14.395185321017953, 121.47390412651141],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Halo-Halo and classic Bacsilog",
+    "locid": 66
   },
   {
     "name": "Naz Coffee",
     "coordinates": [14.395363607158556, 121.47619179272927],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Naz Signature Brew, Caramel Macchiato",
+    "locid": 67
   },
   {
-    "name": "The Brickoven Café",
+    "name": "The Brickoven Cafe",
     "coordinates": [14.244870895837957, 121.36802876793813],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "Pizza Margherita, Garlic Parmesan Wings, 16 Tampipi Pizza 2 Flavors, Chicken Alfredo Pasta",
+    "locid": 68
   },
   {
-    "name": "Glorious Café",
+    "name": "Glorious Cafe",
     "coordinates": [14.233741567409481, 121.35953143743895],
     "type": "Food",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.4",
+    "details": "Choco Overload Waffle, Black Dragon Milktea",
+    "locid": 69
   },
   {
     "name": "Aramielle",
     "coordinates": [14.233783165293097, 121.36686996108484],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.2",
+    "details": "Halo-Halo Special, Lava Cake, Coffee Crumble",
+    "locid": 70
   },
   {
     "name": "Herbs And Beans",
     "coordinates": [14.234723396567427, 121.36727375006727],
     "type": "Food",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.2",
+    "details": "Bagnet Kare-kare, sisig",
+    "locid": 71
   },
   {
     "name": "Cafe Norma PH",
     "coordinates": [14.248313751137987, 121.37860381508582],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Spaghetti and Meatballs, Carbonara Pasta",
+    "locid": 72
   },
   {
     "name": "Konstrak coffee",
     "coordinates": [14.246260513026865, 121.37115997337855],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Egg Sandwich, Nachos, Carrot Cake",
+    "locid": 73
   },
   {
     "name": "Speranza Plus (ThebeanLab and Kaye's tea)",
     "coordinates": [14.480313570510539, 121.43727403745471],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "Dalgona, Milky Matcha, Milky Strawberry",
+    "locid": 74
   },
   {
     "name": "Leona's Kitchen",
     "coordinates": [14.54528625208982, 121.45855873970116],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "Goto, Tamales, Kapeng Barako",
+    "locid": 75
   },
   {
     "name": "Luna Hills Cafe Resort",
     "coordinates": [14.535218759216095, 121.46704566095255],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.9",
+    "details": "Pearl Milktea, Wintermelon, Spanish Latte",
+    "locid": 76
   },
   {
     "name": "Babi Bear Samgyupsal",
     "coordinates": [14.467331591298331, 121.42302044866908],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.0",
+    "details": "sampgyup bruh",
+    "locid": 77
   },
   {
     "name": "Halo-halo ni Edong",
     "coordinates": [14.428392743920032, 121.45298787889554],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Halo-Halo and Coffee Jelly",
+    "locid": 78
   },
   {
     "name": "Kath Reever",
     "coordinates": [14.41098570663888, 121.45108843614878],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.0",
+    "details": "Seafood Carbonara, Crispy Pork Kare Kare",
+    "locid": 79
   },
   {
     "name": "Caleb's Kitchen",
     "coordinates": [14.419097562145149, 121.44625767816885],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Caleb's Special Pizza, All-Meat Pizza",
+    "locid": 80
   },
   {
     "name": "Boss D Ramen",
     "coordinates": [14.416200268557125, 121.44720697702176],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.9",
+    "details": "Pork Gyoza, Shoyu Ramen, Tantanmen Ramen",
+    "locid": 81
   },
   {
     "name": "Dash Espresso",
     "coordinates": [14.279491697884025, 121.41696236084577],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Moccacino, Seasalt Latte, Cloud Foam Latte",
+    "locid": 82
   },
   {
     "name": "SECRET BREW",
     "coordinates": [14.278918998248306, 121.40986615868691],
     "type": "Food",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Flavored Latte, Flavored Cocoa",
+    "locid": 83
+  },
+  {
+    "name": "Anncent Hotel and Seafoods Restaurant",
+    "coordinates": [13.916155669756382, 121.63932376449536],
+    "type": "Food",
+    "budget": "High",
+    "rating": "4.5",
+    "details": "Chao Fan Fried Rice, Steamed Lapu Lapu, Singaporean Crab, Scallops with Mixed Vegetables, Live Seafood, Spiri Ribs Suit & Sour, Lobster Sit Am",
+    "locid": 84
+  },
+  {
+    "name": "Villa Escudero Waterfalls Restaurant",
+    "coordinates": [14.001508276403474, 121.3439767318234],
+    "type": "Food",
+    "budget": "Mid",
+    "rating": "4.4",
+    "details": "Halo Halo, Cookies & Cream, Pumpkin Curry, Clubhouse Sandwich, Tiramisu, Chicken Skin Chicharon, Fried Chicken Tails, Strawberry Milkshake, Fried Chicken, Ginataang Kalabasa with Sitaw Chicken, Pritong Tuyo, Ginataang Kalabasa Chicken, Baked Fish",
+    "locid": 85
   },
   {
     "name": "Pagsanjan Falls",
     "coordinates": [14.263004075245053, 121.4989271751697],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "Pagsanjan Falls, also known as Cavinti Falls, is one of the most famous waterfalls in the Philippines. Located in the province of Laguna, the falls is one of the major tourist attractions of the region.",
+    "locid": 86
   },
   {
     "name": "Cavinti Underground River and Caves Complex",
     "coordinates": [14.282304987140884, 121.6349527624506],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "The caves complex offers cave chambers that are friendly to explore even for beginners as well as challenging ones for the more advanced cave explorers. ",
+    "locid": 87
   },
   {
     "name": "Nakulo Falls",
     "coordinates": [14.261297055577883, 121.4999467385952],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the waterfalls attractions in Cavinti which is accessible via The Cliff Eco-Sanctuary Resort in Brgy. Anglas. The trail is only a 10-minute walkway to its final stretch at the steeply angled metal ladder.",
+    "locid": 88
   },
   {
     "name": "Bumbungan Eco Park",
     "coordinates": [14.249723172119664, 121.50577166103945],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Bumbungan was dammed at this section where the top of the spillway also served as a wet bridge on the Lumban-Caliraya-Cavinti Road. After an adjacent bridge was constructed, the dam and adjacent land became the Eco-Park with huts for picnickers and bathroom facilities.",
+    "locid": 89
   },
   {
     "name": "Pueblo El Salvador Cavinti Nature's Park and Picnic Grove",
     "coordinates": [14.256786160704374, 121.50267699626569],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Cheaper route to see the Pagsanjan Falls with only 270 per person, you get to trek, rappel and raft through the falls",
+    "locid": 90
   },
   {
     "name": "Bumbungan Twin Falls",
     "coordinates": [14.198774761474587, 121.5849642140103],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.4",
+    "details": "This trail is great for hiking and walking, and it's unlikely you'll encounter many other people while exploring. The trail is open year-round and is beautiful to visit anytime.",
+    "locid": 91
   },
   {
     "name": "Domelis Campsite",
     "coordinates": [14.290855599113208, 121.53957651467881],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Venue great for camping and outdoor enthusiasts looking for a great nature and sightseeing experience",
+    "locid": 92
   },
   {
     "name": "Camp Hogad",
     "coordinates": [14.480434938058844, 121.48776973868034],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Venue great for camping and outdoor enthusiasts looking for a great nature and sightseeing experience",
+    "locid": 93
   },
   {
     "name": "Kalayaan Twin Falls",
     "coordinates": [14.321660832076448, 121.4812958306628],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.3",
+    "details": "The name Kalayaan Twin Falls has at least 6 waterfalls inside the resort. Upstream and just beyond the first waterfall near the resort entrance are two more \u2013 a minor cascade peeking through the rocks and a much larger one beyond.",
+    "locid": 94
   },
   {
     "name": "Tanawan View Deck",
     "coordinates": [14.339392473409024, 121.49052690682193],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "5.0",
+    "details": "Great place to spend sightseeing from great heights",
+    "locid": 95
   },
   {
     "name": "Hulugan Falls",
     "coordinates": [14.21173953963019, 121.47993211511792],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Towering at around 70 meters in height, Hulugan falls was a wonderful sight to behold on that early morning. They said that the name Hulugan came to be because back in the days, there were a lot of water buffalos that fell or nahulog there, thus the name.",
+    "locid": 96
   },
   {
     "name": "Hulugan Falls Jump-off Point",
     "coordinates": [14.216484417994128, 121.49093618717498],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Diving Point for Hulugan Falls",
+    "locid": 97
   },
   {
     "name": "Hidden Falls",
     "coordinates": [14.21025, 121.48197],
     "type": "Nature",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.3",
+    "details": "The Hidden Falls is the second waterfall one can visit in San Salvador. It is just 10 minutes from Talay Falls, but the way to it is a little more challenging due to the steep trail and the need to rappel at one point. It is recommended to check with guides due to varying water depths",
+    "locid": 98
   },
   {
     "name": "Pililla 54 MW Windmill",
     "coordinates": [14.464745095935035, 121.37057480166115],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "The incredible, cutting-edge wind turbine quickly gained popularity thanks to its enormous fan that created winds that seemed to be moving toward Laguna Lake. ",
+    "locid": 99
   },
   {
     "name": "Balete Tree of Mabitac (Century Tree)",
     "coordinates": [14.453022961620487, 121.37906291878645],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "N/A",
+    "details": "Century old tree",
+    "locid": 100
   },
   {
     "name": "Bayside Baywalk",
     "coordinates": [14.279097848636688, 121.39008894068473],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Calamba Bayside or Aplaya Calamba Baywalk is one of the tourist attractions in the city of Calamba, it is surrounded by Laguna Lake , it overlooks Wonder Island Calamba or Calamba Island from the east, and Mount Makiling from the south, it is covered by the barangays of Palingon and Lingga",
+    "locid": 101
   },
   {
     "name": "Taytay Falls",
     "coordinates": [14.114601481576146, 121.50530608549198],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Taytay Falls, also called Imelda Falls, is one of the favorite waterfall destinations in Laguna. It has a height of 10-15 meters and releases pristine, icy cold spring waters coming from Mount Banahaw. According to history, it was named after the ex-First Lady Imelda Marcos who funded the promotion of tourism of this spot.",
+    "locid": 102
   },
   {
     "name": "RedDoorz @ Hilarion's Farm",
     "coordinates": [14.148390471046923, 121.48799154044023],
     "type": "Nature",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.6",
+    "details": "Along with other RedDoorz @ Hilarion's Farm Majayjay, Laguna provides visitors with a cozy and secure stay at an affordable rate. The hotel's service guarantee and amenities include comfy beds, showers, toiletries, bottled water, and linens, in addition to the established safety measures.",
+    "locid": 103
   },
   {
     "name": "AIDA AURORA NATURES FARM",
     "coordinates": [14.137030506732204, 121.4838093048591],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Calming nature farm with free admission, good food and nice views.",
+    "locid": 104
   },
   {
     "name": "APA Farms Mini Zoo",
     "coordinates": [14.138536013876402, 121.46326523276561],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.9",
+    "details": "Small Petting Zoo located in Majayjay.",
+    "locid": 105
   },
   {
     "name": "Matabungca Falls",
     "coordinates": [14.36491, 121.48646],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.0",
+    "details": "Refreshing waterfalls with an amazing view",
+    "locid": 106
   },
   {
     "name": "Wawa Park",
     "coordinates": [14.364099615425127, 121.47394796128582],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "There is a lot to do in this park, including riding a bicycle or practicing your motorbike skills on the lakeside road, which is broad enough. They also provide boat excursions back and forth across the lake.",
+    "locid": 107
   },
   {
     "name": "Talon Sirena",
     "coordinates": [14.388624175455833, 121.50637917310215],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "5.0",
+    "details": "Refreshing waterfalls with an amazing view",
+    "locid": 108
   },
   {
     "name": "Mt. Pingas Pilgrimage Park",
     "coordinates": [14.37942692680911, 121.48562391896147],
     "type": "Nature",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.6",
+    "details": "The miraculous mountain is called Bundok Pingas, which is said to be the center of pilgrimage for the Nuestra Se\u00f1ora de los Dolores de Turumba.",
+    "locid": 109
   },
   {
     "name": "Buntot Palos Falls",
     "coordinates": [14.4045, 121.4802],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.6",
+    "details": "Buntot Palos (Eel's Tail), also known as The Hidden Falls. Found inside a grand rock-walled covered with forest thus the term Hidden best describe the place. ",
+    "locid": 110
   },
   {
     "name": "Ambon-Ambon Falls",
     "coordinates": [14.41541555998079, 121.48122197616613],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Good place to visit, river with falls, trekking to Ambon-ambon falls a bit hard, tubing in river, swimming",
+    "locid": 111
   },
   {
     "name": "Bulusukan River & Eco Park",
     "coordinates": [14.245674717999801, 121.35203104639635],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "3.6",
+    "details": "Bulusukan Eco Agro Tourism Park Pila, Laguna: perfect for those who want to relax, jog, bike and date.",
+    "locid": 112
   },
   {
     "name": "Aplaya Marker",
     "coordinates": [14.260761359738975, 121.35248521487134],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "N/A",
+    "details": "Road Marker",
+    "locid": 113
   },
   {
     "name": "Three Falls (Marilag Falls)",
     "coordinates": [14.533897537987977, 121.45478176107794],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.1",
+    "details": "Three waterfalls with the cold cascading water of Sierra Madre mountain range.",
+    "locid": 114
   },
   {
     "name": "Sta. Maria Laguna Viewing Deck",
     "coordinates": [14.541365640018212, 121.45942504005664],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "An amazing view deck for those wanting to appreciate Laguna's natural beauty",
+    "locid": 115
   },
   {
     "name": "Lihim na Lagusan",
     "coordinates": [14.549812491931206, 121.46337890990326],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Popular with riders because of the beautiful scenery of the mountain.",
+    "locid": 116
   },
   {
     "name": "Hammock BaseKamp",
     "coordinates": [14.53397034062365, 121.47963913873176],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.9",
+    "details": "Campground in Santa Maria, Laguna",
+    "locid": 117
   },
   {
     "name": "Sampaloc Falls",
     "coordinates": [14.4433, 121.4853],
     "type": "Nature",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.5",
+    "details": "An idyllic, off-grid, lakefront escape from the busy city life",
+    "locid": 118
   },
   {
     "name": "Top Mount Farm",
     "coordinates": [14.442952798765404, 121.48665200794727],
     "type": "Nature",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Beautiful campsite situated in the mountains that will bring you back to countryside",
+    "locid": 119
+  },
+  {
+    "name": "Lake Sampaloc",
+    "coordinates": [14.075013452234627, 121.32652134904674],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo",
+    "locid": 120
+  },
+  {
+    "name": "Lake Bunot",
+    "coordinates": [14.078360565866737, 121.34541129520689],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo",
+    "locid": 121
+  },
+  {
+    "name": "Lake Kalibato",
+    "coordinates": [14.10664453714757, 121.37613400260177],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo",
+    "locid": 122
+  },
+  {
+    "name": "Lake Pandin",
+    "coordinates": [14.11310999508362, 121.36488543071565],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo",
+    "locid": 123
+  },
+  {
+    "name": "Lake Yambo",
+    "coordinates": [14.121683553232335, 121.36932716859805],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo",
+    "locid": 124
+  },
+  {
+    "name": "Lake Palakpakin",
+    "coordinates": [14.113056115744824, 121.33647596188149],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo",
+    "locid": 125
+  },
+  {
+    "name": "Lake Muhikap",
+    "coordinates": [14.120751991149898, 121.33498593963341],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo",
+    "locid": 126
+  },
+  {
+    "name": "Taal Lake",
+    "coordinates": [13.96840606587709, 120.94172133172172],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.9",
+    "details": "Third largest lake in the Philippines and is the second largest on the island of Luzon. There is a small volcanic island in the middle of the lake which has been the site of almost all the historic volcanic activity. The Taal Volcano itself has a lake of its own inside its crater called 'Crater Lake'.",
+    "locid": 127
+  },
+  {
+    "name": "Kamay Ni Hesus Healing Church",
+    "coordinates": [14.10160107859664, 121.57292168717083],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "The church is claimed to be a healing church. Devotees believe that healing prayers and petitions come true after they visit and pray here in Kamay ni Hesus.",
+    "locid": 128
+  },
+  {
+    "name": "San Ysiro Falls",
+    "coordinates": [14.707544985279059, 121.29792474103591],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "Breathtaking falls in Antipolo.",
+    "locid": 129
+  },
+  {
+    "name": "St Ambrose Biodiversity Farm",
+    "coordinates": [13.982490127473014, 121.2659605579031],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Also known as Mini Tayak, showcasing the local biodiversity of Laguna.",
+    "locid": 130
+  },
+  {
+    "name": "Malagundi Point",
+    "coordinates": [13.62819755128197, 121.31193096953693],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Malagundi Point stands proudly along the majestic, craggy coastline of Balibago.",
+    "locid": 131
+  },
+  {
+    "name": "Avilon Zoo",
+    "coordinates": [14.760290207409643, 121.15030175334593],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Operated by the Avilon Wildlife Conservation Foundation, which also operated the Ark Avilon Zoo in Pasig.",
+    "locid": 132
   },
   {
     "name": "Balai Sitang Mountain Resort",
     "coordinates": [14.493971102623831, 121.47719174315455],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.6",
+    "details": "High Quality Resort in Famy",
+    "locid": 133
   },
   {
     "name": "Longos Cock Fighting Arena",
     "coordinates": [14.345194020913626, 121.4834827774289],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "3.9",
+    "details": "Event venue in Kalayaan, Laguna",
+    "locid": 134
   },
   {
     "name": "Caliraya Springs Golf Club",
     "coordinates": [14.293747821516202, 121.55630132554286],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.1",
+    "details": "Golf course in Cavinti Laguna",
+    "locid": 135
   },
   {
     "name": "Caliraya Ecoville Recreation and Farm Resort",
     "coordinates": [14.285773447762082, 121.51563384737476],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.1",
+    "details": "Resort adjacent to Caliraya Springs Golf Club",
+    "locid": 136
   },
   {
     "name": "Amazing View Mountain Farm Resort",
     "coordinates": [14.442938040417948, 121.39699219066262],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.4",
+    "details": "Nestled in the mountains with breathtaking views, Amazing View Mountain Resort offers an escape, a retreat from the bustling life of the city.",
+    "locid": 137
   },
   {
     "name": "Balanac River Dam Cottage",
     "coordinates": [14.201314950262857, 121.44119317489368],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.3",
+    "details": "A pleasant drive through the province of Laguna to Balanac River Dam Cottage for a cooling swim.",
+    "locid": 138
   },
   {
     "name": "Dalitiwan Resort",
     "coordinates": [14.152095963744745, 121.48940674035487],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.0",
+    "details": "Nice place to relax and unwind, with cheap rates",
+    "locid": 139
   },
   {
     "name": "Sprite Falls Spring Resort",
     "coordinates": [14.137893469944105, 121.49875707971044],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.6",
+    "details": "Refreshing waterfalls with an amazing view",
+    "locid": 140
   },
   {
     "name": "Las Familias Resort",
     "coordinates": [14.144990402868645, 121.49668232470098],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.5",
+    "details": "Family-friendly and cost worthy resort",
+    "locid": 141
   },
   {
     "name": "Casa Milagros Paete",
     "coordinates": [14.367435803775283, 121.47953816436771],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.8",
+    "details": "Casa Milagros is your vacation house in Paete. Perfect for families or groups of friends who are looking for a place to unwind.",
+    "locid": 142
   },
   {
     "name": "Vonwelt Nature Farm",
     "coordinates": [14.237048821847836, 121.45733334334362],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "Mid",
+    "rating": "4.0",
+    "details": "Nice place to relax and unwind, with cheap rates",
+    "locid": 143
   },
   {
     "name": "Cavinti Boating Station",
     "coordinates": [14.2656120444099, 121.47548605975233],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.5",
+    "details": "Boat tour for Pagsanjan Falls area",
+    "locid": 144
   },
   {
     "name": "Pagsanjan Paradise Resort",
     "coordinates": [14.26536733847523, 121.46679092014374],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.1",
+    "details": "Resort dedicated to Pagsanjan Falls area",
+    "locid": 145
   },
   {
     "name": "Villa Nerliza Resort",
     "coordinates": [14.352229886394886, 121.38971927839333],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.1",
+    "details": "Nice place to relax and unwind, with cheap rates",
+    "locid": 146
   },
   {
     "name": "Clemente Campsite",
     "coordinates": [14.38892157101352, 121.3852382353169],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.8",
+    "details": "Campsite for outdoor enthusiasts",
+    "locid": 147
   },
   {
     "name": "Daddy's Place Resort",
     "coordinates": [14.406838500041474, 121.46443968001522],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "3.2",
+    "details": "Decent Resort, according to google reviews",
+    "locid": 148
   },
   {
     "name": "Greenhouse Balian",
     "coordinates": [14.405973559268212, 121.480592862406],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.7",
+    "details": "Resort and Hotel with a Greenhouse attraction",
+    "locid": 149
   },
   {
     "name": "Mountain Breeze Resort",
     "coordinates": [14.407973744096958, 121.47244381704897],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.7",
+    "details": "Decently priced resort with good lodging ",
+    "locid": 150
   },
   {
     "name": "Villa Gaña Resort",
     "coordinates": [14.411051566044934, 121.47883739211248],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.4",
+    "details": "Decently priced resort with good lodging ",
+    "locid": 151
   },
   {
     "name": "Villa Arabella Resort",
     "coordinates": [14.220463758819564, 121.39667886744596],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.5",
+    "details": "Decently priced resort with good lodging ",
+    "locid": 152
   },
   {
     "name": "Montreal Garden Resort",
     "coordinates": [14.208328888429872, 121.37817447026586],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.4",
+    "details": "Decently priced resort with good lodging ",
+    "locid": 153
   },
   {
     "name": "Hiraya  ",
     "coordinates": [14.207850453741841, 121.38087607353583],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.9",
+    "details": "High Quality Resort with Good Lodging and facilities",
+    "locid": 154
   },
   {
     "name": "La Blanca Private Resort",
     "coordinates": [14.262613629739452, 121.36768742999148],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.6",
+    "details": "High Quality Resort with Good Lodging and facilities",
+    "locid": 155
   },
   {
     "name": "Casa Venice Resort",
     "coordinates": [14.221284841546277, 121.39590976627004],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.7",
+    "details": "High Quality Resort with Good Lodging and facilities",
+    "locid": 156
   },
   {
     "name": "Pita Fishing Resort and Recreation Center",
     "coordinates": [14.238246031672489, 121.36854728987302],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.5",
+    "details": "High Quality Resort with Good Lodging, fishing activities and pools",
+    "locid": 157
   },
   {
     "name": "Batis ng kalikasan",
     "coordinates": [14.50609647982242, 121.41098183127143],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "3.9",
+    "details": "Campground in Santa Maria, Laguna",
+    "locid": 158
   },
   {
     "name": "Aambon Forest Spring Resort",
     "coordinates": [14.536311588105798, 121.46884435942894],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.6",
+    "details": "High Quality Resort with Good Lodging and facilities",
+    "locid": 159
   },
   {
     "name": "Little Baguio's Sunset Villa",
     "coordinates": [14.5425011953777, 121.46013254527391],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "5.0",
+    "details": "High Quality Resort with Good Lodging and facilities",
+    "locid": 160
   },
   {
     "name": "Yoyong and Dita's Hot Spring",
     "coordinates": [14.45841454499142, 121.42787557739882],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "3.8",
+    "details": "Swimming pool in Santa Maria, Laguna",
+    "locid": 161
   },
   {
     "name": "August-Inn Resort",
     "coordinates": [14.428821698283338, 121.46345938893471],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "3.9",
+    "details": "High Quality Resort with Good Lodging and facilities",
+    "locid": 162
   },
   {
     "name": "Ricardo's Nature Garden",
     "coordinates": [14.262767917036816, 121.42833410213395],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "3.6",
+    "details": "Decently priced resort with good lodging ",
+    "locid": 163
   },
   {
     "name": "Lipski Ville Resort",
     "coordinates": [14.286920415294121, 121.40427408539307],
     "type": "Entertainment",
-    "budget": "Low"
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "Affordable resort with good lodging ",
+    "locid": 164
   },
   {
     "name": "Lady Ester Grand Villa Resort and Farm",
     "coordinates": [14.236642300639053, 121.40763512650622],
     "type": "Entertainment",
-    "budget": "High"
+    "budget": "High",
+    "rating": "4.3",
+    "details": "Affordable resort and farm with good lodging ",
+    "locid": 165
   },
   {
     "name": "Hacienda Antonia",
     "coordinates": [14.242882148799506, 121.41666558959562],
     "type": "Entertainment",
-    "budget": "Mid"
+    "budget": "Mid",
+    "rating": "4.6",
+    "details": "Decently priced villa with good lodging ",
+    "locid": 166
+  },
+  {
+    "name": "Papaya Island Cove",
+    "coordinates": [14.226021319028373, 120.59663634762353],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.3",
+    "details": "Popular Cove in Nasugbu",
+    "locid": 167
+  },
+  {
+    "name": "Layag Layag Beach",
+    "coordinates": [14.181599476349279, 120.58725150653105],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.5",
+    "details": "Popular Beach in Nasugbu",
+    "locid": 168
+  },
+  {
+    "name": "Nasugbu Beachfront",
+    "coordinates": [14.077172604336868, 120.62362756610815],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "4.6",
+    "details": "Popular Beach in Nasugbu",
+    "locid": 169
+  },
+  {
+    "name": "Manuel Uy Beach",
+    "coordinates": [13.804817457082331, 120.63883559842394],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "4.1",
+    "details": "Resort Hotel in Calatagan",
+    "locid": 170
+  },
+  {
+    "name": "Starfish Sandbar",
+    "coordinates": [13.821199330169502, 120.61821296143135],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.7",
+    "details": "Tourist attraction in Calatagan, Batangas",
+    "locid": 171
+  },
+  {
+    "name": "K3's Floating Cottage",
+    "coordinates": [13.843762511069077, 120.61805735823843],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.6",
+    "details": "Tourist attraction in Calatagan, Batangas",
+    "locid": 172
+  },
+  {
+    "name": "Fantasy World",
+    "coordinates": [14.021929094147765, 120.87285694429671],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "3.5",
+    "details": "Abandoned Castle Themed Park in Lemery",
+    "locid": 173
+  },
+  {
+    "name": "Sky Ranch Tagaytay",
+    "coordinates": [14.104827928062463, 120.93807576555106],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "4.3",
+    "details": "Amusement park in Tagaytay",
+    "locid": 174
+  },
+  {
+    "name": "Enchanted Kingdom",
+    "coordinates": [14.29471872274793, 121.09527362825123],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.5",
+    "details": "A very Famous amusement park in Santa Rosa Laguna",
+    "locid": 175
+  },
+  {
+    "name": "Masungi Georeserve",
+    "coordinates": [14.610218256105837, 121.32172426499963],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "4.8",
+    "details": "Nature preserve in Tanay, Rizal",
+    "locid": 176
   }
 ]
