@@ -1018,7 +1018,7 @@
   {
     "name": "Kamay Ni Hesus Healing Church",
     "coordinates": [14.10160107859664, 121.57292168717083],
-    "type": "Religious",
+    "type": "Nature",
     "budget": "Low",
     "rating": "4.7",
     "details": "The church is claimed to be a healing church. Devotees believe that healing prayers and petitions come true after they visit and pray here in Kamay ni Hesus."
@@ -1037,7 +1037,7 @@
     "type": "Nature",
     "budget": "Low",
     "rating": "4.5",
-    "details": "Also known as 'Mini Tayak’, showcasing the local biodiversity of Laguna."
+    "details": "Also known as Mini Tayak, showcasing the local biodiversity of Laguna."
   },
   {
     "name": "Malagundi Point",
@@ -1050,7 +1050,7 @@
   {
     "name": "Avilon Zoo",
     "coordinates": [14.760290207409643, 121.15030175334593],
-    "type": "Zoo",
+    "type": "Nature",
     "budget": "Low",
     "rating": "4.5",
     "details": "Operated by the Avilon Wildlife Conservation Foundation, which also operated the Ark Avilon Zoo in Pasig."
@@ -1060,271 +1060,351 @@
     "coordinates": [14.493971102623831, 121.47719174315455],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "High Quality Resort in Famy"
   },
   {
     "name": "Longos Cock Fighting Arena",
     "coordinates": [14.345194020913626, 121.4834827774289],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "3.9",
+    "details": "Event venue in Kalayaan, Laguna"
   },
   {
     "name": "Caliraya Springs Golf Club",
     "coordinates": [14.293747821516202, 121.55630132554286],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.1",
+    "details": "Golf course in Cavinti Laguna"
   },
   {
     "name": "Caliraya Ecoville Recreation and Farm Resort",
     "coordinates": [14.285773447762082, 121.51563384737476],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.1",
+    "details": "Resort adjacent to Caliraya Springs Golf Club"
   },
   {
     "name": "Amazing View Mountain Farm Resort",
     "coordinates": [14.442938040417948, 121.39699219066262],
     "type": "Entertainment",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "Nestled in the mountains with breathtaking views, Amazing View Mountain Resort offers an escape, a retreat from the bustling life of the city."
   },
   {
     "name": "Balanac River Dam Cottage",
     "coordinates": [14.201314950262857, 121.44119317489368],
     "type": "Entertainment",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "A pleasant drive through the province of Laguna to Balanac River Dam Cottage for a cooling swim."
   },
   {
     "name": "Dalitiwan Resort",
     "coordinates": [14.152095963744745, 121.48940674035487],
     "type": "Entertainment",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.0",
+    "details": "Nice place to relax and unwind, with cheap rates"
   },
   {
     "name": "Sprite Falls Spring Resort",
     "coordinates": [14.137893469944105, 121.49875707971044],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Refreshing waterfalls with an amazing view"
   },
   {
     "name": "Las Familias Resort",
     "coordinates": [14.144990402868645, 121.49668232470098],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Family-friendly and cost worthy resort"
   },
   {
     "name": "Casa Milagros Paete",
     "coordinates": [14.367435803775283, 121.47953816436771],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Casa Milagros is your vacation house in Paete. Perfect for families or groups of friends who are looking for a place to unwind."
   },
   {
     "name": "Vonwelt Nature Farm",
     "coordinates": [14.237048821847836, 121.45733334334362],
     "type": "Entertainment",
-    "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "budget": "Mid",
+    "rating": "4.0",
+    "details": "Nice place to relax and unwind, with cheap rates"
   },
   {
     "name": "Cavinti Boating Station",
     "coordinates": [14.2656120444099, 121.47548605975233],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Boat tour for Pagsanjan Falls area"
   },
   {
     "name": "Pagsanjan Paradise Resort",
     "coordinates": [14.26536733847523, 121.46679092014374],
     "type": "Entertainment",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.1",
+    "details": "Resort dedicated to Pagsanjan Falls area"
   },
   {
     "name": "Villa Nerliza Resort",
     "coordinates": [14.352229886394886, 121.38971927839333],
     "type": "Entertainment",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.1",
+    "details": "Nice place to relax and unwind, with cheap rates"
   },
   {
     "name": "Clemente Campsite",
     "coordinates": [14.38892157101352, 121.3852382353169],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Campsite for outdoor enthusiasts"
   },
   {
     "name": "Daddy's Place Resort",
     "coordinates": [14.406838500041474, 121.46443968001522],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "3.2",
+    "details": "Decent Resort, according to google reviews"
   },
   {
     "name": "Greenhouse Balian",
     "coordinates": [14.405973559268212, 121.480592862406],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.7",
+    "details": "Resort and Hotel with a Greenhouse attraction"
   },
   {
     "name": "Mountain Breeze Resort",
     "coordinates": [14.407973744096958, 121.47244381704897],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.7",
+    "details": "Decently priced resort with good lodging "
   },
   {
     "name": "Villa Gaña Resort",
     "coordinates": [14.411051566044934, 121.47883739211248],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "Decently priced resort with good lodging "
   },
   {
     "name": "Villa Arabella Resort",
     "coordinates": [14.220463758819564, 121.39667886744596],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Decently priced resort with good lodging "
   },
   {
     "name": "Montreal Garden Resort",
     "coordinates": [14.208328888429872, 121.37817447026586],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "Decently priced resort with good lodging "
   },
   {
     "name": "Hiraya  ",
     "coordinates": [14.207850453741841, 121.38087607353583],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.9",
+    "details": "High Quality Resort with Good Lodging and facilities"
   },
   {
     "name": "La Blanca Private Resort",
     "coordinates": [14.262613629739452, 121.36768742999148],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "High Quality Resort with Good Lodging and facilities"
   },
   {
     "name": "Casa Venice Resort",
     "coordinates": [14.221284841546277, 121.39590976627004],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.7",
+    "details": "High Quality Resort with Good Lodging and facilities"
   },
   {
     "name": "Pita Fishing Resort and Recreation Center",
     "coordinates": [14.238246031672489, 121.36854728987302],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "High Quality Resort with Good Lodging, fishing activities and pools"
   },
   {
     "name": "Batis ng kalikasan",
     "coordinates": [14.50609647982242, 121.41098183127143],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "3.9",
+    "details": "Campground in Santa Maria, Laguna"
   },
   {
     "name": "Aambon Forest Spring Resort",
     "coordinates": [14.536311588105798, 121.46884435942894],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "High Quality Resort with Good Lodging and facilities"
   },
   {
     "name": "Little Baguio's Sunset Villa",
     "coordinates": [14.5425011953777, 121.46013254527391],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "5.0",
+    "details": "High Quality Resort with Good Lodging and facilities"
   },
   {
     "name": "Yoyong and Dita's Hot Spring",
     "coordinates": [14.45841454499142, 121.42787557739882],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "3.8",
+    "details": "Swimming pool in Santa Maria, Laguna"
   },
   {
     "name": "August-Inn Resort",
     "coordinates": [14.428821698283338, 121.46345938893471],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "3.9",
+    "details": "High Quality Resort with Good Lodging and facilities"
   },
   {
     "name": "Ricardo's Nature Garden",
     "coordinates": [14.262767917036816, 121.42833410213395],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "3.6",
+    "details": "Decently priced resort with good lodging "
   },
   {
     "name": "Lipski Ville Resort",
     "coordinates": [14.286920415294121, 121.40427408539307],
     "type": "Entertainment",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.7",
+    "details": "Affordable resort with good lodging "
   },
   {
     "name": "Lady Ester Grand Villa Resort and Farm",
     "coordinates": [14.236642300639053, 121.40763512650622],
     "type": "Entertainment",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Affordable resort and farm with good lodging "
   },
   {
     "name": "Hacienda Antonia",
     "coordinates": [14.242882148799506, 121.41666558959562],
     "type": "Entertainment",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Decently priced villa with good lodging "
+  },
+  {
+    "name": "Papaya Island Cove",
+    "coordinates": [14.226021319028373, 120.59663634762353],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.3",
+    "details": "Popular Cove in Nasugbu"
+  },
+  {
+    "name": "Layag Layag Beach",
+    "coordinates": [14.181599476349279, 120.58725150653105],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.5",
+    "details": "Popular Beach in Nasugbu"
+  },
+  {
+    "name": "Nasugbu Beachfront",
+    "coordinates": [14.077172604336868, 120.62362756610815],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "4.6",
+    "details": "Popular Beach in Nasugbu"
+  },
+  {
+    "name": "Manuel Uy Beach",
+    "coordinates": [13.804817457082331, 120.63883559842394],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "4.1",
+    "details": "Resort Hotel in Calatagan"
+  },
+  {
+    "name": "Starfish Sandbar",
+    "coordinates": [13.821199330169502, 120.61821296143135],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.7",
+    "details": "Tourist attraction in Calatagan, Batangas"
+  },
+  {
+    "name": "K3's Floating Cottage",
+    "coordinates": [13.843762511069077, 120.61805735823843],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.6",
+    "details": "Tourist attraction in Calatagan, Batangas"
+  },
+  {
+    "name": "Fantasy World",
+    "coordinates": [14.021929094147765, 120.87285694429671],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "3.5",
+    "details": "Abandoned Castle Themed Park in Lemery"
+  },
+  {
+    "name": "Sky Ranch Tagaytay",
+    "coordinates": [14.104827928062463, 120.93807576555106],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "4.3",
+    "details": "Amusement park in Tagaytay"
+  },
+  {
+    "name": "Enchanted Kingdom",
+    "coordinates": [14.29471872274793, 121.09527362825123],
+    "type": "Entertainment",
+    "budget": "High",
+    "rating": "4.5",
+    "details": "A very Famous amusement park in Santa Rosa Laguna"
+  },
+  {
+    "name": "Masungi Georeserve",
+    "coordinates": [14.610218256105837, 121.32172426499963],
+    "type": "Entertainment",
+    "budget": "Medium",
+    "rating": "4.8",
+    "details": "Nature preserve in Tanay, Rizal"
   }
 ]
