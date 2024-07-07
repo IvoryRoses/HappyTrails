@@ -244,424 +244,440 @@
     "coordinates": [14.42368, 121.44254],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Sushi Bar that also serves Ramen and Pizza"
   },
   {
     "name": "Book Hive Cafe",
     "coordinates": [14.275707597652545, 121.39961459387818],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "BH Pizza, White Bunny Milktea, Matcha Latte"
   },
   {
     "name": "Muni Coffee PH",
     "coordinates": [14.334208551451539, 121.48195907288466],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Brownie, Caramel Macchiato and Brownies, Hazelnut Latte"
   },
   {
     "name": "Joy's View",
     "coordinates": [14.326958284185176, 121.47354670860891],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Quesadillas and Pasta"
   },
   {
     "name": "BROTHERS CAFE 101",
     "coordinates": [14.332393700175599, 121.48166646868518],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "Salted Caramel Latte, Smoked Butterscotch, Red Velvet Cheesecake"
   },
   {
     "name": "Brics Hideout Restobar",
     "coordinates": [14.205509786379178, 121.49311667296809],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Sizzling Sisig, Pinakbet, Coffee"
   },
   {
     "name": "Maribella Restaurant and Garden Resort",
     "coordinates": [14.175078107541767, 121.52442054090143],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Tapsilog, Carabao Meat, Sinigang Na Sugpo, Butter Garlic Shrimp"
   },
   {
     "name": "Hulugan Falls Nanay Ganda's Tapsilogan",
     "coordinates": [14.219869673363561, 121.48231849825382],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Tapsilog"
   },
   {
     "name": "YHAMSHE GRILL",
     "coordinates": [14.30616082040382, 121.4797085987322],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.2",
+    "details": "Pork Steak, Sinigang, Kare-Kare Bagnet, Grilled Pork, Sizzling Burger Steak"
   },
   {
     "name": "Janna's Place Restaurant",
     "coordinates": [14.300608622858151, 121.46419640184243],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "Chef Salad, Salmon, Grilled squid"
   },
   {
     "name": "Elvira's Creamy Halo-Halo and Pancit Lucban",
     "coordinates": [14.28601393762845, 121.45806065058962],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Halo-Halo and Pancit Lucban"
   },
   {
     "name": "Miguel's Garden Cafe at Kota Paradiso",
     "coordinates": [14.449552031822353, 121.3826900240258],
     "type": "Food",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Special Beef Tapa, Michelle's Supreme Pizza, Caramel Latte"
   },
   {
     "name": "Nanay Virgie Eatery",
     "coordinates": [14.454154359860837, 121.37740134565814],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Bulalo and Goto"
   },
   {
     "name": "Big Boss Boodlefight",
     "coordinates": [14.269716501289285, 121.39861148880654],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "Traditional Filipino Boodlefight"
   },
   {
     "name": "Kusina ni Isa",
     "coordinates": [14.147837003931377, 121.4802954556095],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Pancit Bihon, Calamares and Tapsilog"
   },
   {
     "name": "Kusina mo'to",
     "coordinates": [14.14686062132072, 121.48419339837126],
     "type": "Food",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Chicken Wings"
   },
   {
     "name": "Ate Ganda's Kainan Lugaw Mami and more",
     "coordinates": [14.146431431890873, 121.47613350761296],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Lugaw Espesyal"
   },
   {
     "name": "Kape Kesada",
     "coordinates": [14.364657910057062, 121.48304245214966],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Egg Sandwich, Coffee and Dalandan Juice"
   },
   {
     "name": "Reese & Kyle's Lomi&Goto by Adors",
     "coordinates": [14.369057150328453, 121.51532956099082],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Lugaw, Lomi and Goto"
   },
   {
     "name": "Le Maison Yelo Lane",
     "coordinates": [14.274233572393497, 121.44824505206047],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Four Cheese Pizza, Mango Bingsu, Grilled Salmon Steak"
   },
   {
     "name": "Calle Arco Restaurant",
     "coordinates": [14.273992861021991, 121.45312598771002],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Pinakbet, Sinigang na baka with Langka, Garlic Chicken"
   },
   {
     "name": "Alberto's Heritage Cafe",
     "coordinates": [14.249282096679462, 121.43498574801758],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Crispy Chicken Burger, Mediterranean Tuna Pasta, Hawaiian Pizza"
   },
   {
     "name": "Fatty With Double Chin",
     "coordinates": [14.238240374153053, 121.43315441359532],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Burgers, Quarter Pounder and Double Cheese Burger"
   },
   {
     "name": "Casa Verde Pagsanjan",
     "coordinates": [14.275764287855448, 121.44907483452516],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Lechon Manok, Lechon Kawali"
   },
   {
     "name": "Alvin's Cuisine",
     "coordinates": [14.270043353763908, 121.45745825238392],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Burgers and Katsu Meals"
   },
   {
     "name": "Manay's Eatery",
     "coordinates": [14.382716847313633, 121.47641273705308],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Crispy Lechon Kawali, Sizzling Squid, Chopsuey"
   },
   {
     "name": "PORTSIDE UNLIWINGS",
     "coordinates": [14.37175776674741, 121.40163303860443],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Fries, Salted Ego, Classic Unli Wings with Garlic Rice, Cheese Bomb, Cucumber Lemonade, Blue Lemonade, Nachos"
   },
   {
     "name": "BOSS Prince Eatery",
     "coordinates": [14.369000828340672, 121.40018202137836],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Pancit Bihon Pork Sisig Sizzling Tofu, Chicken Fillet, Lomi Overload"
   },
   {
     "name": "Food O'Clock",
     "coordinates": [14.36824402524055, 121.40002952282785],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Beef Bulgogi and Beef Spicy Korean BBQ"
   },
   {
     "name": "Padyok Cafe and Restaurant",
     "coordinates": [14.390938734044557, 121.47954640659071],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Carbonara, Sinigang na Salmon Belly and Kare-Kare"
   },
   {
     "name": "Café Emeterio",
     "coordinates": [14.388044524129036, 121.47701605989482],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "Beef Biryani and Pizza"
   },
   {
     "name": "Ala eh TONIO's Burger",
     "coordinates": [14.385772620233158, 121.47618860539795],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Bulik Burger, Buttered Porkchop, Chicken Mami, Buttered Chicken"
   },
   {
     "name": "Liliosa Garden Cafe",
     "coordinates": [14.379330709616385, 121.47756908684048],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Spanish Latte, Mocha Latte"
   },
   {
     "name": "Tea korner",
     "coordinates": [14.384608178834382, 121.40544164067937],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Okinawa Cream Cheese"
   },
   {
     "name": "Jess Gotohan",
     "coordinates": [14.396226397024272, 121.47607961165198],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Bulalo, Chicken Sisig, Lugaw and Goto"
   },
   {
     "name": "KM107",
     "coordinates": [14.395185321017953, 121.47390412651141],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Halo-Halo and classic Bacsilog"
   },
   {
     "name": "Naz Coffee",
     "coordinates": [14.395363607158556, 121.47619179272927],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Naz Signature Brew, Caramel Macchiato"
   },
   {
     "name": "The Brickoven Café",
     "coordinates": [14.244870895837957, 121.36802876793813],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Pizza Margherita, Garlic Parmesan Wings, 16 Tampipi Pizza 2 Flavors, Chicken Alfredo Pasta"
   },
   {
     "name": "Glorious Café",
     "coordinates": [14.233741567409481, 121.35953143743895],
     "type": "Food",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "Choco Overload Waffle, Black Dragon Milktea"
   },
   {
     "name": "Aramielle",
     "coordinates": [14.233783165293097, 121.36686996108484],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.2",
+    "details": "Halo-Halo Special, Lava Cake, Coffee Crumble"
   },
   {
     "name": "Herbs And Beans",
     "coordinates": [14.234723396567427, 121.36727375006727],
     "type": "Food",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.2",
+    "details": "Bagnet Kare-kare, sisig"
   },
   {
     "name": "Cafe Norma PH",
     "coordinates": [14.248313751137987, 121.37860381508582],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Spaghetti and Meatballs, Carbonara Pasta"
   },
   {
     "name": "Konstrak coffee",
     "coordinates": [14.246260513026865, 121.37115997337855],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Egg Sandwich, Nachos, Carrot Cake"
   },
   {
     "name": "Speranza Plus (ThebeanLab and Kaye's tea)",
     "coordinates": [14.480313570510539, 121.43727403745471],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.7",
+    "details": "Dalgona, Milky Matcha, Milky Strawberry"
   },
   {
     "name": "Leona's Kitchen",
     "coordinates": [14.54528625208982, 121.45855873970116],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Goto, Tamales, Kapeng Barako"
   },
   {
     "name": "Luna Hills Cafe Resort",
     "coordinates": [14.535218759216095, 121.46704566095255],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.9",
+    "details": "Pearl Milktea, Wintermelon, Spanish Latte"
   },
   {
     "name": "Babi Bear Samgyupsal",
     "coordinates": [14.467331591298331, 121.42302044866908],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.0",
+    "details": "sampgyup bruh"
   },
   {
     "name": "Halo-halo ni Edong",
     "coordinates": [14.428392743920032, 121.45298787889554],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Halo-Halo and Coffee Jelly"
   },
   {
     "name": "Kath Reever",
     "coordinates": [14.41098570663888, 121.45108843614878],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.0",
+    "details": "Seafood Carbonara, Crispy Pork Kare Kare"
   },
   {
     "name": "Caleb's Kitchen",
     "coordinates": [14.419097562145149, 121.44625767816885],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Caleb's Special Pizza, All-Meat Pizza"
   },
   {
     "name": "Boss D Ramen",
     "coordinates": [14.416200268557125, 121.44720697702176],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.9",
+    "details": "Pork Gyoza, Shoyu Ramen, Tantanmen Ramen"
   },
   {
     "name": "Dash Espresso",
     "coordinates": [14.279491697884025, 121.41696236084577],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Moccacino, Seasalt Latte, Cloud Foam Latte"
   },
   {
     "name": "SECRET BREW",
     "coordinates": [14.278918998248306, 121.40986615868691],
     "type": "Food",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Flavored Latte, Flavored Cocoa"
+  },
+  {
+    "name": "Anncent Hotel and Seafoods Restaurant",
+    "coordinates": [13.916155669756382, 121.63932376449536],
+    "type": "Food",
+    "budget": "High",
+    "rating": "4.5",
+    "details": "Chao Fan Fried Rice, Steamed Lapu Lapu, Singaporean Crab, Scallops with Mixed Vegetables, Live Seafood, Spiri Ribs Suit & Sour, Lobster Sit Am"
+  },
+  {
+    "name": "Villa Escudero Waterfalls Restaurant",
+    "coordinates": [14.001508276403474, 121.3439767318234],
+    "type": "Food",
+    "budget": "Mid",
+    "rating": "4.4",
+    "details": "Halo Halo, Cookies & Cream, Pumpkin Curry, Clubhouse Sandwich, Tiramisu, Chicken Skin Chicharon, Fried Chicken Tails, Strawberry Milkshake, Fried Chicken, Ginataang Kalabasa with Sitaw Chicken, Pritong Tuyo, Ginataang Kalabasa Chicken, Baked Fish"
   },
   {
     "name": "Pagsanjan Falls",
