@@ -684,272 +684,376 @@
     "coordinates": [14.263004075245053, 121.4989271751697],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "Pagsanjan Falls, also known as Cavinti Falls, is one of the most famous waterfalls in the Philippines. Located in the province of Laguna, the falls is one of the major tourist attractions of the region."
   },
   {
     "name": "Cavinti Underground River and Caves Complex",
     "coordinates": [14.282304987140884, 121.6349527624506],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "The caves complex offers cave chambers that are friendly to explore even for beginners as well as challenging ones for the more advanced cave explorers. "
   },
   {
     "name": "Nakulo Falls",
     "coordinates": [14.261297055577883, 121.4999467385952],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "One of the waterfalls attractions in Cavinti which is accessible via The Cliff Eco-Sanctuary Resort in Brgy. Anglas. The trail is only a 10-minute walkway to its final stretch at the steeply angled metal ladder."
   },
   {
     "name": "Bumbungan Eco Park",
     "coordinates": [14.249723172119664, 121.50577166103945],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Bumbungan was dammed at this section where the top of the spillway also served as a wet bridge on the Lumban-Caliraya-Cavinti Road. After an adjacent bridge was constructed, the dam and adjacent land became the Eco-Park with huts for picnickers and bathroom facilities."
   },
   {
     "name": "Pueblo El Salvador Cavinti Nature's Park and Picnic Grove",
     "coordinates": [14.256786160704374, 121.50267699626569],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Cheaper route to see the Pagsanjan Falls with only 270 per person, you get to trek, rappel and raft through the falls"
   },
   {
     "name": "Bumbungan Twin Falls",
     "coordinates": [14.198774761474587, 121.5849642140103],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.4",
+    "details": "This trail is great for hiking and walking, and it's unlikely you'll encounter many other people while exploring. The trail is open year-round and is beautiful to visit anytime."
   },
   {
     "name": "Domelis Campsite",
     "coordinates": [14.290855599113208, 121.53957651467881],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Venue great for camping and outdoor enthusiasts looking for a great nature and sightseeing experience"
   },
   {
     "name": "Camp Hogad",
     "coordinates": [14.480434938058844, 121.48776973868034],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Venue great for camping and outdoor enthusiasts looking for a great nature and sightseeing experience"
   },
   {
     "name": "Kalayaan Twin Falls",
     "coordinates": [14.321660832076448, 121.4812958306628],
     "type": "Nature",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "The name Kalayaan Twin Falls has at least 6 waterfalls inside the resort. Upstream and just beyond the first waterfall near the resort entrance are two more – a minor cascade peeking through the rocks and a much larger one beyond."
   },
   {
     "name": "Tanawan View Deck",
     "coordinates": [14.339392473409024, 121.49052690682193],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "5.0",
+    "details": "Great place to spend sightseeing from great heights"
   },
   {
     "name": "Hulugan Falls",
     "coordinates": [14.21173953963019, 121.47993211511792],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Towering at around 70 meters in height, Hulugan falls was a wonderful sight to behold on that early morning. They said that the name Hulugan came to be because back in the days, there were a lot of water buffalos that fell or nahulog there, thus the name."
   },
   {
     "name": "Hulugan Falls Jump-off Point",
     "coordinates": [14.216484417994128, 121.49093618717498],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Diving Point for Hulugan Falls"
   },
   {
     "name": "Hidden Falls",
     "coordinates": [14.21025, 121.48197],
     "type": "Nature",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "The Hidden Falls is the second waterfall one can visit in San Salvador. It is just 10 minutes from Talay Falls, but the way to it is a little more challenging due to the steep trail and the need to rappel at one point. It is recommended to check with guides due to varying water depths"
   },
   {
     "name": "Pililla 54 MW Windmill",
     "coordinates": [14.464745095935035, 121.37057480166115],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "The incredible, cutting-edge wind turbine quickly gained popularity thanks to its enormous fan that created winds that seemed to be moving toward Laguna Lake. "
   },
   {
     "name": "Balete Tree of Mabitac (Century Tree)",
     "coordinates": [14.453022961620487, 121.37906291878645],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "N/A",
+    "details": "Century old tree"
   },
   {
     "name": "Bayside Baywalk",
     "coordinates": [14.279097848636688, 121.39008894068473],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Calamba Bayside or Aplaya Calamba Baywalk is one of the tourist attractions in the city of Calamba, it is surrounded by Laguna Lake , it overlooks Wonder Island Calamba or Calamba Island from the east, and Mount Makiling from the south, it is covered by the barangays of Palingon and Lingga"
   },
   {
     "name": "Taytay Falls",
     "coordinates": [14.114601481576146, 121.50530608549198],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Taytay Falls, also called Imelda Falls, is one of the favorite waterfall destinations in Laguna. It has a height of 10-15 meters and releases pristine, icy cold spring waters coming from Mount Banahaw. According to history, it was named after the ex-First Lady Imelda Marcos who funded the promotion of tourism of this spot."
   },
   {
     "name": "RedDoorz @ Hilarion's Farm",
     "coordinates": [14.148390471046923, 121.48799154044023],
     "type": "Nature",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Along with other RedDoorz @ Hilarion's Farm Majayjay, Laguna provides visitors with a cozy and secure stay at an affordable rate. The hotel's service guarantee and amenities include comfy beds, showers, toiletries, bottled water, and linens, in addition to the established safety measures."
   },
   {
     "name": "AIDA AURORA NATURES FARM",
     "coordinates": [14.137030506732204, 121.4838093048591],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Calming nature farm with free admission, good food and nice views."
   },
   {
     "name": "APA Farms Mini Zoo",
     "coordinates": [14.138536013876402, 121.46326523276561],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.9",
+    "details": "Small Petting Zoo located in Majayjay."
   },
   {
     "name": "Matabungca Falls",
     "coordinates": [14.36491, 121.48646],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.0",
+    "details": "Refreshing waterfalls with an amazing view"
   },
   {
     "name": "Wawa Park",
     "coordinates": [14.364099615425127, 121.47394796128582],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.3",
+    "details": "There is a lot to do in this park, including riding a bicycle or practicing your motorbike skills on the lakeside road, which is broad enough. They also provide boat excursions back and forth across the lake."
   },
   {
     "name": "Talon Sirena",
     "coordinates": [14.388624175455833, 121.50637917310215],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "5.0",
+    "details": "Refreshing waterfalls with an amazing view"
   },
   {
     "name": "Mt. Pingas Pilgrimage Park",
     "coordinates": [14.37942692680911, 121.48562391896147],
     "type": "Nature",
     "budget": "High",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "The miraculous mountain is called Bundok Pingas, which is said to be the center of pilgrimage for the Nuestra Señora de los Dolores de Turumba."
   },
   {
     "name": "Buntot Palos Falls",
     "coordinates": [14.4045, 121.4802],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.6",
+    "details": "Buntot Palos (Eel's Tail), also known as The Hidden Falls. Found inside a grand rock-walled covered with forest thus the term Hidden best describe the place. "
   },
   {
     "name": "Ambon-Ambon Falls",
     "coordinates": [14.41541555998079, 121.48122197616613],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Good place to visit, river with falls, trekking to Ambon-ambon falls a bit hard, tubing in river, swimming"
   },
   {
     "name": "Bulusukan River & Eco Park",
     "coordinates": [14.245674717999801, 121.35203104639635],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "3.6",
+    "details": "Bulusukan Eco Agro Tourism Park Pila, Laguna: perfect for those who want to relax, jog, bike and date."
   },
   {
     "name": "Aplaya Marker",
     "coordinates": [14.260761359738975, 121.35248521487134],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "N/A",
+    "details": "Road Marker"
   },
   {
     "name": "Three Falls (Marilag Falls)",
     "coordinates": [14.533897537987977, 121.45478176107794],
     "type": "Nature",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.1",
+    "details": "Three waterfalls with the cold cascading water of Sierra Madre mountain range."
   },
   {
     "name": "Sta. Maria Laguna Viewing Deck",
     "coordinates": [14.541365640018212, 121.45942504005664],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "An amazing view deck for those wanting to appreciate Laguna's natural beauty"
   },
   {
     "name": "Lihim na Lagusan",
     "coordinates": [14.549812491931206, 121.46337890990326],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.8",
+    "details": "Popular with riders because of the beautiful scenery of the mountain."
   },
   {
     "name": "Hammock BaseKamp",
     "coordinates": [14.53397034062365, 121.47963913873176],
     "type": "Nature",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.9",
+    "details": "Campground in Santa Maria, Laguna"
   },
   {
     "name": "Sampaloc Falls",
     "coordinates": [14.4433, 121.4853],
     "type": "Nature",
     "budget": "Mid",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "An idyllic, off-grid, lakefront escape from the busy city life"
   },
   {
     "name": "Top Mount Farm",
     "coordinates": [14.442952798765404, 121.48665200794727],
     "type": "Nature",
     "budget": "Low",
-    "rating": "1",
-    "details": "test"
+    "rating": "4.5",
+    "details": "Beautiful campsite situated in the mountains that will bring you back to countryside"
+  },
+  {
+    "name": "Lake Sampaloc",
+    "coordinates": [14.075013452234627, 121.32652134904674],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo"
+  },
+  {
+    "name": "Lake Bunot",
+    "coordinates": [14.078360565866737, 121.34541129520689],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo"
+  },
+  {
+    "name": "Lake Kalibato",
+    "coordinates": [14.10664453714757, 121.37613400260177],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo"
+  },
+  {
+    "name": "Lake Pandin",
+    "coordinates": [14.11310999508362, 121.36488543071565],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo"
+  },
+  {
+    "name": "Lake Yambo",
+    "coordinates": [14.121683553232335, 121.36932716859805],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo"
+  },
+  {
+    "name": "Lake Palakpakin",
+    "coordinates": [14.113056115744824, 121.33647596188149],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo"
+  },
+  {
+    "name": "Lake Muhikap",
+    "coordinates": [14.120751991149898, 121.33498593963341],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "One of the breathtaking 7 lakes of San Pablo"
+  },
+  {
+    "name": "Taal Lake",
+    "coordinates": [13.96840606587709, 120.94172133172172],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.9",
+    "details": "Third largest lake in the Philippines and is the second largest on the island of Luzon. There is a small volcanic island in the middle of the lake which has been the site of almost all the historic volcanic activity. The Taal Volcano itself has a lake of its own inside its crater called 'Crater Lake'."
+  },
+  {
+    "name": "Kamay Ni Hesus Healing Church",
+    "coordinates": [14.10160107859664, 121.57292168717083],
+    "type": "Religious",
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "The church is claimed to be a healing church. Devotees believe that healing prayers and petitions come true after they visit and pray here in Kamay ni Hesus."
+  },
+  {
+    "name": "San Ysiro Falls",
+    "coordinates": [14.707544985279059, 121.29792474103591],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.7",
+    "details": "Breathtaking falls in Antipolo."
+  },
+  {
+    "name": "St Ambrose Biodiversity Farm",
+    "coordinates": [13.982490127473014, 121.2659605579031],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Also known as 'Mini Tayak’, showcasing the local biodiversity of Laguna."
+  },
+  {
+    "name": "Malagundi Point",
+    "coordinates": [13.62819755128197, 121.31193096953693],
+    "type": "Nature",
+    "budget": "Low",
+    "rating": "4.8",
+    "details": "Malagundi Point stands proudly along the majestic, craggy coastline of Balibago."
+  },
+  {
+    "name": "Avilon Zoo",
+    "coordinates": [14.760290207409643, 121.15030175334593],
+    "type": "Zoo",
+    "budget": "Low",
+    "rating": "4.5",
+    "details": "Operated by the Avilon Wildlife Conservation Foundation, which also operated the Ark Avilon Zoo in Pasig."
   },
   {
     "name": "Balai Sitang Mountain Resort",
