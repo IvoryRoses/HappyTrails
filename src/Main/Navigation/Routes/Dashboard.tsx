@@ -25,10 +25,26 @@ import NatureMarker from "../Assets/Nature_Marker.png";
 import HistoricalMarker from "../Assets/Historical_Marker.png";
 import EntertainmentMarker from "../Assets/Entertainment_Marker.png";
 import UserMarker from "../Assets/User_Marker.png";
-import { TiArrowBack, TiArrowForward } from "react-icons/ti";
-import { FaTrashAlt, FaHistory, FaQuestion } from "react-icons/fa";
+import { FaTrashAlt, FaHistory, FaQuestion, FaRegStar } from "react-icons/fa";
+import { FaRightLong, FaLeftLong } from "react-icons/fa6";
+
+import { MoonLoader } from "react-spinners";
 
 const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
+
+// Define the type for markers
+type MarkerType = {
+  id: string;
+  geocode: [number, number]; // explicitly a tuple with two elements
+  popUp: string;
+  type?: string;
+  budget?: string;
+  name?: string;
+  image?: string;
+  rating?: number;
+  detail?: string;
+  locID?: number;
+};
 
 interface HistoryPopupProps {
   handleClose: () => void;
@@ -36,17 +52,6 @@ interface HistoryPopupProps {
 }
 
 export default function Dashboard() {
-  // Define the type for markers
-  type MarkerType = {
-    id: string;
-    geocode: [number, number]; // explicitly a tuple with two elements
-    popUp: string;
-    type?: string;
-    budget?: string;
-    name?: string;
-    image?: string;
-  };
-
   type MarkerImagesType = { [key: string]: any };
 
   const preferenceMarker = presetLocations.map((location) => ({
@@ -54,7 +59,11 @@ export default function Dashboard() {
     type: location.type,
     budget: location.budget,
     name: location.name,
+    rating: location.rating,
+    detail: location.details,
+    locID: location.locid,
     image: (MarkerImages as MarkerImagesType)[location.name],
+    ref: useRef<any>(null),
   }));
 
   useEffect(() => {
@@ -79,10 +88,12 @@ export default function Dashboard() {
   // State to manage selected types
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
-  const [priceRange, setPriceRange] = useState<number>(0);
+  const [minPriceRange, setMinPriceRange] = useState<string>("");
+  const [maxPriceRange, setMaxPriceRange] = useState<string>("");
 
   // State to manage selected budgets
-  const [selectedBudgets, setSelectedBudgets] = useState<string[]>([]);
+  const [minBudget, setMinBudget] = useState<string>("");
+  const [maxBudget, setMaxBudget] = useState<string>("");
 
   const [showConfirmationForm, setShowConfirmationForm] =
     useState<boolean>(false);
@@ -91,6 +102,8 @@ export default function Dashboard() {
   const [historyPopup, setHistoryPopup] = useState(false);
 
   const [showManual, setShowManual] = useState(false);
+
+  const [userMarker, setUserMarker] = useState<MarkerType | null>(null);
 
   const mapRef = useRef<L.Map | null>(null);
 
@@ -175,6 +188,25 @@ export default function Dashboard() {
       map.flyTo([14.27, 121.46], 12);
     }
   };
+
+  const handleBackToUserClick = () => {
+    const map = mapRef.current;
+    if (map && userMarker) {
+      map.flyTo(userMarker.geocode, 15);
+    } else {
+      toast.error("No User Marker Found", {
+        autoClose: 3000,
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (markers.length > 0) {
+      setUserMarker(markers[0]); // Assuming user marker is the first marker in the array
+    } else {
+      setUserMarker(null);
+    }
+  }, [markers]);
 
   // Component to handle map clicks
   function AddMarkerOnClick() {
@@ -278,14 +310,6 @@ export default function Dashboard() {
     return null;
   }
 
-  // Function to handle the deletion of a marker
-  const deleteMarker = (id: string, event: React.MouseEvent) => {
-    event.stopPropagation();
-    setMarkers((prevMarkers) =>
-      prevMarkers.filter((marker) => marker.id !== id)
-    );
-  };
-
   const handleStartTripClick = async (preferenceMarker: MarkerType) => {
     if (markers.length === 0) {
       toast.error("Please add a start marker on the map first.", {
@@ -310,6 +334,7 @@ export default function Dashboard() {
             [userMarker.geocode[1], userMarker.geocode[0]], // User marker coordinates
             [preferenceMarker.geocode[1], preferenceMarker.geocode[0]], // Preference marker coordinates
           ],
+<<<<<<< HEAD
           //algorithm: "A-Star",
           preference: "shortest",
           profile: "driving-car", //do not remove
@@ -318,6 +343,9 @@ export default function Dashboard() {
           //  target_count: 3,
           //},
           //algorithm: "astar", // Experimental
+=======
+          preference: "shortest",
+>>>>>>> 18b7ca911d63a606fd4dbb815959f10dd3ab8264
         }),
       });
 
@@ -344,6 +372,7 @@ export default function Dashboard() {
           if (currentUser) {
             const tripData = {
               locationName: preferenceMarker.name,
+              locationType: preferenceMarker.type,
               timestamp: new Date().toISOString(),
             };
             await setDoc(
@@ -381,7 +410,7 @@ export default function Dashboard() {
     setRoute([]);
     setRouteLength(0);
     setUseGPS(false);
-    setSelectedBudgets([]);
+    setMinBudget("");
     const map = mapRef.current;
     if (map) {
       map.eachLayer((layer) => {
@@ -424,34 +453,129 @@ export default function Dashboard() {
     setHistoryPopup(!historyPopup);
   };
 
-  const handlePriceRangeChange = (inputValue: number) => {
-    // Update price range state
-    setPriceRange(inputValue);
+  const handleSuggestion = () => {
+    const filteredMarkers = preferenceMarker.filter((marker) => {
+      // Check type match
+      const typeMatch =
+        selectedTypes.length === 0 ||
+        selectedTypes.includes(marker.type as string);
 
-    // Update selected budgets based on price range
-    if (inputValue < 500) {
-      setSelectedBudgets(["Low"]);
-    } else if (inputValue >= 501 && inputValue <= 999) {
-      setSelectedBudgets(["Mid"]);
-    } else if (inputValue >= 1000) {
-      setSelectedBudgets(["High"]);
+      // Check budget match
+      let budgetMatch = true;
+      const budgetLevels = ["Low", "Mid", "High"];
+      const minIndex = budgetLevels.indexOf(minBudget);
+      const maxIndex = budgetLevels.indexOf(maxBudget);
+      const markerIndex = budgetLevels.indexOf(marker.budget as string);
+
+      if (minIndex !== -1 && maxIndex !== -1 && markerIndex !== -1) {
+        if (minIndex <= markerIndex && markerIndex <= maxIndex) {
+          budgetMatch = true;
+        } else {
+          budgetMatch = false;
+        }
+      } else {
+        budgetMatch = true; // Handle case where budget levels are not properly set
+      }
+
+      return typeMatch && budgetMatch;
+    });
+
+    // Check if there are markers available after filtering
+    if (filteredMarkers.length === 0) {
+      console.error("No markers available based on type and budget conditions");
+      toast.error(
+        "No suitable locations found. Please adjust your preferences.",
+        {
+          autoClose: 3000,
+        }
+      );
+      return;
+    }
+
+    // Select a random marker from the filtered list
+    const randomIndex = Math.floor(Math.random() * filteredMarkers.length);
+    const randomMarker = filteredMarkers[randomIndex];
+
+    if (randomMarker && randomMarker.geocode) {
+      const map = mapRef.current;
+      if (map) {
+        map.flyTo(randomMarker.geocode as [number, number], 15);
+        if (randomMarker.ref.current) {
+          randomMarker.ref.current.openPopup();
+        }
+      }
     } else {
-      setSelectedBudgets([]); // Clear selected budgets if no valid range is selected
+      console.error("Random marker or its geocode is undefined");
+      toast.error("Failed to suggest a location. Please try again.", {
+        autoClose: 3000,
+      });
+    }
+  };
+
+  const handleMinPriceRangeChange = (inputValue: string) => {
+    const numericValue = parseInt(inputValue.replace(/\D/g, ""), 10);
+
+    // Update price range state
+    setMinPriceRange(inputValue);
+
+    // Update selected budget based on price range
+    if (numericValue >= 1 && numericValue <= 500) {
+      setMinBudget("Low");
+    } else if (numericValue >= 501 && numericValue <= 999) {
+      setMinBudget("Mid");
+    } else if (numericValue >= 1000) {
+      setMinBudget("High");
+    } else {
+      setMinBudget(""); // Clear selected budget if no valid range is selected
+    }
+  };
+
+  const handleMaxPriceRangeChange = (inputValue: string) => {
+    const numericValue = parseInt(inputValue.replace(/\D/g, ""), 10);
+
+    // Update price range state
+    setMaxPriceRange(inputValue);
+
+    // Update selected budget based on price range
+    if (numericValue >= 1 && numericValue <= 500) {
+      setMaxBudget("Low");
+    } else if (numericValue >= 501 && numericValue <= 999) {
+      setMaxBudget("Mid");
+    } else if (numericValue >= 1000) {
+      setMaxBudget("High");
+    } else {
+      setMaxBudget(""); // Clear selected budget if no valid range is selected
     }
   };
 
   const clearPrice = () => {
-    setSelectedBudgets([]);
-    setPriceRange(Number(0));
+    setMinBudget("");
+    setMaxBudget("");
+    setMinPriceRange("");
+    setMaxPriceRange("");
   };
 
   const filteredMarkers = preferenceMarker.filter((marker) => {
     const typeMatch =
       selectedTypes.length === 0 ||
       selectedTypes.includes(marker.type as string);
-    const budgetMatch =
-      selectedBudgets.length === 0 ||
-      selectedBudgets.includes(marker.budget as string);
+
+    let budgetMatch = true;
+    const budgetLevels = ["Low", "Mid", "High"];
+
+    const minIndex = budgetLevels.indexOf(minBudget);
+    const maxIndex = budgetLevels.indexOf(maxBudget);
+    const markerIndex = budgetLevels.indexOf(marker.budget as string);
+
+    if (minIndex !== -1 && maxIndex !== -1 && markerIndex !== -1) {
+      if (minIndex <= markerIndex && markerIndex <= maxIndex) {
+        budgetMatch = true;
+      } else {
+        budgetMatch = false;
+      }
+    } else {
+      budgetMatch = true;
+    }
     return typeMatch && budgetMatch;
   });
 
@@ -478,29 +602,36 @@ export default function Dashboard() {
             <button className="laguna-button" onClick={handleBackToLagunaClick}>
               Back to Laguna
             </button>
-            <button
-              className="clear-route-button"
-              onClick={clearRouteAndMarker}
-            >
-              <FaTrashAlt style={{ marginRight: "3px" }} />
-              Clear Route
+            <button className="user-button" onClick={handleBackToUserClick}>
+              Back to User
             </button>
           </div>
-          <h1 style={{ color: "#ded2aa" }}>Budget</h1>
-          <input
-            className="price-input"
-            type="number"
-            placeholder="Enter price range: e.g., 1000"
-            value={priceRange}
-            onChange={(e) => setPriceRange(Number(e.target.value))}
-          />
-          <div className="price-button-container">
-            <button
-              onClick={() => handlePriceRangeChange(priceRange as number)}
-            >
-              Enter
+          <button className="clear-route-button" onClick={clearRouteAndMarker}>
+            <FaTrashAlt style={{ marginRight: "3px" }} />
+            Clear Route
+          </button>
+
+          <h1>Budget</h1>
+          <div className="price-wrapper">
+            <div className="price-seperator">
+              <input
+                className="price-input"
+                type="number"
+                placeholder="Minimum"
+                value={minPriceRange}
+                onChange={(e) => handleMinPriceRangeChange(e.target.value)}
+              />
+              <input
+                className="price-input"
+                type="number"
+                placeholder="Maximum"
+                value={maxPriceRange}
+                onChange={(e) => handleMaxPriceRangeChange(e.target.value)}
+              />
+            </div>
+            <button className="price-clear-button" onClick={() => clearPrice()}>
+              Clear
             </button>
-            <button onClick={() => clearPrice()}>Clear</button>
           </div>
           <h1>Preference</h1>
           <div className="check-icon">
@@ -546,8 +677,15 @@ export default function Dashboard() {
               History
             </button>
             {historyPopup && (
-              <HistoryPopup handleClose={handleHistoryPopup} mapRef={mapRef} />
+              <HistoryPopup
+                handleClose={handleHistoryPopup}
+                mapRef={mapRef}
+                preferenceMarker={preferenceMarker}
+              />
             )}
+            <button className="history-button" onClick={handleSuggestion}>
+              Suggestion
+            </button>
             <FaQuestion
               onClick={handleManual}
               style={{ width: "1.5rem", height: "1.5rem", cursor: "pointer" }}
@@ -603,21 +741,34 @@ export default function Dashboard() {
                   key={marker.geocode.join(",")}
                   position={marker.geocode as [number, number]}
                   icon={icon}
+                  ref={marker.ref}
                 >
                   <Popup>
                     <div className="popup-display">
+                      <span className="marker-name">{marker.name}</span>
                       <img
+                        onClick={handleHistoryPopup}
                         src={marker.image}
                         style={{
-                          width: "180px", //made this wider from 150
-                          height: "150px",
+                          width: "250px", //made this wider from 150
+                          height: "200px",
                           marginBottom: "10px",
                         }}
                       />
-                      <span className="marker-name">{marker.name}</span>
+                      <span className="marker-name">
+                        <FaRegStar /> {marker.rating}
+                      </span>
+                      <span className="marker-name">{marker.detail}</span>
+                      <span>{marker.budget}</span>
                       <button
                         className="popup-button"
-                        onClick={() => handleStartTripClick(marker)}
+                        onClick={() => {
+                          handleStartTripClick(marker);
+                          const map = mapRef.current;
+                          if (map) {
+                            map.closePopup();
+                          }
+                        }}
                       >
                         Start trip
                       </button>
@@ -634,11 +785,7 @@ export default function Dashboard() {
                 icon={customIcon}
               >
                 <Popup>
-                  {marker.popUp}
-                  <br />
-                  <button onClick={(e) => deleteMarker(marker.id, e)}>
-                    Delete
-                  </button>
+                  <h1>you</h1>
                 </Popup>
               </Marker>
             ))}
@@ -657,23 +804,34 @@ export default function Dashboard() {
 }
 
 //History Popup Container
-const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
+const HistoryPopup: React.FC<HistoryPopupProps & { preferenceMarker: any }> = ({
+  handleClose,
+  mapRef,
+  preferenceMarker,
+}) => {
   const [tripHistory, setTripHistory] = useState<
-    { locationName: string; timestamp: string }[]
+    { locationName: string; locationType: string; timestamp: string }[]
   >([]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const tripsPerPage = 10;
 
+  const [loading, setLoading] = useState(true);
+
   const currentUser = auth.currentUser;
 
   const handleRevisit = (locationName: string) => {
-    const location = presetLocations.find((loc) => loc.name === locationName);
+    const markerToRevisit = preferenceMarker.find(
+      (marker: MarkerType) => marker.name === locationName
+    );
 
-    if (location && mapRef.current) {
+    if (markerToRevisit && markerToRevisit.ref.current) {
       handleClose();
-      const [lat, lng] = location.coordinates;
-      mapRef.current.flyTo([lat, lng], 15); // Adjust zoom level as needed
+      const map = mapRef.current;
+      if (map) {
+        map.flyTo(markerToRevisit.geocode, 15); // Fly to the marker's coordinates
+        markerToRevisit.ref.current.openPopup(); // Open the marker's popup
+      }
     }
   };
 
@@ -692,11 +850,22 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
         const querySnapshot = await getDocs(
           collection(fs, "users", currentUser.uid, "tripHistory")
         );
-        const trips: { locationName: string; timestamp: string }[] = [];
+        const trips: {
+          locationName: string;
+          locationType: string;
+          timestamp: string;
+        }[] = [];
         querySnapshot.forEach((doc) => {
-          trips.push(doc.data() as { locationName: string; timestamp: string });
+          trips.push(
+            doc.data() as {
+              locationName: string;
+              locationType: string;
+              timestamp: string;
+            }
+          );
         });
         setTripHistory(trips);
+        setLoading(false);
       }
     };
 
@@ -722,30 +891,35 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
   return (
     <div className="history-popup" onClick={handleOutsideClick}>
       <div className="history-container">
-        <p className="account-profile-header" style={{ textAlign: "center" }}>
-          History
-        </p>
-        <div
-          className="category-history"
-          style={{ backgroundColor: "#b98f68" }}
-        >
-          <p>Name</p>
-          <p>Time & Date </p>
-          <p>Revisit</p>
+        <div className="history-header">
+          <p className="main-header" style={{ textAlign: "left" }}>
+            History
+          </p>
+          <p className="second-header"> | Repeat past travels</p>
         </div>
-        <div id="dashboard-history" className="dashbaord-history">
-          {tripHistory.length === 0 ? (
+        <div id="dashboard-history" className="dashboard-history">
+          {loading ? (
+            <div className="history-loader">
+              <MoonLoader color="black" loading={loading} size={70} />
+            </div>
+          ) : tripHistory.length === 0 ? (
             <p>No Past Trip Recorded.</p>
           ) : (
             <ul>
               {currentTrips.map((trip, index) => (
                 <li key={index} className="trip-item">
-                  <div className="trip-name">{trip.locationName}</div>
-                  <div className="trip-tripstamp">
-                    {new Date(trip.timestamp).toLocaleString()}
+                  <div className="history-items">
+                    <div className="trip-name">{trip.locationName}</div>
+                    <div className="trip-tripstamp">
+                      {new Date(trip.timestamp).toLocaleString()}
+                    </div>
                   </div>
                   <div className="trip-action">
-                    <button onClick={() => handleRevisit(trip.locationName)}>
+                    <div className="trip-type">{trip.locationType}</div>
+                    <button
+                      className="trip-button"
+                      onClick={() => handleRevisit(trip.locationName)}
+                    >
                       Revisit
                     </button>
                   </div>
@@ -756,13 +930,11 @@ const HistoryPopup: React.FC<HistoryPopupProps> = ({ handleClose, mapRef }) => {
         </div>
         {tripHistory.length > tripsPerPage && (
           <div className="pagination">
-            <button onClick={handlePrevPage}>
-              <TiArrowBack className="react-icon" />
-            </button>
-            <div style={{ alignContent: "center" }}>{currentPage}</div>
-            <button onClick={handleNextPage}>
-              <TiArrowForward className="react-icon" />
-            </button>
+            <FaLeftLong className="react-icon" onClick={handlePrevPage} />
+            <div style={{ alignContent: "center", fontSize: "1.5rem" }}>
+              {currentPage}
+            </div>
+            <FaRightLong className="react-icon" onClick={handleNextPage} />
           </div>
         )}
       </div>
