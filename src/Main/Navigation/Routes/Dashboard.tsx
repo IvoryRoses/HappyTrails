@@ -334,18 +334,15 @@ export default function Dashboard() {
             [userMarker.geocode[1], userMarker.geocode[0]], // User marker coordinates
             [preferenceMarker.geocode[1], preferenceMarker.geocode[0]], // Preference marker coordinates
           ],
-<<<<<<< HEAD
-          //algorithm: "A-Star",
-          preference: "shortest",
+          //preference: "fastest",
+          //preference: "shortest",
+          preference: "recommended",
           profile: "driving-car", //do not remove
           //alternative_routes: {
           //  share_factor: 0.6,
           //  target_count: 3,
           //},
           //algorithm: "astar", // Experimental
-=======
-          preference: "shortest",
->>>>>>> 18b7ca911d63a606fd4dbb815959f10dd3ab8264
         }),
       });
 

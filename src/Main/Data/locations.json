@@ -1582,5 +1582,14 @@
     "rating": "4.8",
     "details": "Nature preserve in Tanay, Rizal",
     "locid": 176
+  },
+  {
+    "name": "Rizal Monument",
+    "coordinates": [14.5818, 120.9769],
+    "type": "Historical",
+    "budget": "Low",
+    "rating": "5.0",
+    "details": "Rizal Monument in Luneta, Ground Zero for Testing",
+    "locid": 0
   }
 ]
