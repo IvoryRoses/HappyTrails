@@ -23,5 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+firebase.tsx
+
 
 #apikey: OpenRouteService - 5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4
