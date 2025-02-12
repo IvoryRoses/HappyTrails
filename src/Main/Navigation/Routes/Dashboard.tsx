@@ -30,7 +30,7 @@ import { FaRightLong, FaLeftLong } from "react-icons/fa6";
 
 import { MoonLoader } from "react-spinners";
 
-const apiKey = "5b3ce3597851110001cf624847b902f1b415417ba738563c66a1cff4";
+const apiKey = "your-apikey-here";
 
 // Define the type for markers
 type MarkerType = {
